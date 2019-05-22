@@ -111,7 +111,7 @@ class BottomView: UIView {
     var leftBottomPoint  = CGPoint()
     var rightBottomPoint = CGPoint()
     
-    var color = UIColor()
+    
     
     override func draw(_ rect: CGRect) {
         // Drawing code
@@ -133,7 +133,7 @@ class BottomView: UIView {
         bezierPath.addLine(to: pointD)
         bezierPath.close()
         
-        color.setFill()
+        UIColor.red.setFill()
         bezierPath.fill()
         
         self.path = bezierPath

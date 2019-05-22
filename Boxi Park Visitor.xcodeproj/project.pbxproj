@@ -13,6 +13,8 @@
 		55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */; };
 		55027E5C22953C670018589F /* ProfileTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E5B22953C670018589F /* ProfileTC.swift */; };
 		55027E5F22954BE30018589F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E5E22954BE30018589F /* MenuVC.swift */; };
+		55027E61229557A40018589F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E60229557A40018589F /* MenuItem.swift */; };
+		55027E68229580FB0018589F /* BottomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E67229580FB0018589F /* BottomVC.swift */; };
 		55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */; };
 		55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */; };
 		55732FF0228CFBBC00B8BBB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55732FEE228CFBBC00B8BBB4 /* Main.storyboard */; };
@@ -21,6 +23,9 @@
 		55733000228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FFF228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift */; };
 		5573300B228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */; };
 		5573301D228D10C900B8BBB4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573301C228D10C900B8BBB4 /* TopView.swift */; };
+		77305B8B599455E1BEF03BD0 /* Pods_Boxi_Park_VisitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED3B9030586FEA5EE948BD /* Pods_Boxi_Park_VisitorTests.framework */; };
+		921003F862ABB2C8B98BA4E2 /* Pods_Boxi_Park_Visitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F25AA3D29F71E24EA07B51 /* Pods_Boxi_Park_Visitor.framework */; };
+		DD2F2590415C4DA008FDBF05 /* Pods_Boxi_Park_VisitorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B832A0C916AF8492252AB8 /* Pods_Boxi_Park_VisitorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,12 +46,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D521F0454BC886DDB1983E9 /* Pods-Boxi Park VisitorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park VisitorUITests.release.xcconfig"; path = "Target Support Files/Pods-Boxi Park VisitorUITests/Pods-Boxi Park VisitorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		55003C602293A82F00C8D12F /* MainWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherVC.swift; sourceTree = "<group>"; };
 		55003C622293A98C00C8D12F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithLoyaltyVC.swift; sourceTree = "<group>"; };
 		55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyalty.swift; sourceTree = "<group>"; };
 		55027E5B22953C670018589F /* ProfileTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTC.swift; sourceTree = "<group>"; };
 		55027E5E22954BE30018589F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		55027E60229557A40018589F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		55027E67229580FB0018589F /* BottomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomVC.swift; sourceTree = "<group>"; };
 		55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxi Park Visitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturentSelectionVC.swift; sourceTree = "<group>"; };
@@ -61,6 +69,14 @@
 		5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxi_Park_VisitorUITests.swift; sourceTree = "<group>"; };
 		5573300C228CFBBD00B8BBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5573301C228D10C900B8BBB4 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		725ADE4C1E4DAB0B4294FEE3 /* Pods-Boxi Park Visitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park Visitor.debug.xcconfig"; path = "Target Support Files/Pods-Boxi Park Visitor/Pods-Boxi Park Visitor.debug.xcconfig"; sourceTree = "<group>"; };
+		92B832A0C916AF8492252AB8 /* Pods_Boxi_Park_VisitorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boxi_Park_VisitorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEE676A5C271F4637426F9FA /* Pods-Boxi Park VisitorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park VisitorUITests.debug.xcconfig"; path = "Target Support Files/Pods-Boxi Park VisitorUITests/Pods-Boxi Park VisitorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4F25AA3D29F71E24EA07B51 /* Pods_Boxi_Park_Visitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boxi_Park_Visitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87D92858904B13549521496 /* Pods-Boxi Park Visitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park Visitor.release.xcconfig"; path = "Target Support Files/Pods-Boxi Park Visitor/Pods-Boxi Park Visitor.release.xcconfig"; sourceTree = "<group>"; };
+		F7FE0084EDB02EE202485AFD /* Pods-Boxi Park VisitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park VisitorTests.release.xcconfig"; path = "Target Support Files/Pods-Boxi Park VisitorTests/Pods-Boxi Park VisitorTests.release.xcconfig"; sourceTree = "<group>"; };
+		FA6B5F21FD135F7E412D171C /* Pods-Boxi Park VisitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park VisitorTests.debug.xcconfig"; path = "Target Support Files/Pods-Boxi Park VisitorTests/Pods-Boxi Park VisitorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDED3B9030586FEA5EE948BD /* Pods_Boxi_Park_VisitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boxi_Park_VisitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921003F862ABB2C8B98BA4E2 /* Pods_Boxi_Park_Visitor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77305B8B599455E1BEF03BD0 /* Pods_Boxi_Park_VisitorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,18 +100,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2F2590415C4DA008FDBF05 /* Pods_Boxi_Park_VisitorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		194A2B13512DD0736111D2D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				725ADE4C1E4DAB0B4294FEE3 /* Pods-Boxi Park Visitor.debug.xcconfig */,
+				D87D92858904B13549521496 /* Pods-Boxi Park Visitor.release.xcconfig */,
+				FA6B5F21FD135F7E412D171C /* Pods-Boxi Park VisitorTests.debug.xcconfig */,
+				F7FE0084EDB02EE202485AFD /* Pods-Boxi Park VisitorTests.release.xcconfig */,
+				BEE676A5C271F4637426F9FA /* Pods-Boxi Park VisitorUITests.debug.xcconfig */,
+				1D521F0454BC886DDB1983E9 /* Pods-Boxi Park VisitorUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		55027E5D22953C9C0018589F /* TabelCell */ = {
 			isa = PBXGroup;
 			children = (
 				55027E5B22953C670018589F /* ProfileTC.swift */,
+				55027E60229557A40018589F /* MenuItem.swift */,
 			);
 			path = TabelCell;
+			sourceTree = "<group>";
+		};
+		55027E622295772E0018589F /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				55027E67229580FB0018589F /* BottomVC.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		55732FDE228CFBBC00B8BBB4 = {
@@ -103,6 +144,8 @@
 				55732FFE228CFBBD00B8BBB4 /* Boxi Park VisitorTests */,
 				55733009228CFBBD00B8BBB4 /* Boxi Park VisitorUITests */,
 				55732FE8228CFBBC00B8BBB4 /* Products */,
+				194A2B13512DD0736111D2D3 /* Pods */,
+				DC88B88B00E7A8C52FDAF323 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +162,7 @@
 		55732FE9228CFBBC00B8BBB4 /* Boxi Park Visitor */ = {
 			isa = PBXGroup;
 			children = (
+				55027E622295772E0018589F /* BottomSheet */,
 				5573301B228D10BB00B8BBB4 /* Extension */,
 				5573301A228D003300B8BBB4 /* Resoures */,
 				55733019228D001F00B8BBB4 /* Views */,
@@ -186,6 +230,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DC88B88B00E7A8C52FDAF323 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4F25AA3D29F71E24EA07B51 /* Pods_Boxi_Park_Visitor.framework */,
+				FDED3B9030586FEA5EE948BD /* Pods_Boxi_Park_VisitorTests.framework */,
+				92B832A0C916AF8492252AB8 /* Pods_Boxi_Park_VisitorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5573300F228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park Visitor" */;
 			buildPhases = (
+				1E095CE7C8585D88EC7059E3 /* [CP] Check Pods Manifest.lock */,
 				55732FE3228CFBBC00B8BBB4 /* Sources */,
 				55732FE4228CFBBC00B8BBB4 /* Frameworks */,
 				55732FE5228CFBBC00B8BBB4 /* Resources */,
+				A3FF8E8BD84996F94E94442F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +266,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55733012228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park VisitorTests" */;
 			buildPhases = (
+				4E193401C5745520ECC13DB2 /* [CP] Check Pods Manifest.lock */,
 				55732FF7228CFBBD00B8BBB4 /* Sources */,
 				55732FF8228CFBBD00B8BBB4 /* Frameworks */,
 				55732FF9228CFBBD00B8BBB4 /* Resources */,
@@ -228,6 +285,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55733015228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park VisitorUITests" */;
 			buildPhases = (
+				6D4BF99E4121BC7DBA820D12 /* [CP] Check Pods Manifest.lock */,
 				55733002228CFBBD00B8BBB4 /* Sources */,
 				55733003228CFBBD00B8BBB4 /* Frameworks */,
 				55733004228CFBBD00B8BBB4 /* Resources */,
@@ -312,6 +370,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E095CE7C8585D88EC7059E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Boxi Park Visitor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E193401C5745520ECC13DB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Boxi Park VisitorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D4BF99E4121BC7DBA820D12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Boxi Park VisitorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3FF8E8BD84996F94E94442F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Boxi Park Visitor/Pods-Boxi Park Visitor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FittedSheets.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boxi Park Visitor/Pods-Boxi Park Visitor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		55732FE3228CFBBC00B8BBB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,11 +470,13 @@
 				55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */,
 				55027E5C22953C670018589F /* ProfileTC.swift in Sources */,
 				5573301D228D10C900B8BBB4 /* TopView.swift in Sources */,
+				55027E68229580FB0018589F /* BottomVC.swift in Sources */,
 				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
 				55027E5F22954BE30018589F /* MenuVC.swift in Sources */,
 				55003C632293A98C00C8D12F /* LoginVC.swift in Sources */,
 				55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */,
 				55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */,
+				55027E61229557A40018589F /* MenuItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +649,7 @@
 		};
 		55733010228CFBBD00B8BBB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 725ADE4C1E4DAB0B4294FEE3 /* Pods-Boxi Park Visitor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -517,6 +669,7 @@
 		};
 		55733011228CFBBD00B8BBB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D87D92858904B13549521496 /* Pods-Boxi Park Visitor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +689,7 @@
 		};
 		55733013228CFBBD00B8BBB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA6B5F21FD135F7E412D171C /* Pods-Boxi Park VisitorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -557,6 +711,7 @@
 		};
 		55733014228CFBBD00B8BBB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7FE0084EDB02EE202485AFD /* Pods-Boxi Park VisitorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -578,6 +733,7 @@
 		};
 		55733016228CFBBD00B8BBB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE676A5C271F4637426F9FA /* Pods-Boxi Park VisitorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -598,6 +754,7 @@
 		};
 		55733017228CFBBD00B8BBB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D521F0454BC886DDB1983E9 /* Pods-Boxi Park VisitorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

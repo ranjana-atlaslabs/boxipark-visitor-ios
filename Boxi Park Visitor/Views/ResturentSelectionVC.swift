@@ -18,10 +18,10 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var leadingConstrianSidebar: NSLayoutConstraint!
     
     //Mark Varialbles
-    var itemCount     = 10
-    var tagId         = 1
-    let colorArray    = [UIColor.gray, UIColor.black, UIColor.blue, UIColor.brown, UIColor.magenta, UIColor.yellow, UIColor.cyan, UIColor.white]
-    let imagesArray   = [ #imageLiteral(resourceName: "cano_logo"), #imageLiteral(resourceName: "lacajitalogon"), #imageLiteral(resourceName: "beforelogon"), #imageLiteral(resourceName: "hopslogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "grilllogon"), #imageLiteral(resourceName: "naughtylogon"), #imageLiteral(resourceName: "beforelogon")]
+    var itemCount     = 5
+    var tagId         = 0
+    let colorArray    = [#colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0.7740916014, green: 0.3885799944, blue: 0.2412629426, alpha: 1), #colorLiteral(red: 0.9653725028, green: 0.835703373, blue: 0.556709826, alpha: 1), #colorLiteral(red: 0.7598508, green: 0.2347533405, blue: 0.190864265, alpha: 1), #colorLiteral(red: 0.2463579476, green: 0.3117541969, blue: 0.3831449151, alpha: 1), #colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.4114020467, green: 0.6439546347, blue: 0.5185563564, alpha: 1),#colorLiteral(red: 0.133510083, green: 0.1185990497, blue: 0.1235295162, alpha: 1), #colorLiteral(red: 0.1140215024, green: 0.3539430797, blue: 0.4238928854, alpha: 1)]
+    let imagesArray   = [ #imageLiteral(resourceName: "barnonalogon"), #imageLiteral(resourceName: "canoli_logo"), #imageLiteral(resourceName: "lacajitalogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "hopslogon"), #imageLiteral(resourceName: "grilllogon"), #imageLiteral(resourceName: "clawlogon"), #imageLiteral(resourceName: "naughtylogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "beforelogon")]
     var isSidebarOpen = false
     var selectedImage = UIView()
     
@@ -69,34 +69,27 @@ class ResturentSelectionVC: UIViewController {
     
     func setupScrollView()  {
         
-        self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount - 2)))
+        
+        self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount - 1)))
         self.scrollViw.layoutIfNeeded()
         
-        let colorArray2: [UIColor] = colorArray.reversed()
-        let imagesArray2: [UIImage] = imagesArray.reversed()
-        
-    
         let viw = TopView(frame: CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height/4))
         
         var side1 = UIView(frame: CGRect(x: 0, y: 0, width: viw.frame.width/2, height: viw.frame.height))
-        var side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  #imageLiteral(resourceName: "canolilogon"))
-        side1.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        var side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  imagesArray[tagId ])
+        
         side1Image.center = side1.center
         
         side1.addSubview(side1Image)
-        side1.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        side1.backgroundColor = colorArray[tagId ]
         side1.tag = tagId
         
-        var side2 = UIView(frame: CGRect(x: viw.frame.width/2, y: 0, width: viw.frame.width/2, height: viw.frame.height))
-        var side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5), image: #imageLiteral(resourceName: "cano_logo"))
-       
-        side2.addSubview(side2Image)
-        
-        side2Image.center = side1Image.center
-        side2Image.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-        side2.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-        
         tagId = tagId + 1
+        var side2 = UIView(frame: CGRect(x: viw.frame.width/2, y: 0, width: viw.frame.width/2, height: viw.frame.height))
+        var side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5), image:  imagesArray[tagId ])
+        side2.addSubview(side2Image)
+        side2Image.center = side1Image.center
+        side2.backgroundColor =  colorArray[tagId]
         side2.tag = tagId
         
         
@@ -121,6 +114,7 @@ class ResturentSelectionVC: UIViewController {
         
         for index in 1...count {
             
+            print(tagId)
             let calculateValue = ((itemHeight*2/3) * CGFloat(index - 1))
             
             let middleView              = MiddleView(frame: CGRect(x: 0, y:itemY + calculateValue  , width: itemWidth , height: itemHeight))
@@ -130,28 +124,31 @@ class ResturentSelectionVC: UIViewController {
             middleView.leftBottomPoint  = CGPoint(x: 0 , y: middleView.frame.height)
             middleView.rightBottomPoint = CGPoint(x: middleView.frame.width , y: middleView.frame.height*2/3 )
             
-            middleView.color            = colorArray[index - 1]
+            tagId = tagId + 1
+            middleView.color            = colorArray[tagId ]
             
             side1 = UIImageView(frame: CGRect(x: 0, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
-            side1.backgroundColor = colorArray[index - 1]
-            side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/2), height: (side1.frame.height/2), image:  imagesArray[index - 1])
-            side1Image.backgroundColor = colorArray[index - 1]
+            side1.backgroundColor = colorArray[tagId ]
+            side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/2), height: (side1.frame.height/2), image:  imagesArray[tagId])
+           
             side1Image.center = side1.center
             
             side1.addSubview(side1Image)
 
-            tagId = tagId + 1
+            
             side1.tag = tagId
             
+            tagId = tagId + 1
+            
             side2 = UIImageView(frame: CGRect(x: middleView.frame.width/2, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
-            side2.backgroundColor = colorArray2 [index - 1]
-            side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/2), height: (side2.frame.height/2), image: imagesArray2[index - 1])
-            side2Image.backgroundColor = colorArray[index - 1]
+            side2.backgroundColor = colorArray [tagId ]
+            side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/2), height: (side2.frame.height/2), image: imagesArray[tagId])
+            
             side2Image.center = side1Image.center
             side2.addSubview(side2Image)
             
             
-            tagId = tagId + 1
+            
             side2.tag = tagId
             
             // Add tap gesture recognizer to View
@@ -179,17 +176,17 @@ class ResturentSelectionVC: UIViewController {
         bottomView.leftBottomPoint  = CGPoint(x: 0 , y: bottomView.frame.height + self.view.frame.height*1/3)
         bottomView.rightBottomPoint = CGPoint(x: bottomView.frame.width , y: bottomView.frame.height)
         
-        bottomView.color = colorArray[colorArray.count - 1]
         
         side1 = UIImageView(frame: CGRect(x: 0, y: 0, width: bottomView.frame.width/2, height: bottomView.frame.height))
-        
-        side1.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         tagId = tagId + 1
+        side1.backgroundColor = colorArray[tagId]
+        
         side1.tag = tagId
         
         side2 = UIImageView(frame: CGRect(x: bottomView.frame.width/2, y: 0, width: bottomView.frame.width/2, height: bottomView.frame.height))
-        side2.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         tagId = tagId + 1
+        side2.backgroundColor = colorArray[tagId]
+        
         side2.tag = tagId
         
         // Add tap gesture recognizer to View
@@ -234,7 +231,7 @@ class ResturentSelectionVC: UIViewController {
     @objc func handleTap(_ recognizer:UITapGestureRecognizer) {
         
         self.selectedImage = (recognizer.view)!
-        print(recognizer.view?.tag ?? 0)
+        
         self.performSegue(withIdentifier: "menu", sender: nil)
         
     }
