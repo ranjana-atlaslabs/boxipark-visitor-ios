@@ -11,6 +11,8 @@
 		55003C632293A98C00C8D12F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C622293A98C00C8D12F /* LoginVC.swift */; };
 		55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */; };
 		55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */; };
+		55027E5C22953C670018589F /* ProfileTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E5B22953C670018589F /* ProfileTC.swift */; };
+		55027E5F22954BE30018589F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E5E22954BE30018589F /* MenuVC.swift */; };
 		55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */; };
 		55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */; };
 		55732FF0228CFBBC00B8BBB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55732FEE228CFBBC00B8BBB4 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		55003C622293A98C00C8D12F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithLoyaltyVC.swift; sourceTree = "<group>"; };
 		55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyalty.swift; sourceTree = "<group>"; };
+		55027E5B22953C670018589F /* ProfileTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTC.swift; sourceTree = "<group>"; };
+		55027E5E22954BE30018589F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxi Park Visitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturentSelectionVC.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55027E5D22953C9C0018589F /* TabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				55027E5B22953C670018589F /* ProfileTC.swift */,
+			);
+			path = TabelCell;
+			sourceTree = "<group>";
+		};
 		55732FDE228CFBBC00B8BBB4 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 				55003C622293A98C00C8D12F /* LoginVC.swift */,
 				55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */,
 				55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */,
+				55027E5E22954BE30018589F /* MenuVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 		5573301B228D10BB00B8BBB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55027E5D22953C9C0018589F /* TabelCell */,
 				5573301C228D10C900B8BBB4 /* TopView.swift */,
 			);
 			path = Extension;
@@ -305,8 +319,10 @@
 			files = (
 				55003C612293A82F00C8D12F /* MainWeatherVC.swift in Sources */,
 				55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */,
+				55027E5C22953C670018589F /* ProfileTC.swift in Sources */,
 				5573301D228D10C900B8BBB4 /* TopView.swift in Sources */,
 				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
+				55027E5F22954BE30018589F /* MenuVC.swift in Sources */,
 				55003C632293A98C00C8D12F /* LoginVC.swift in Sources */,
 				55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */,
 				55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */,
