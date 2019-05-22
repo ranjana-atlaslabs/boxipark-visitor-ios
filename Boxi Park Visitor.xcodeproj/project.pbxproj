@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55003C612293A82F00C8D12F /* MainWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C602293A82F00C8D12F /* MainWeatherVC.swift */; };
+		55003C632293A98C00C8D12F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C622293A98C00C8D12F /* LoginVC.swift */; };
+		55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */; };
+		55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */; };
+		55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */; };
+		55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */; };
+		55732FF0228CFBBC00B8BBB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55732FEE228CFBBC00B8BBB4 /* Main.storyboard */; };
+		55732FF2228CFBBD00B8BBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55732FF1228CFBBD00B8BBB4 /* Assets.xcassets */; };
+		55732FF5228CFBBD00B8BBB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55732FF3228CFBBD00B8BBB4 /* LaunchScreen.storyboard */; };
+		55733000228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FFF228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift */; };
+		5573300B228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */; };
+		5573301D228D10C900B8BBB4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573301C228D10C900B8BBB4 /* TopView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55732FFC228CFBBD00B8BBB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55732FDF228CFBBC00B8BBB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55732FE6228CFBBC00B8BBB4;
+			remoteInfo = "Boxi Park Visitor";
+		};
+		55733007228CFBBD00B8BBB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55732FDF228CFBBC00B8BBB4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55732FE6228CFBBC00B8BBB4;
+			remoteInfo = "Boxi Park Visitor";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55003C602293A82F00C8D12F /* MainWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherVC.swift; sourceTree = "<group>"; };
+		55003C622293A98C00C8D12F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithLoyaltyVC.swift; sourceTree = "<group>"; };
+		55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyalty.swift; sourceTree = "<group>"; };
+		55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxi Park Visitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturentSelectionVC.swift; sourceTree = "<group>"; };
+		55732FEF228CFBBC00B8BBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55732FF1228CFBBD00B8BBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55732FF4228CFBBD00B8BBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55732FF6228CFBBD00B8BBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55732FFB228CFBBD00B8BBB4 /* Boxi Park VisitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boxi Park VisitorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55732FFF228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxi_Park_VisitorTests.swift; sourceTree = "<group>"; };
+		55733001228CFBBD00B8BBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55733006228CFBBD00B8BBB4 /* Boxi Park VisitorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Boxi Park VisitorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxi_Park_VisitorUITests.swift; sourceTree = "<group>"; };
+		5573300C228CFBBD00B8BBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5573301C228D10C900B8BBB4 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55732FE4228CFBBC00B8BBB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55732FF8228CFBBD00B8BBB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55733003228CFBBD00B8BBB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55732FDE228CFBBC00B8BBB4 = {
+			isa = PBXGroup;
+			children = (
+				55732FE9228CFBBC00B8BBB4 /* Boxi Park Visitor */,
+				55732FFE228CFBBD00B8BBB4 /* Boxi Park VisitorTests */,
+				55733009228CFBBD00B8BBB4 /* Boxi Park VisitorUITests */,
+				55732FE8228CFBBC00B8BBB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55732FE8228CFBBC00B8BBB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */,
+				55732FFB228CFBBD00B8BBB4 /* Boxi Park VisitorTests.xctest */,
+				55733006228CFBBD00B8BBB4 /* Boxi Park VisitorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55732FE9228CFBBC00B8BBB4 /* Boxi Park Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				5573301B228D10BB00B8BBB4 /* Extension */,
+				5573301A228D003300B8BBB4 /* Resoures */,
+				55733019228D001F00B8BBB4 /* Views */,
+				55733018228CFEC300B8BBB4 /* Application */,
+			);
+			path = "Boxi Park Visitor";
+			sourceTree = "<group>";
+		};
+		55732FFE228CFBBD00B8BBB4 /* Boxi Park VisitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				55732FFF228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift */,
+				55733001228CFBBD00B8BBB4 /* Info.plist */,
+			);
+			path = "Boxi Park VisitorTests";
+			sourceTree = "<group>";
+		};
+		55733009228CFBBD00B8BBB4 /* Boxi Park VisitorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */,
+				5573300C228CFBBD00B8BBB4 /* Info.plist */,
+			);
+			path = "Boxi Park VisitorUITests";
+			sourceTree = "<group>";
+		};
+		55733018228CFEC300B8BBB4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */,
+				55732FF6228CFBBD00B8BBB4 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		55733019228D001F00B8BBB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55732FEE228CFBBC00B8BBB4 /* Main.storyboard */,
+				55732FF3228CFBBD00B8BBB4 /* LaunchScreen.storyboard */,
+				55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */,
+				55003C602293A82F00C8D12F /* MainWeatherVC.swift */,
+				55003C622293A98C00C8D12F /* LoginVC.swift */,
+				55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */,
+				55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5573301A228D003300B8BBB4 /* Resoures */ = {
+			isa = PBXGroup;
+			children = (
+				55732FF1228CFBBD00B8BBB4 /* Assets.xcassets */,
+			);
+			path = Resoures;
+			sourceTree = "<group>";
+		};
+		5573301B228D10BB00B8BBB4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5573301C228D10C900B8BBB4 /* TopView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55732FE6228CFBBC00B8BBB4 /* Boxi Park Visitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5573300F228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park Visitor" */;
+			buildPhases = (
+				55732FE3228CFBBC00B8BBB4 /* Sources */,
+				55732FE4228CFBBC00B8BBB4 /* Frameworks */,
+				55732FE5228CFBBC00B8BBB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Boxi Park Visitor";
+			productName = "Boxi Park Visitor";
+			productReference = 55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55732FFA228CFBBD00B8BBB4 /* Boxi Park VisitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55733012228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park VisitorTests" */;
+			buildPhases = (
+				55732FF7228CFBBD00B8BBB4 /* Sources */,
+				55732FF8228CFBBD00B8BBB4 /* Frameworks */,
+				55732FF9228CFBBD00B8BBB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55732FFD228CFBBD00B8BBB4 /* PBXTargetDependency */,
+			);
+			name = "Boxi Park VisitorTests";
+			productName = "Boxi Park VisitorTests";
+			productReference = 55732FFB228CFBBD00B8BBB4 /* Boxi Park VisitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55733005228CFBBD00B8BBB4 /* Boxi Park VisitorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55733015228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park VisitorUITests" */;
+			buildPhases = (
+				55733002228CFBBD00B8BBB4 /* Sources */,
+				55733003228CFBBD00B8BBB4 /* Frameworks */,
+				55733004228CFBBD00B8BBB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55733008228CFBBD00B8BBB4 /* PBXTargetDependency */,
+			);
+			name = "Boxi Park VisitorUITests";
+			productName = "Boxi Park VisitorUITests";
+			productReference = 55733006228CFBBD00B8BBB4 /* Boxi Park VisitorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55732FDF228CFBBC00B8BBB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Atlas-Labs";
+				TargetAttributes = {
+					55732FE6228CFBBC00B8BBB4 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					55732FFA228CFBBD00B8BBB4 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 55732FE6228CFBBC00B8BBB4;
+					};
+					55733005228CFBBD00B8BBB4 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 55732FE6228CFBBC00B8BBB4;
+					};
+				};
+			};
+			buildConfigurationList = 55732FE2228CFBBC00B8BBB4 /* Build configuration list for PBXProject "Boxi Park Visitor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55732FDE228CFBBC00B8BBB4;
+			productRefGroup = 55732FE8228CFBBC00B8BBB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55732FE6228CFBBC00B8BBB4 /* Boxi Park Visitor */,
+				55732FFA228CFBBD00B8BBB4 /* Boxi Park VisitorTests */,
+				55733005228CFBBD00B8BBB4 /* Boxi Park VisitorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55732FE5228CFBBC00B8BBB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55732FF5228CFBBD00B8BBB4 /* LaunchScreen.storyboard in Resources */,
+				55732FF2228CFBBD00B8BBB4 /* Assets.xcassets in Resources */,
+				55732FF0228CFBBC00B8BBB4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55732FF9228CFBBD00B8BBB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55733004228CFBBD00B8BBB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55732FE3228CFBBC00B8BBB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55003C612293A82F00C8D12F /* MainWeatherVC.swift in Sources */,
+				55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */,
+				5573301D228D10C900B8BBB4 /* TopView.swift in Sources */,
+				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
+				55003C632293A98C00C8D12F /* LoginVC.swift in Sources */,
+				55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */,
+				55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55732FF7228CFBBD00B8BBB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55733000228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55733002228CFBBD00B8BBB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5573300B228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55732FFD228CFBBD00B8BBB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55732FE6228CFBBC00B8BBB4 /* Boxi Park Visitor */;
+			targetProxy = 55732FFC228CFBBD00B8BBB4 /* PBXContainerItemProxy */;
+		};
+		55733008228CFBBD00B8BBB4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55732FE6228CFBBC00B8BBB4 /* Boxi Park Visitor */;
+			targetProxy = 55733007228CFBBD00B8BBB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55732FEE228CFBBC00B8BBB4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55732FEF228CFBBC00B8BBB4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55732FF3228CFBBD00B8BBB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55732FF4228CFBBD00B8BBB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5573300D228CFBBD00B8BBB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5573300E228CFBBD00B8BBB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55733010228CFBBD00B8BBB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
+				INFOPLIST_FILE = "$(SRCROOT)/Boxi Park Visitor/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Atals-labs.Boxi-Park-Visitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55733011228CFBBD00B8BBB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
+				INFOPLIST_FILE = "$(SRCROOT)/Boxi Park Visitor/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Atals-labs.Boxi-Park-Visitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		55733013228CFBBD00B8BBB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
+				INFOPLIST_FILE = "Boxi Park VisitorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Atals-labs.Boxi-Park-VisitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boxi Park Visitor.app/Boxi Park Visitor";
+			};
+			name = Debug;
+		};
+		55733014228CFBBD00B8BBB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
+				INFOPLIST_FILE = "Boxi Park VisitorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Atals-labs.Boxi-Park-VisitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boxi Park Visitor.app/Boxi Park Visitor";
+			};
+			name = Release;
+		};
+		55733016228CFBBD00B8BBB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
+				INFOPLIST_FILE = "Boxi Park VisitorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Atals-labs.Boxi-Park-VisitorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Boxi Park Visitor";
+			};
+			name = Debug;
+		};
+		55733017228CFBBD00B8BBB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
+				INFOPLIST_FILE = "Boxi Park VisitorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Atals-labs.Boxi-Park-VisitorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Boxi Park Visitor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55732FE2228CFBBC00B8BBB4 /* Build configuration list for PBXProject "Boxi Park Visitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5573300D228CFBBD00B8BBB4 /* Debug */,
+				5573300E228CFBBD00B8BBB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5573300F228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park Visitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55733010228CFBBD00B8BBB4 /* Debug */,
+				55733011228CFBBD00B8BBB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55733012228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park VisitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55733013228CFBBD00B8BBB4 /* Debug */,
+				55733014228CFBBD00B8BBB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55733015228CFBBD00B8BBB4 /* Build configuration list for PBXNativeTarget "Boxi Park VisitorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55733016228CFBBD00B8BBB4 /* Debug */,
+				55733017228CFBBD00B8BBB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55732FDF228CFBBC00B8BBB4 /* Project object */;
+}
