@@ -1,2 +1,2 @@
 # somark-visitor-ios
-ios mobile app
+ios mobile app - please write all instruction for project set up
