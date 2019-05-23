@@ -16,6 +16,7 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var tblProfileData: UITableView!
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var leadingConstrianSidebar: NSLayoutConstraint!
+    @IBOutlet weak var lblEditProfile: UILabel!
     
     //Mark Varialbles
     var itemCount     = 5
@@ -40,10 +41,15 @@ class ResturentSelectionVC: UIViewController {
         }
     }
     
+    @IBAction func offerBtnTap(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "offer", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "menu" {
             if let vc = segue.destination as? MenuVC {
                 vc.color = selectedImage.backgroundColor!
+                vc.image = imagesArray[selectedImage.tag]
             }
         }
     }
@@ -62,6 +68,10 @@ class ResturentSelectionVC: UIViewController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         
+        // Add tap gesture recognizer to lbllogout
+        let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
+        lblEditProfile.addGestureRecognizer(tap)
+        lblEditProfile.isUserInteractionEnabled = true
         
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
@@ -77,18 +87,16 @@ class ResturentSelectionVC: UIViewController {
         
         var side1 = UIView(frame: CGRect(x: 0, y: 0, width: viw.frame.width/2, height: viw.frame.height))
         var side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  imagesArray[tagId ])
-        
         side1Image.center = side1.center
-        
         side1.addSubview(side1Image)
         side1.backgroundColor = colorArray[tagId ]
         side1.tag = tagId
         
         tagId = tagId + 1
         var side2 = UIView(frame: CGRect(x: viw.frame.width/2, y: 0, width: viw.frame.width/2, height: viw.frame.height))
-        var side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5), image:  imagesArray[tagId ])
+        var side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5) , image:  imagesArray[tagId ])
         side2.addSubview(side2Image)
-        side2Image.center = side1Image.center
+        side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 20)
         side2.backgroundColor =  colorArray[tagId]
         side2.tag = tagId
         
@@ -114,7 +122,6 @@ class ResturentSelectionVC: UIViewController {
         
         for index in 1...count {
             
-            print(tagId)
             let calculateValue = ((itemHeight*2/3) * CGFloat(index - 1))
             
             let middleView              = MiddleView(frame: CGRect(x: 0, y:itemY + calculateValue  , width: itemWidth , height: itemHeight))
@@ -131,7 +138,7 @@ class ResturentSelectionVC: UIViewController {
             side1.backgroundColor = colorArray[tagId ]
             side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/2), height: (side1.frame.height/2), image:  imagesArray[tagId])
            
-            side1Image.center = side1.center
+            side1Image.center = CGPoint(x: side1.center.x, y: side1.center.y + 10)
             
             side1.addSubview(side1Image)
 
@@ -143,8 +150,7 @@ class ResturentSelectionVC: UIViewController {
             side2 = UIImageView(frame: CGRect(x: middleView.frame.width/2, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
             side2.backgroundColor = colorArray [tagId ]
             side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/2), height: (side2.frame.height/2), image: imagesArray[tagId])
-            
-            side2Image.center = side1Image.center
+            side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 20)
             side2.addSubview(side2Image)
             
             
@@ -179,14 +185,19 @@ class ResturentSelectionVC: UIViewController {
         
         side1 = UIImageView(frame: CGRect(x: 0, y: 0, width: bottomView.frame.width/2, height: bottomView.frame.height))
         tagId = tagId + 1
+        side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  imagesArray[tagId ])
+        side1Image.center = side1.center
+        side1.addSubview(side1Image)
         side1.backgroundColor = colorArray[tagId]
         
         side1.tag = tagId
         
         side2 = UIImageView(frame: CGRect(x: bottomView.frame.width/2, y: 0, width: bottomView.frame.width/2, height: bottomView.frame.height))
         tagId = tagId + 1
+        side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5), image:  imagesArray[tagId ])
+        side2.addSubview(side2Image)
+        side2Image.center = side1Image.center
         side2.backgroundColor = colorArray[tagId]
-        
         side2.tag = tagId
         
         // Add tap gesture recognizer to View
@@ -212,8 +223,6 @@ class ResturentSelectionVC: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
-            
-            //print("Swipe Right")
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
             
@@ -233,6 +242,12 @@ class ResturentSelectionVC: UIViewController {
         self.selectedImage = (recognizer.view)!
         
         self.performSegue(withIdentifier: "menu", sender: nil)
+        
+    }
+    
+    @objc func handleLogoutTap(_ recognizer:UITapGestureRecognizer) {
+        
+        self.performSegue(withIdentifier: "edit", sender: nil)
         
     }
     

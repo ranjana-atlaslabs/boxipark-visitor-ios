@@ -16,6 +16,7 @@ class MenuVC: UIViewController {
     @IBOutlet weak var tblMenuItems: UITableView!
     
     var color = UIColor()
+    var image = UIImage()
     let sections: [String] = ["Cocktails", "Wine on Tap", "Bottled Wine", "Park Brewing \n Rotating Selections", "Canned Beer", "Beverages", "Cocktails"]
     
     let s1Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "1Ginger"]
@@ -39,7 +40,7 @@ class MenuVC: UIViewController {
     
     func setupview()  {
         imageView.backgroundColor = color
-        imageView.image  = #imageLiteral(resourceName: "lacajitalogon")
+        imageView.image  = image
         imageView.contentMode = .scaleAspectFit
         
         imageView.layer.cornerRadius = 10
@@ -115,6 +116,10 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showBottomSheet()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
     }
 }
 
