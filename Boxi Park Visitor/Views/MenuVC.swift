@@ -45,7 +45,7 @@ class MenuVC: UIViewController {
         
         imageView.layer.cornerRadius = 10
         
-        
+        tblMenuItems.separatorColor = UIColor.clear
         sectionData = [0: s1Data, 1:s2Data, 2: s3Data, 3:s4Data, 4: s5Data , 5:s6Data, 6: s7Data , 7: s7Data]
         tblMenuItems.tableFooterView = UIView()
 
@@ -111,15 +111,29 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         cell.lblItemName.text = sectionData[indexPath.section]![indexPath.row]
         cell.lblItemPrice.text = "$    " + price[indexPath.row]
         cell.selectionStyle = .none
+        
+        let bottomBorder = CALayer()
+        
+        bottomBorder.frame = CGRect(x: 20.0, y: 43.0, width: cell.contentView.frame.size.width - 40, height: 1.0)
+        bottomBorder.backgroundColor = UIColor(white: 0.8, alpha: 1.0).cgColor
+        cell.contentView.layer.addSublayer(bottomBorder)
+
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showBottomSheet()
+        
+        DispatchQueue.main.async {
+            self.showBottomSheet()
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
+
 }
 

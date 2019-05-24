@@ -56,7 +56,7 @@ class ResturentSelectionVC: UIViewController {
     
     //Mark: Custome Methods
     func setupview()  {
-        self.btnOffer.layer.cornerRadius       = 8
+        self.btnOffer.layer.cornerRadius       = 5
         self.btnLogout.layer.cornerRadius      = 8
         self.tblProfileData.tableFooterView    = UIView()
         self.tblProfileData.rowHeight          = UITableView.automaticDimension
@@ -80,7 +80,7 @@ class ResturentSelectionVC: UIViewController {
     func setupScrollView()  {
         
         
-        self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount - 1)))
+        self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount)))
         self.scrollViw.layoutIfNeeded()
         
         let viw = TopView(frame: CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height/4))
@@ -116,7 +116,7 @@ class ResturentSelectionVC: UIViewController {
 
         let count      = itemCount - 2
         let itemWidth  = view.frame.width
-        let itemHeight = view.frame.height/5 + viw.frame.height * 1/3
+        let itemHeight = view.frame.height/5 + viw.frame.height * 2/3
         let itemY      = viw.frame.height * 2/3
         let leftY      = viw.frame.height * 1/3
         
@@ -152,8 +152,6 @@ class ResturentSelectionVC: UIViewController {
             side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/2), height: (side2.frame.height/2), image: imagesArray[tagId])
             side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 20)
             side2.addSubview(side2Image)
-            
-            
             
             side2.tag = tagId
             
@@ -229,7 +227,7 @@ class ResturentSelectionVC: UIViewController {
             
             if self.isSidebarOpen {
                 self.leadingConstrianSidebar.constant = -1500
-                UIView.animate(withDuration: 0.3) {
+                UIView.animate(withDuration: 0.5) {
                     self.view.layoutIfNeeded()
                 }
                 self.isSidebarOpen = false
