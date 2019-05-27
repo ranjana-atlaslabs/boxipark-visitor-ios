@@ -17,17 +17,16 @@ class MenuVC: UIViewController {
     
     var color = UIColor()
     var image = UIImage()
-    let sections: [String] = ["Cocktails", "Wine on Tap", "Bottled Wine", "Park Brewing \n Rotating Selections", "Canned Beer", "Beverages", "Cocktails"]
+    let sections: [String] = ["Cocktails", "Wine on Tap", "Bottled Wine", "Park Brewing \nRotating Selections", "Canned Beer", "Beverages"]
     
-    let s1Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "1Ginger"]
-    let s2Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "2Ginger"]
-    let s3Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "3Ginger"]
-    let s4Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "4Ginger"]
-    let s5Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "5Ginger"]
-    let s6Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "6Ginger"]
-    let s7Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "7Ginger"]
+    let s1Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "Ginger Bourbon Lemonade", "Freshly Hand Juiced Margarita"]
+    let s2Data: [String] = ["Summerland Rose", "Nobilo Sauvignon Blan", "Merf Chardonna"]
+    let s3Data: [String] = ["Nv Prosecco", "2017 Pinot Grigio", "2017 Sauvignon Blanc"]
+    let s4Data: [String] = ["Standard Lager", "Blonde Ale", "Belgian Wit"]
+    let s5Data: [String] = ["Bud Light", "Michelob Ultra", "Medalla Light"]
+    let s6Data: [String] = ["San Pellegrino", "Accqua Panna", "Gold Peak Tea"]
     
-    let price: [String] = ["6.00", "8.00", "9.00"]
+    let price: [String] = ["6.00", "8.00", "9.00" , "5.00"]
     
     var sectionData: [Int: [String]] = [:]
     
@@ -46,7 +45,7 @@ class MenuVC: UIViewController {
         imageView.layer.cornerRadius = 10
         
         tblMenuItems.separatorColor = UIColor.clear
-        sectionData = [0: s1Data, 1:s2Data, 2: s3Data, 3:s4Data, 4: s5Data , 5:s6Data, 6: s7Data , 7: s7Data]
+        sectionData = [0: s1Data, 1:s2Data, 2: s3Data, 3:s4Data, 4: s5Data , 5:s6Data]
         tblMenuItems.tableFooterView = UIView()
 
     }
@@ -90,6 +89,7 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (sectionData[section]?.count)!
     }
@@ -98,17 +98,22 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         let view = UIView()
         
         let headerText = UILabel()
+        headerText.sizeToFit()
+        headerText.numberOfLines = 2
         headerText.frame = CGRect(x: 20, y: 0, width: tableView.frame.width, height: 50)
         headerText.text = sections[section]
+        headerText.adjustsFontSizeToFitWidth = true
+        headerText.minimumScaleFactor = 0.5
         headerText.font = UIFont.boldSystemFont(ofSize: 20)
         view.addSubview(headerText)
         
         return view
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "item", for: indexPath) as! MenuItem
         
-        cell.lblItemName.text = sectionData[indexPath.section]![indexPath.row]
+        cell.lblItemName.set(image: #imageLiteral(resourceName: "info"), with: sectionData[indexPath.section]![indexPath.row])
         cell.lblItemPrice.text = "$    " + price[indexPath.row]
         cell.selectionStyle = .none
         
@@ -137,3 +142,21 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
 
 }
 
+extension UILabel {
+    func set(image: UIImage, with text: String) {
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = CGRect(x: 0, y: 0, width: 10, height: 10)
+        let attachmentStr = NSAttributedString(attachment: attachment)
+
+        let mutableAttributedString = NSMutableAttributedString()
+        
+        let textString = NSAttributedString(string: text + "  ", attributes: [.font: self.font!])
+        mutableAttributedString.append(textString)
+        
+        
+        mutableAttributedString.append(attachmentStr)
+        
+        self.attributedText = mutableAttributedString
+    }
+}

@@ -10,7 +10,6 @@
 		55003AA322963FAA00782CFD /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003AA222963FAA00782CFD /* MapVC.swift */; };
 		55003AAB2296404A00782CFD /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA52296404A00782CFD /* marker.png */; };
 		55003AAC2296404A00782CFD /* File3.js in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA62296404A00782CFD /* File3.js */; };
-		55003AAD2296404A00782CFD /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA72296404A00782CFD /* map.jpg */; };
 		55003AAE2296404A00782CFD /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA82296404A00782CFD /* index.html */; };
 		55003AAF2296404A00782CFD /* map.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA92296404A00782CFD /* map.PNG */; };
 		55003AB02296404A00782CFD /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 55003AAA2296404A00782CFD /* main.css */; };
@@ -24,6 +23,7 @@
 		55027E5F22954BE30018589F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E5E22954BE30018589F /* MenuVC.swift */; };
 		55027E61229557A40018589F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E60229557A40018589F /* MenuItem.swift */; };
 		55027E68229580FB0018589F /* BottomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E67229580FB0018589F /* BottomVC.swift */; };
+		55061CDE229B960A00A7D734 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55061CDD229B960900A7D734 /* map.jpg */; };
 		550E8A1B22965BB300C983F4 /* BottomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E8A1A22965BB300C983F4 /* BottomBorder.swift */; };
 		550E8A1D2296A7CA00C983F4 /* OfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E8A1C2296A7CA00C983F4 /* OfferVC.swift */; };
 		55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */; };
@@ -61,7 +61,6 @@
 		55003AA222963FAA00782CFD /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		55003AA52296404A00782CFD /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		55003AA62296404A00782CFD /* File3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = File3.js; sourceTree = "<group>"; };
-		55003AA72296404A00782CFD /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		55003AA82296404A00782CFD /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		55003AA92296404A00782CFD /* map.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.PNG; sourceTree = "<group>"; };
 		55003AAA2296404A00782CFD /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		55027E5E22954BE30018589F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		55027E60229557A40018589F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		55027E67229580FB0018589F /* BottomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomVC.swift; sourceTree = "<group>"; };
+		55061CDD229B960900A7D734 /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		550E8A1A22965BB300C983F4 /* BottomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBorder.swift; sourceTree = "<group>"; };
 		550E8A1C2296A7CA00C983F4 /* OfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferVC.swift; sourceTree = "<group>"; };
 		55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxi Park Visitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +149,7 @@
 				55003AA62296404A00782CFD /* File3.js */,
 				55003AA82296404A00782CFD /* index.html */,
 				55003AAA2296404A00782CFD /* main.css */,
-				55003AA72296404A00782CFD /* map.jpg */,
+				55061CDD229B960900A7D734 /* map.jpg */,
 				55003AA92296404A00782CFD /* map.PNG */,
 				55003AA52296404A00782CFD /* marker.png */,
 			);
@@ -393,7 +393,7 @@
 				55003AAF2296404A00782CFD /* map.PNG in Resources */,
 				55003AAE2296404A00782CFD /* index.html in Resources */,
 				55003AB02296404A00782CFD /* main.css in Resources */,
-				55003AAD2296404A00782CFD /* map.jpg in Resources */,
+				55061CDE229B960A00A7D734 /* map.jpg in Resources */,
 				55732FF5228CFBBD00B8BBB4 /* LaunchScreen.storyboard in Resources */,
 				55732FF2228CFBBD00B8BBB4 /* Assets.xcassets in Resources */,
 				55003AAC2296404A00782CFD /* File3.js in Resources */,

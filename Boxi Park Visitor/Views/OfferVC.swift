@@ -12,6 +12,7 @@ class OfferVC: UIViewController {
 
     @IBOutlet weak var imgWeather: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

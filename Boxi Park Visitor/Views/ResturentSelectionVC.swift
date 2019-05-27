@@ -19,12 +19,14 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var lblEditProfile: UILabel!
     
     //Mark Varialbles
-    var itemCount     = 5
-    var tagId         = 0
-    let colorArray    = [#colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0.7740916014, green: 0.3885799944, blue: 0.2412629426, alpha: 1), #colorLiteral(red: 0.9653725028, green: 0.835703373, blue: 0.556709826, alpha: 1), #colorLiteral(red: 0.7598508, green: 0.2347533405, blue: 0.190864265, alpha: 1), #colorLiteral(red: 0.2463579476, green: 0.3117541969, blue: 0.3831449151, alpha: 1), #colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.4114020467, green: 0.6439546347, blue: 0.5185563564, alpha: 1),#colorLiteral(red: 0.133510083, green: 0.1185990497, blue: 0.1235295162, alpha: 1), #colorLiteral(red: 0.1140215024, green: 0.3539430797, blue: 0.4238928854, alpha: 1)]
-    let imagesArray   = [ #imageLiteral(resourceName: "barnonalogon"), #imageLiteral(resourceName: "canoli_logo"), #imageLiteral(resourceName: "lacajitalogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "hopslogon"), #imageLiteral(resourceName: "grilllogon"), #imageLiteral(resourceName: "clawlogon"), #imageLiteral(resourceName: "naughtylogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "beforelogon")]
-    var isSidebarOpen = false
-    var selectedImage = UIView()
+    var itemCount          = 5
+    var tagId              = 0
+    let colorArray         = [#colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0.7740916014, green: 0.3885799944, blue: 0.2412629426, alpha: 1), #colorLiteral(red: 0.9653725028, green: 0.835703373, blue: 0.556709826, alpha: 1), #colorLiteral(red: 0.7598508, green: 0.2347533405, blue: 0.190864265, alpha: 1), #colorLiteral(red: 0.2463579476, green: 0.3117541969, blue: 0.3831449151, alpha: 1), #colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.4114020467, green: 0.6439546347, blue: 0.5185563564, alpha: 1),#colorLiteral(red: 0.133510083, green: 0.1185990497, blue: 0.1235295162, alpha: 1), #colorLiteral(red: 0.1140215024, green: 0.3539430797, blue: 0.4238928854, alpha: 1)]
+    let imagesArray        = [ #imageLiteral(resourceName: "barnonalogon"), #imageLiteral(resourceName: "canoli_logo"), #imageLiteral(resourceName: "lacajitalogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "hopslogon"), #imageLiteral(resourceName: "grilllogon"), #imageLiteral(resourceName: "clawlogon"), #imageLiteral(resourceName: "naughtylogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "beforelogon")]
+    let profileDetailsArry = ["Card Number", "Registration Number", "Call Support"]
+    let profileValueArry   = ["002658932525", "14626421296499296", "+95 285 299 653"]
+    var isSidebarOpen      = false
+    var selectedImage      = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +74,7 @@ class ResturentSelectionVC: UIViewController {
         let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
         lblEditProfile.addGestureRecognizer(tap)
         lblEditProfile.isUserInteractionEnabled = true
+        lblEditProfile.set(image: #imageLiteral(resourceName: "edit_icon"), with: "Edit profile")
         
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
@@ -150,7 +153,7 @@ class ResturentSelectionVC: UIViewController {
             side2 = UIImageView(frame: CGRect(x: middleView.frame.width/2, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
             side2.backgroundColor = colorArray [tagId ]
             side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/2), height: (side2.frame.height/2), image: imagesArray[tagId])
-            side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 20)
+            side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 30)
             side2.addSubview(side2Image)
             
             side2.tag = tagId
@@ -262,12 +265,14 @@ class ResturentSelectionVC: UIViewController {
 
 extension ResturentSelectionVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.profileDetailsArry.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell            = tableView.dequeueReusableCell(withIdentifier: "data", for: indexPath) as! ProfileTC
+        cell.lblHeader.text = profileDetailsArry[indexPath.row]
+        cell.lblValue.text  = profileValueArry[indexPath.row]
         cell.selectionStyle = .none
         return cell
     }
