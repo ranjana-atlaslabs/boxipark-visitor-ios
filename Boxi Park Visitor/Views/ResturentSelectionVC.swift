@@ -16,21 +16,37 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var tblProfileData: UITableView!
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var leadingConstrianSidebar: NSLayoutConstraint!
+    @IBOutlet weak var tralingConstrianSearch: NSLayoutConstraint!
     @IBOutlet weak var lblEditProfile: UILabel!
+    @IBOutlet weak var viwSearch: UIView!
+    @IBOutlet weak var txtSearch: UITextField!
+    @IBOutlet weak var viwWeather: UIView!
     
     //Mark Varialbles
     var itemCount          = 5
     var tagId              = 0
     let colorArray         = [#colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0.7740916014, green: 0.3885799944, blue: 0.2412629426, alpha: 1), #colorLiteral(red: 0.9653725028, green: 0.835703373, blue: 0.556709826, alpha: 1), #colorLiteral(red: 0.7598508, green: 0.2347533405, blue: 0.190864265, alpha: 1), #colorLiteral(red: 0.2463579476, green: 0.3117541969, blue: 0.3831449151, alpha: 1), #colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.4114020467, green: 0.6439546347, blue: 0.5185563564, alpha: 1),#colorLiteral(red: 0.133510083, green: 0.1185990497, blue: 0.1235295162, alpha: 1), #colorLiteral(red: 0.1140215024, green: 0.3539430797, blue: 0.4238928854, alpha: 1)]
-    let imagesArray        = [ #imageLiteral(resourceName: "barnonalogon"), #imageLiteral(resourceName: "canoli_logo"), #imageLiteral(resourceName: "lacajitalogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "hopslogon"), #imageLiteral(resourceName: "grilllogon"), #imageLiteral(resourceName: "clawlogon"), #imageLiteral(resourceName: "naughtylogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "beforelogon")]
+    let imagesArray        = [ #imageLiteral(resourceName: "barnonalogon"), #imageLiteral(resourceName: "canoli_logo"), #imageLiteral(resourceName: "lacajitalogon"), #imageLiteral(resourceName: "fowl flay"), #imageLiteral(resourceName: "hopslogon"), #imageLiteral(resourceName: "grilllogon"), #imageLiteral(resourceName: "clawlogon"), #imageLiteral(resourceName: "naughtylogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "beforelogon")]
     let profileDetailsArry = ["Card Number", "Registration Number", "Call Support"]
     let profileValueArry   = ["002658932525", "14626421296499296", "+95 285 299 653"]
     var isSidebarOpen      = false
     var selectedImage      = UIView()
+    var isPageLoad         = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupview()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if isPageLoad {
+            self.setupScrollView()
+            isPageLoad = false
+        }
     }
     
     //Mark: @IBAction
@@ -41,6 +57,14 @@ class ResturentSelectionVC: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+    @IBAction func searchBtnTap(_ sender: Any) {
+        self.tralingConstrianSearch.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+        
     }
     
     @IBAction func offerBtnTap(_ sender: UIButton) {
@@ -58,11 +82,13 @@ class ResturentSelectionVC: UIViewController {
     
     //Mark: Custome Methods
     func setupview()  {
+        self.isPageLoad = true
         self.btnOffer.layer.cornerRadius       = 5
         self.btnLogout.layer.cornerRadius      = 8
         self.tblProfileData.tableFooterView    = UIView()
         self.tblProfileData.rowHeight          = UITableView.automaticDimension
-        self.setupScrollView()
+        
+        
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeRight.direction = .right
@@ -76,17 +102,37 @@ class ResturentSelectionVC: UIViewController {
         lblEditProfile.isUserInteractionEnabled = true
         lblEditProfile.set(image: #imageLiteral(resourceName: "edit_icon"), with: "Edit profile")
         
+        let tap2                   = UITapGestureRecognizer(target: self, action: #selector(handleSearchTap(_:)))
+        viwSearch.addGestureRecognizer(tap2)
+        viwSearch.isUserInteractionEnabled = true
+        
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
+        
+        txtSearch.layer.cornerRadius = 15
+        txtSearch.rightViewMode = .always
+        txtSearch.leftViewMode = .always
+        let outerView = UIView(frame: CGRect(x: 0, y: 0, width: 20+8, height: 20) )
+        let leftOuterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10) )
+
+        let iconView  = UIImageView(frame: CGRect(x: -8, y: 0, width: 20, height: 20))
+        iconView.image = #imageLiteral(resourceName: "search")
+        outerView.addSubview(iconView)
+
+        txtSearch.rightView = outerView
+        txtSearch.leftView = leftOuterView
     }
     
     func setupScrollView()  {
         
         
-        self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount)))
+        self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount)) + 60 + viwWeather.frame.height)
         self.scrollViw.layoutIfNeeded()
         
-        let viw = TopView(frame: CGRect(x: 0, y: 0, width: view.frame.width , height: view.frame.height/4))
+        
+        print(viwWeather.frame.height)
+        print(viwWeather.frame.maxY)
+        let viw = TopView(frame: CGRect(x: 0, y: viwWeather.frame.height , width: view.frame.width , height: view.frame.height/4 + 40))
         
         var side1 = UIView(frame: CGRect(x: 0, y: 0, width: viw.frame.width/2, height: viw.frame.height))
         var side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  imagesArray[tagId ])
@@ -120,7 +166,7 @@ class ResturentSelectionVC: UIViewController {
         let count      = itemCount - 2
         let itemWidth  = view.frame.width
         let itemHeight = view.frame.height/5 + viw.frame.height * 2/3
-        let itemY      = viw.frame.height * 2/3
+        let itemY      = viw.frame.height * 2/3 + viwWeather.frame.height
         let leftY      = viw.frame.height * 1/3
         
         for index in 1...count {
@@ -177,7 +223,7 @@ class ResturentSelectionVC: UIViewController {
         
         let calculateValue = ((itemHeight*2/3) * CGFloat(itemCount - 2))
         
-        let bottomView              = BottomView(frame: CGRect(x: 0, y:itemY + calculateValue , width: itemWidth , height: itemHeight ))
+        let bottomView              = BottomView(frame: CGRect(x: 0, y:itemY + calculateValue , width: itemWidth , height: itemHeight - 40 ))
         bottomView.leftTopPoint     = CGPoint(x: 0, y: leftY)
         bottomView.rightTopPoint    = CGPoint(x: bottomView.frame.width , y: 0)
         bottomView.leftBottomPoint  = CGPoint(x: 0 , y: bottomView.frame.height + self.view.frame.height*1/3)
@@ -250,6 +296,15 @@ class ResturentSelectionVC: UIViewController {
         
         self.performSegue(withIdentifier: "edit", sender: nil)
         
+    }
+    
+    @objc func handleSearchTap(_ recognizer:UITapGestureRecognizer) {
+        
+        self.txtSearch.resignFirstResponder()
+        self.tralingConstrianSearch.constant = -1500
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     func createImageView(x: CGFloat , y: CGFloat , width: CGFloat, height: CGFloat, image: UIImage) -> UIImageView {
