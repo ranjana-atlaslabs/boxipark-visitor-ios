@@ -32,7 +32,7 @@ class LoginVC: UIViewController {
   
     func setupView()  {
         
-        btnLogin.layer.cornerRadius = 10
+        btnLogin.layer.cornerRadius = 12
         txtUsername.setLeftPaddingPoints(20)
         txtPassword.setLeftPaddingPoints(20)
         

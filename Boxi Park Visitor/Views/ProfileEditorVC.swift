@@ -34,10 +34,10 @@ class ProfileEditorVC: UIViewController {
     }
     
     func setupview()  {
-        btnSave.layer.cornerRadius = 10
-        btnCancel.layer.cornerRadius = 10
-        btnUpload.layer.cornerRadius = 10
-        btnDelete.layer.cornerRadius = 10
+        btnSave.layer.cornerRadius = 12
+        btnCancel.layer.cornerRadius = 12
+        btnUpload.layer.cornerRadius = 12
+        btnDelete.layer.cornerRadius = 12
         
         let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
         lblEditProfile.addGestureRecognizer(tap)

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55003936229FC8D60044B86F /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD69D229FC6C800526089 /* Gotham-Medium.otf */; };
+		55003937229FC8D60044B86F /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD69C229FC68200526089 /* Gotham-Bold.otf */; };
+		55003938229FC8D60044B86F /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD69B229FC62D00526089 /* Gotham-Book.otf */; };
+		55003939229FC8D60044B86F /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD699229FC2A100526089 /* Gotham-Light.otf */; };
 		55003AA322963FAA00782CFD /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003AA222963FAA00782CFD /* MapVC.swift */; };
 		55003AAB2296404A00782CFD /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA52296404A00782CFD /* marker.png */; };
 		55003AAC2296404A00782CFD /* File3.js in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA62296404A00782CFD /* File3.js */; };
@@ -77,6 +81,10 @@
 		55061CDD229B960900A7D734 /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		550E8A1A22965BB300C983F4 /* BottomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBorder.swift; sourceTree = "<group>"; };
 		550E8A1C2296A7CA00C983F4 /* OfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferVC.swift; sourceTree = "<group>"; };
+		551DD699229FC2A100526089 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		551DD69B229FC62D00526089 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		551DD69C229FC68200526089 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		551DD69D229FC6C800526089 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxi Park Visitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturentSelectionVC.swift; sourceTree = "<group>"; };
@@ -173,6 +181,17 @@
 			path = BottomSheet;
 			sourceTree = "<group>";
 		};
+		551DD696229FC29500526089 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				551DD69D229FC6C800526089 /* Gotham-Medium.otf */,
+				551DD69C229FC68200526089 /* Gotham-Bold.otf */,
+				551DD69B229FC62D00526089 /* Gotham-Book.otf */,
+				551DD699229FC2A100526089 /* Gotham-Light.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		55732FDE228CFBBC00B8BBB4 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +274,7 @@
 		5573301A228D003300B8BBB4 /* Resoures */ = {
 			isa = PBXGroup;
 			children = (
+				551DD696229FC29500526089 /* Fonts */,
 				55003AA42296403400782CFD /* Map */,
 				55732FF1228CFBBD00B8BBB4 /* Assets.xcassets */,
 			);
@@ -394,7 +414,11 @@
 				55003AAE2296404A00782CFD /* index.html in Resources */,
 				55003AB02296404A00782CFD /* main.css in Resources */,
 				55061CDE229B960A00A7D734 /* map.jpg in Resources */,
+				55003939229FC8D60044B86F /* Gotham-Light.otf in Resources */,
+				55003936229FC8D60044B86F /* Gotham-Medium.otf in Resources */,
 				55732FF5228CFBBD00B8BBB4 /* LaunchScreen.storyboard in Resources */,
+				55003938229FC8D60044B86F /* Gotham-Book.otf in Resources */,
+				55003937229FC8D60044B86F /* Gotham-Bold.otf in Resources */,
 				55732FF2228CFBBD00B8BBB4 /* Assets.xcassets in Resources */,
 				55003AAC2296404A00782CFD /* File3.js in Resources */,
 				55732FF0228CFBBC00B8BBB4 /* Main.storyboard in Resources */,

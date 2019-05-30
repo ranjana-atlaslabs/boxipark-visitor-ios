@@ -16,6 +16,7 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
   
+        
         if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
             webViewMap.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
         }

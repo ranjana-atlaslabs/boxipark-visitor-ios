@@ -19,7 +19,7 @@ class MenuVC: UIViewController {
     var image = UIImage()
     let sections: [String] = ["Cocktails", "Wine on Tap", "Bottled Wine", "Park Brewing \nRotating Selections", "Canned Beer", "Beverages"]
     
-    let s1Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "Ginger Bourbon Lemonade", "Freshly Hand Juiced Margarita"]
+    let s1Data: [String] = ["Seasonal Sangria", "Smoked Manhattan", "Ginger Bourbon Lemonade", "Freshly Hand Juiced"]
     let s2Data: [String] = ["Summerland Rose", "Nobilo Sauvignon Blan", "Merf Chardonna"]
     let s3Data: [String] = ["Nv Prosecco", "2017 Pinot Grigio", "2017 Sauvignon Blanc"]
     let s4Data: [String] = ["Standard Lager", "Blonde Ale", "Belgian Wit"]
@@ -42,7 +42,7 @@ class MenuVC: UIViewController {
         imageView.image  = image
         imageView.contentMode = .scaleAspectFit
         
-        imageView.layer.cornerRadius = 10
+        imageView.layer.cornerRadius = 12
         
         tblMenuItems.separatorColor = UIColor.clear
         sectionData = [0: s1Data, 1:s2Data, 2: s3Data, 3:s4Data, 4: s5Data , 5:s6Data]
@@ -104,7 +104,7 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
         headerText.text = sections[section]
         headerText.adjustsFontSizeToFitWidth = true
         headerText.minimumScaleFactor = 0.5
-        headerText.font = UIFont.boldSystemFont(ofSize: 20)
+        headerText.font = UIFont(name: "Gotham-Bold", size: 20)
         view.addSubview(headerText)
         
         return view

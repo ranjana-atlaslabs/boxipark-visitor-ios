@@ -32,7 +32,7 @@ class SignupWithoutLoyalty: UIViewController {
     
 
     func setupView()   {
-        btnSignup.layer.cornerRadius = 10
+        btnSignup.layer.cornerRadius = 12
         
         txtName.setLeftPaddingPoints(20)
         txtEmail.setLeftPaddingPoints(20)

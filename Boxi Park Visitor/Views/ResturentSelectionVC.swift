@@ -41,12 +41,27 @@ class ResturentSelectionVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         if isPageLoad {
-            self.setupScrollView()
+            DispatchQueue.main.async {
+                var contentRect = CGRect.zero
+                
+                for view in self.scrollViw.subviews {
+                    contentRect = contentRect.union(view.frame)
+                }
+                
+                self.setupScrollView()
+            }
             isPageLoad = false
         }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     //Mark: @IBAction
@@ -87,9 +102,7 @@ class ResturentSelectionVC: UIViewController {
         self.btnLogout.layer.cornerRadius      = 8
         self.tblProfileData.tableFooterView    = UIView()
         self.tblProfileData.rowHeight          = UITableView.automaticDimension
-        
-        
-        
+
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeRight.direction = .right
         
@@ -127,11 +140,8 @@ class ResturentSelectionVC: UIViewController {
         
         
         self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount)) + 60 + viwWeather.frame.height)
-        self.scrollViw.layoutIfNeeded()
         
         
-        print(viwWeather.frame.height)
-        print(viwWeather.frame.maxY)
         let viw = TopView(frame: CGRect(x: 0, y: viwWeather.frame.height , width: view.frame.width , height: view.frame.height/4 + 40))
         
         var side1 = UIView(frame: CGRect(x: 0, y: 0, width: viw.frame.width/2, height: viw.frame.height))
@@ -198,7 +208,7 @@ class ResturentSelectionVC: UIViewController {
             
             side2 = UIImageView(frame: CGRect(x: middleView.frame.width/2, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
             side2.backgroundColor = colorArray [tagId ]
-            side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/2), height: (side2.frame.height/2), image: imagesArray[tagId])
+            side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.8), height: (side2.frame.height/1.8), image: imagesArray[tagId])
             side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 30)
             side2.addSubview(side2Image)
             
@@ -232,7 +242,7 @@ class ResturentSelectionVC: UIViewController {
         
         side1 = UIImageView(frame: CGRect(x: 0, y: 0, width: bottomView.frame.width/2, height: bottomView.frame.height))
         tagId = tagId + 1
-        side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  imagesArray[tagId ])
+        side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5) , image:  imagesArray[tagId])
         side1Image.center = side1.center
         side1.addSubview(side1Image)
         side1.backgroundColor = colorArray[tagId]
@@ -241,7 +251,7 @@ class ResturentSelectionVC: UIViewController {
         
         side2 = UIImageView(frame: CGRect(x: bottomView.frame.width/2, y: 0, width: bottomView.frame.width/2, height: bottomView.frame.height))
         tagId = tagId + 1
-        side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5), image:  imagesArray[tagId ])
+        side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5), image:  imagesArray[tagId])
         side2.addSubview(side2Image)
         side2Image.center = side1Image.center
         side2.backgroundColor = colorArray[tagId]
