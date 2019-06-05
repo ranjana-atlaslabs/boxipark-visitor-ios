@@ -17,6 +17,7 @@ class ProfileEditorVC: UIViewController {
     @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var lblEditProfile: UILabel!
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
+    @IBOutlet weak var lblViewEdit: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,8 @@ class ProfileEditorVC: UIViewController {
         let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
         lblEditProfile.addGestureRecognizer(tap)
         lblEditProfile.isUserInteractionEnabled = true
+        lblViewEdit.addGestureRecognizer(tap)
+        lblViewEdit.isUserInteractionEnabled = true
         //lblEditProfile.set(image: #imageLiteral(resourceName: "edit_icon"), with: "Edit profile")
     }
     

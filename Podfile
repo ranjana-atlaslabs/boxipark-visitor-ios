@@ -6,6 +6,7 @@ target 'Boxi Park Visitor' do
   use_frameworks!
 
   pod 'FittedSheets'
+  pod 'Alamofire'
   # Pods for Boxi Park Visitor
 
   target 'Boxi Park VisitorTests' do

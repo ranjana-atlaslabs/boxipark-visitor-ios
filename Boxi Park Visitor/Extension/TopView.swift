@@ -39,7 +39,7 @@ class TopView: UIView {
         bezierPath.addLine(to: pointD)
         bezierPath.close()
         
-        UIColor.red.setFill()
+        UIColor.clear.setFill()
         bezierPath.fill()
         
         self.leftBottomPoint  = pointD
@@ -133,7 +133,7 @@ class BottomView: UIView {
         bezierPath.addLine(to: pointD)
         bezierPath.close()
         
-        UIColor.red.setFill()
+        UIColor.white.setFill()
         bezierPath.fill()
         
         self.path = bezierPath

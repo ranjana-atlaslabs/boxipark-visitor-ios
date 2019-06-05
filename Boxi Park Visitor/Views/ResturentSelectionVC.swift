@@ -18,9 +18,12 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var leadingConstrianSidebar: NSLayoutConstraint!
     @IBOutlet weak var tralingConstrianSearch: NSLayoutConstraint!
     @IBOutlet weak var lblEditProfile: UILabel!
+    @IBOutlet weak var lblViewEditProfile: UIView!
     @IBOutlet weak var viwSearch: UIView!
     @IBOutlet weak var txtSearch: UITextField!
     @IBOutlet weak var viwWeather: UIView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var lblNoData: UILabel!
     
     //Mark Varialbles
     var itemCount          = 5
@@ -32,36 +35,62 @@ class ResturentSelectionVC: UIViewController {
     var isSidebarOpen      = false
     var selectedImage      = UIView()
     var isPageLoad         = false
+    var menuApiData: MenuData!
+    var allResutresntViews = [UIView()]
+    var lblError           = UILabel()
     
+    
+    //Mark: Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupview()
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillLayoutSubviews() {
         
         if isPageLoad {
-            DispatchQueue.main.async {
-                var contentRect = CGRect.zero
-                
-                for view in self.scrollViw.subviews {
-                    contentRect = contentRect.union(view.frame)
-                }
-                
-                self.setupScrollView()
-            }
+            
             isPageLoad = false
+            
+            if Constant.OFFLINE_DATA_ON {
+                
+                if let path = Bundle.main.path(forResource: "menu", ofType: "json") {
+                    do {
+                        let fileUrl = URL(fileURLWithPath: path)
+                        // Getting data from JSON file using the file URL
+                        let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
+                        let decoder = JSONDecoder()
+                        let jsonData = try decoder.decode(MenuData.self, from: data as Data)
+                        self.menuApiData = jsonData
+                        DispatchQueue.main.async {
+                            
+                            self.activityIndicatorView.stopAnimating()
+                            var contentRect = CGRect.zero
+                            
+                            for view in self.scrollViw.subviews {
+                                contentRect = contentRect.union(view.frame)
+                            }
+                            
+                            self.setupScrollView()
+                        }
+                        
+                    } catch {
+                        print("error")
+                    }
+                }
+                    
+                else {
+                    print("no file")
+                }
+            }else {
+                
+                self.activityIndicatorView.startAnimating()
+                self.getResutrantMenus()
+            }
+           
         }
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
+
     }
     
     //Mark: @IBAction
@@ -91,28 +120,72 @@ class ResturentSelectionVC: UIViewController {
             if let vc = segue.destination as? MenuVC {
                 vc.color = selectedImage.backgroundColor!
                 vc.image = imagesArray[selectedImage.tag]
+                vc.resutrentMenu = self.menuApiData.data.menus.first(where: {$0.id == Constant.RETURENT_LOCAL_DATA[selectedImage.tag].id})
             }
         }
     }
     
+    
+    //Mark: API CALL
+    fileprivate func getResutrantMenus() {
+        
+        API.getMenus() { result, error in
+            
+            if error == nil {
+                
+                if let modal = result {
+                    self.menuApiData = modal
+                    DispatchQueue.main.async {
+                        
+                        self.activityIndicatorView.stopAnimating()
+                        var contentRect = CGRect.zero
+                        
+                        for view in self.scrollViw.subviews {
+                            contentRect = contentRect.union(view.frame)
+                        }
+                        
+                        self.setupScrollView()
+                    }
+                }
+                
+            }else {
+                self.activityIndicatorView.stopAnimating()
+                self.lblNoData.isHidden = false
+            }
+            
+            
+        }
+        
+    }
+    
     //Mark: Custome Methods
     func setupview()  {
+        
+        
+        self.lblNoData.isHidden = true
+        
+        //notify page is load done
         self.isPageLoad = true
+        
         self.btnOffer.layer.cornerRadius       = 5
         self.btnLogout.layer.cornerRadius      = 8
         self.tblProfileData.tableFooterView    = UIView()
         self.tblProfileData.rowHeight          = UITableView.automaticDimension
-
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        
+        //add swap gestures Recognize
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSideBarGesture))
         swipeRight.direction = .right
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSideBarGesture))
         swipeLeft.direction = .left
         
         // Add tap gesture recognizer to lbllogout
         let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
         lblEditProfile.addGestureRecognizer(tap)
         lblEditProfile.isUserInteractionEnabled = true
+        lblViewEditProfile.addGestureRecognizer(tap)
+        lblViewEditProfile.isUserInteractionEnabled = true
+
         lblEditProfile.set(image: #imageLiteral(resourceName: "edit_icon"), with: "Edit profile")
         
         let tap2                   = UITapGestureRecognizer(target: self, action: #selector(handleSearchTap(_:)))
@@ -127,29 +200,39 @@ class ResturentSelectionVC: UIViewController {
         txtSearch.leftViewMode = .always
         let outerView = UIView(frame: CGRect(x: 0, y: 0, width: 20+8, height: 20) )
         let leftOuterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10) )
-
+        
         let iconView  = UIImageView(frame: CGRect(x: -8, y: 0, width: 20, height: 20))
         iconView.image = #imageLiteral(resourceName: "search")
         outerView.addSubview(iconView)
-
+        
         txtSearch.rightView = outerView
         txtSearch.leftView = leftOuterView
+        
     }
     
     func setupScrollView()  {
         
+        Constant.RETURENT_LOCAL_DATA.forEach { (resturent) in
+            
+            if self.menuApiData.data.menus.contains(where: {$0.name == resturent.name}) {
+                resturent.id = self.menuApiData.data.menus.first(where: {$0.name == resturent.name})?.id
+                
+            }
+        }
         
+        //set scrollView size
         self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount)) + 60 + viwWeather.frame.height)
         
         
         let viw = TopView(frame: CGRect(x: 0, y: viwWeather.frame.height , width: view.frame.width , height: view.frame.height/4 + 40))
         
         var side1 = UIView(frame: CGRect(x: 0, y: 0, width: viw.frame.width/2, height: viw.frame.height))
-        var side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  imagesArray[tagId ])
+        var side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/1.5), height: (side1.frame.height/1.5), image:  imagesArray[tagId])
         side1Image.center = side1.center
         side1.addSubview(side1Image)
-        side1.backgroundColor = colorArray[tagId ]
+        side1.backgroundColor = colorArray[tagId]
         side1.tag = tagId
+        allResutresntViews.append(side1)
         
         tagId = tagId + 1
         var side2 = UIView(frame: CGRect(x: viw.frame.width/2, y: 0, width: viw.frame.width/2, height: viw.frame.height))
@@ -158,6 +241,7 @@ class ResturentSelectionVC: UIViewController {
         side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 20)
         side2.backgroundColor =  colorArray[tagId]
         side2.tag = tagId
+        allResutresntViews.append(side2)
         
         
         // Add tap gesture recognizer to View
@@ -172,7 +256,7 @@ class ResturentSelectionVC: UIViewController {
         viw.addSubview(side1)
         viw.addSubview(side2)
         scrollViw.addSubview(viw)
-
+        
         let count      = itemCount - 2
         let itemWidth  = view.frame.width
         let itemHeight = view.frame.height/5 + viw.frame.height * 2/3
@@ -196,11 +280,11 @@ class ResturentSelectionVC: UIViewController {
             side1 = UIImageView(frame: CGRect(x: 0, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
             side1.backgroundColor = colorArray[tagId ]
             side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/2), height: (side1.frame.height/2), image:  imagesArray[tagId])
-           
+            
             side1Image.center = CGPoint(x: side1.center.x, y: side1.center.y + 10)
             
             side1.addSubview(side1Image)
-
+            
             
             side1.tag = tagId
             
@@ -272,7 +356,7 @@ class ResturentSelectionVC: UIViewController {
         scrollViw.addSubview(bottomView)
     }
     
-    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+    @objc func handleSideBarGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
             
             self.leadingConstrianSidebar.constant = 0
@@ -293,12 +377,14 @@ class ResturentSelectionVC: UIViewController {
             }
         }
     }
-
+    
     @objc func handleTap(_ recognizer:UITapGestureRecognizer) {
         
         self.selectedImage = (recognizer.view)!
         
-        self.performSegue(withIdentifier: "menu", sender: nil)
+        if (Constant.RETURENT_LOCAL_DATA[selectedImage.tag].id > 0) {
+            self.performSegue(withIdentifier: "menu", sender: nil)
+        }
         
     }
     
@@ -345,5 +431,5 @@ extension ResturentSelectionVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
-
+    
 }
