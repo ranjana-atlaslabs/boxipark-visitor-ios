@@ -23,8 +23,8 @@ class BottomVC: UIViewController {
         
         imgItemDetail.layer.cornerRadius = 15
         lblPrice.text = price
-        lblDescription.text = itemDescription
-        
+        lblDescription.text = itemDescription.capitalizingFirstLetter()
+        lblDescription.setLineHeight(lineHeight: 1.1)
         imgItemDetail.image = loadImage(named: itemName)
     }
     

@@ -50,7 +50,6 @@ class MenuVC: UIViewController {
         }
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
      
         DispatchQueue.main.async {
@@ -126,7 +125,6 @@ class MenuVC: UIViewController {
 }
 
 extension MenuVC: UITableViewDelegate, UITableViewDataSource {
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -227,7 +225,10 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == 0 && !resturentItem.description.isEmpty &&  resturentItem.description != ""{
                 
                 let header_cell = tableView.dequeueReusableCell(withIdentifier: "subHeader", for: indexPath) as! SubHeader
-                header_cell.lblSubHeader.text = resturentItem.description
+                
+                
+                header_cell.lblSubHeader.text = resturentItem.description.capitalizingFirstLetter()
+                header_cell.lblSubHeader.setLineHeight(lineHeight: 1.3)
                 cell = header_cell
                 
             }else {
@@ -279,6 +280,8 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             
             
             let resturentItem = resturent_section_data[indexPath.section]
+            
+            guard let _ = tblMenuItems.cellForRow(at: indexPath) as? MenuItem else {return}
             
             if resturentItem.description != "" {
                 self.selectedItem = resturentItem.items[indexPath.row - 1]
@@ -336,4 +339,32 @@ extension UILabel {
         
         self.attributedText = mutableAttributedString
     }
+    
+    func setLineHeight(lineHeight: CGFloat) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 1.0
+        paragraphStyle.lineHeightMultiple = lineHeight
+        paragraphStyle.alignment = self.textAlignment
+        
+        let attrString = NSMutableAttributedString()
+        if (self.attributedText != nil) {
+            attrString.append( self.attributedText!)
+        } else {
+            attrString.append( NSMutableAttributedString(string: self.text!))
+            attrString.addAttribute(NSAttributedString.Key.font, value: self.font ?? UIFont(name: "Gotham-Bold", size: 16) , range: NSMakeRange(0, attrString.length))
+        }
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        self.attributedText = attrString
+    }
 }
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
+

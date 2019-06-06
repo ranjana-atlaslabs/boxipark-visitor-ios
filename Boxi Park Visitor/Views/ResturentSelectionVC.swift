@@ -24,6 +24,7 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var viwWeather: UIView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var lblNoData: UILabel!
+    @IBOutlet weak var viewOffer: UIView!
     
     //Mark Varialbles
     var itemCount          = 5
@@ -150,6 +151,7 @@ class ResturentSelectionVC: UIViewController {
                 
             }else {
                 self.activityIndicatorView.stopAnimating()
+                self.lblNoData.text = error?.domain
                 self.lblNoData.isHidden = false
             }
             
@@ -191,6 +193,10 @@ class ResturentSelectionVC: UIViewController {
         let tap2                   = UITapGestureRecognizer(target: self, action: #selector(handleSearchTap(_:)))
         viwSearch.addGestureRecognizer(tap2)
         viwSearch.isUserInteractionEnabled = true
+        
+        let tap3                   = UITapGestureRecognizer(target: self, action: #selector(handleOfferViewTap(_:)))
+        viewOffer.addGestureRecognizer(tap3)
+        viewOffer.isUserInteractionEnabled = true
         
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
@@ -401,6 +407,12 @@ class ResturentSelectionVC: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+    }
+    
+    @objc func handleOfferViewTap(_ recognizer:UITapGestureRecognizer) {
+        
+       self.performSegue(withIdentifier: "offer", sender: nil)
+        
     }
     
     func createImageView(x: CGFloat , y: CGFloat , width: CGFloat, height: CGFloat, image: UIImage) -> UIImageView {
