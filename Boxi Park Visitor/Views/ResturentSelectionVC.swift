@@ -25,6 +25,7 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var lblNoData: UILabel!
     @IBOutlet weak var viewOffer: UIView!
+    @IBOutlet weak var qrImage: UIImageView!
     
     //Mark Varialbles
     var itemCount          = 5
@@ -214,6 +215,8 @@ class ResturentSelectionVC: UIViewController {
         txtSearch.rightView = outerView
         txtSearch.leftView = leftOuterView
         
+        let image = generateQRCode(from: "002658932525")
+        self.qrImage.image = image
     }
     
     func setupScrollView()  {
@@ -423,6 +426,21 @@ class ResturentSelectionVC: UIViewController {
         
         return imageView
         
+    }
+    
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+        
+        return nil
     }
 }
 

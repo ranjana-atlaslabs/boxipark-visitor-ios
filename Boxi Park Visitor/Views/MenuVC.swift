@@ -16,6 +16,7 @@ class MenuVC: UIViewController {
     @IBOutlet weak var tblMenuItems: UITableView!
     @IBOutlet weak var scrollViw: UIScrollView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var viwContent: UIView!
     
     var color = UIColor()
     var image = UIImage()
@@ -26,7 +27,6 @@ class MenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupview()
-        
     }
     
     func setupview()  {
@@ -61,7 +61,6 @@ class MenuVC: UIViewController {
             
             //set scrollView size
             self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height: self.tblMenuItems.contentSize.height + self.topView.frame.height )
-         
         }
     }
     
