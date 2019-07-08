@@ -152,8 +152,9 @@ class ResturentSelectionVC: UIViewController {
                 
             }else {
                 self.activityIndicatorView.stopAnimating()
-                self.lblNoData.text = error?.domain
+                self.lblNoData.text = "No Internet Connection"
                 self.lblNoData.isHidden = false
+                _ = APIErrorHandling(error: error!, vc: self)
             }
             
             
@@ -163,8 +164,7 @@ class ResturentSelectionVC: UIViewController {
     
     //Mark: Custome Methods
     func setupview()  {
-        
-        
+ 
         self.lblNoData.isHidden = true
         
         //notify page is load done
@@ -214,6 +214,15 @@ class ResturentSelectionVC: UIViewController {
         
         txtSearch.rightView = outerView
         txtSearch.leftView = leftOuterView
+        
+        Constant.SHOW_ERROR_MSG = true
+  
+        NotificationCenter.default
+            .addObserver(self,
+                         selector: #selector(statusManager),
+                         name: .flagsChanged,
+                         object: nil)
+        updateUserInterface()
         
         let image = generateQRCode(from: "002658932525")
         self.qrImage.image = image

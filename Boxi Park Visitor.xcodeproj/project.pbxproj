@@ -30,7 +30,7 @@
 		55061CDE229B960A00A7D734 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55061CDD229B960900A7D734 /* map.jpg */; };
 		550E8A1B22965BB300C983F4 /* BottomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E8A1A22965BB300C983F4 /* BottomBorder.swift */; };
 		550E8A1D2296A7CA00C983F4 /* OfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E8A1C2296A7CA00C983F4 /* OfferVC.swift */; };
-		55179F1D22A527AD00AE4784 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F1C22A527AD00AE4784 /* APIService.swift */; };
+		55179F1D22A527AD00AE4784 /* MenuAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F1C22A527AD00AE4784 /* MenuAPIService.swift */; };
 		55179F1F22A5280900AE4784 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F1E22A5280900AE4784 /* Constant.swift */; };
 		55179F2222A5288300AE4784 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F2122A5288300AE4784 /* Menu.swift */; };
 		5570B39C22A7BFFE000CDB6F /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 5570B39B22A7BFFE000CDB6F /* menu.json */; };
@@ -42,6 +42,10 @@
 		55733000228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FFF228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift */; };
 		5573300B228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */; };
 		5573301D228D10C900B8BBB4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573301C228D10C900B8BBB4 /* TopView.swift */; };
+		55C09F3E22D2ED4F00FB5C4D /* APIErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */; };
+		55C09F4122D2ED8F00FB5C4D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4022D2ED8F00FB5C4D /* Alert.swift */; };
+		55C09F4322D2F8AC00FB5C4D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4222D2F8AC00FB5C4D /* Reachability.swift */; };
+		55C09F4522D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */; };
 		55FC497222A65CC000C11659 /* SubHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC497122A65CC000C11659 /* SubHeader.swift */; };
 		77305B8B599455E1BEF03BD0 /* Pods_Boxi_Park_VisitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED3B9030586FEA5EE948BD /* Pods_Boxi_Park_VisitorTests.framework */; };
 		921003F862ABB2C8B98BA4E2 /* Pods_Boxi_Park_Visitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F25AA3D29F71E24EA07B51 /* Pods_Boxi_Park_Visitor.framework */; };
@@ -86,7 +90,7 @@
 		55061CDD229B960900A7D734 /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		550E8A1A22965BB300C983F4 /* BottomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBorder.swift; sourceTree = "<group>"; };
 		550E8A1C2296A7CA00C983F4 /* OfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferVC.swift; sourceTree = "<group>"; };
-		55179F1C22A527AD00AE4784 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		55179F1C22A527AD00AE4784 /* MenuAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAPIService.swift; sourceTree = "<group>"; usesTabs = 0; };
 		55179F1E22A5280900AE4784 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		55179F2122A5288300AE4784 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		551DD699229FC2A100526089 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
@@ -108,6 +112,10 @@
 		5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxi_Park_VisitorUITests.swift; sourceTree = "<group>"; };
 		5573300C228CFBBD00B8BBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5573301C228D10C900B8BBB4 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandling.swift; sourceTree = "<group>"; };
+		55C09F4022D2ED8F00FB5C4D /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		55C09F4222D2F8AC00FB5C4D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkAvalabilityErrorHandling .swift"; sourceTree = "<group>"; };
 		55FC497122A65CC000C11659 /* SubHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeader.swift; sourceTree = "<group>"; };
 		725ADE4C1E4DAB0B4294FEE3 /* Pods-Boxi Park Visitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park Visitor.debug.xcconfig"; path = "Target Support Files/Pods-Boxi Park Visitor/Pods-Boxi Park Visitor.debug.xcconfig"; sourceTree = "<group>"; };
 		92B832A0C916AF8492252AB8 /* Pods_Boxi_Park_VisitorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boxi_Park_VisitorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,12 +314,32 @@
 		5573301B228D10BB00B8BBB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55C09F3F22D2ED7400FB5C4D /* Other */,
+				55C09F3C22D2ED1D00FB5C4D /* APIService */,
 				55027E5D22953C9C0018589F /* TabelCell */,
 				5573301C228D10C900B8BBB4 /* TopView.swift */,
 				550E8A1A22965BB300C983F4 /* BottomBorder.swift */,
-				55179F1C22A527AD00AE4784 /* APIService.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		55C09F3C22D2ED1D00FB5C4D /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				55179F1C22A527AD00AE4784 /* MenuAPIService.swift */,
+				55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */,
+				55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		55C09F3F22D2ED7400FB5C4D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				55C09F4222D2F8AC00FB5C4D /* Reachability.swift */,
+				55C09F4022D2ED8F00FB5C4D /* Alert.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		DC88B88B00E7A8C52FDAF323 /* Frameworks */ = {
@@ -570,16 +598,20 @@
 				55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */,
 				55027E5C22953C670018589F /* ProfileTC.swift in Sources */,
 				550E8A1D2296A7CA00C983F4 /* OfferVC.swift in Sources */,
+				55C09F4122D2ED8F00FB5C4D /* Alert.swift in Sources */,
 				55179F2222A5288300AE4784 /* Menu.swift in Sources */,
 				5500D7882296560D00D0586D /* ProfileEditorVC.swift in Sources */,
-				55179F1D22A527AD00AE4784 /* APIService.swift in Sources */,
+				55179F1D22A527AD00AE4784 /* MenuAPIService.swift in Sources */,
 				55FC497222A65CC000C11659 /* SubHeader.swift in Sources */,
+				55C09F3E22D2ED4F00FB5C4D /* APIErrorHandling.swift in Sources */,
 				5573301D228D10C900B8BBB4 /* TopView.swift in Sources */,
 				55027E68229580FB0018589F /* BottomVC.swift in Sources */,
 				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
 				55027E5F22954BE30018589F /* MenuVC.swift in Sources */,
+				55C09F4522D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift in Sources */,
 				55003C632293A98C00C8D12F /* LoginVC.swift in Sources */,
 				550E8A1B22965BB300C983F4 /* BottomBorder.swift in Sources */,
+				55C09F4322D2F8AC00FB5C4D /* Reachability.swift in Sources */,
 				55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */,
 				55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */,
 				55027E61229557A40018589F /* MenuItem.swift in Sources */,

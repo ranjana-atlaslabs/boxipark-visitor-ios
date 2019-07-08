@@ -28,4 +28,18 @@ struct Constant {
                                                                      ResturentLocalData(id: 0 ,name: "Barxi Park", logo: #imageLiteral(resourceName: "barxilogon"), color: #colorLiteral(red: 0.133510083, green: 0.1185990497, blue: 0.1235295162, alpha: 1)),
                                                                      ResturentLocalData(id: 0 ,name: "Before It Melts", logo: #imageLiteral(resourceName: "beforelogon"), color: #colorLiteral(red: 0.1140215024, green: 0.3539430797, blue: 0.4238928854, alpha: 1))
                                                                    ]
+    public static var SHOW_ERROR_MSG = false
+
+    //Error Messages
+    public static let NO_WIFI_ALERT_ERROR_MESSAGE_HEADER = "Celluar Data is Turned Off"
+    public static let NO_WIFI_ALERT_ERROR_MESSAGE_BODY   = "Turn on cellular data or use Wi-Fi to access data"
+    
+    public static let SLOW_NETWORK_DETECT_ERROR_MESSAGE_HEADER = ""
+    public static let SLOW_NETWORK_DETECT_ERROR_MESSAGE_BODY   = "Slow network detected"
+    
+    public static let SERVER_SIDE_ERROR_MESSAGE_HEADER    = "Error"
+    public static let SERVER_SIDE_ERROR_MESSAGE_BODY      = "Data temporarily unavailable"
+    
+    public static let NO_INTERNET_ERROR_MESSAGE_HEADER    = "Error"
+    public static let NO_INTERNET_ERROR_MESSAGE_BODY      = "No Internet Connection"
 }

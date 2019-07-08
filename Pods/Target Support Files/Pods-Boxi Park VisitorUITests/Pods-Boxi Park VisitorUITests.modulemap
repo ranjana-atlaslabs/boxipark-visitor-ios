@@ -1,0 +1,6 @@
+framework module Pods_Boxi_Park_VisitorUITests {
+  umbrella header "Pods-Boxi Park VisitorUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
