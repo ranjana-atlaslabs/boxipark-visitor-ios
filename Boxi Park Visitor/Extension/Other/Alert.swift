@@ -47,6 +47,7 @@ struct Alert {
         showBasicAlert(on: vc, with: Constant.SERVER_SIDE_ERROR_MESSAGE_HEADER, message: Constant.SERVER_SIDE_ERROR_MESSAGE_BODY)
     }
     
+    
     static func showNoInterneErroAlert(on vc:UIViewController){
         showBasicAlert(on: vc, with: Constant.NO_INTERNET_ERROR_MESSAGE_HEADER, message: Constant.NO_INTERNET_ERROR_MESSAGE_BODY)
     }

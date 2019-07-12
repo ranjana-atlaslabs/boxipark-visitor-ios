@@ -117,7 +117,7 @@
 		5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxi_Park_VisitorUITests.swift; sourceTree = "<group>"; };
 		5573300C228CFBBD00B8BBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5573301C228D10C900B8BBB4 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
-		55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandling.swift; sourceTree = "<group>"; };
+		55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandling.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		55C09F4022D2ED8F00FB5C4D /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		55C09F4222D2F8AC00FB5C4D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkAvalabilityErrorHandling .swift"; sourceTree = "<group>"; };

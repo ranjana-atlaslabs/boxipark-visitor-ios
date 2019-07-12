@@ -56,7 +56,7 @@ struct Constant {
     public static let SLOW_NETWORK_DETECT_ERROR_MESSAGE_BODY    = "Slow network detected"
     
     public static let SERVER_SIDE_ERROR_MESSAGE_HEADER          = "Error"
-    public static let SERVER_SIDE_ERROR_MESSAGE_BODY            = "Data temporarily unavailable"
+    public static let SERVER_SIDE_ERROR_MESSAGE_BODY            = "Paytronix server unreachable"
     
     public static let NO_INTERNET_ERROR_MESSAGE_HEADER          = "Error"
     public static let NO_INTERNET_ERROR_MESSAGE_BODY            = "No Internet Connection"
