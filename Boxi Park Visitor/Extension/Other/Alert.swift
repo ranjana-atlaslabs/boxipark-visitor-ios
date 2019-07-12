@@ -38,9 +38,9 @@ struct Alert {
     static func showSlowNetworkDetectAlert(on vc:UIViewController){
         showBasicAlert(on: vc, with: Constant.SLOW_NETWORK_DETECT_ERROR_MESSAGE_HEADER, message: Constant.SLOW_NETWORK_DETECT_ERROR_MESSAGE_BODY)
     }
-    
-    static func showEnterEmailAlert(on vc:UIViewController){
-        showBasicAlert(on: vc, with: "", message: "Please enter email id")
+
+    static func showValidationErrorAlert(on vc:UIViewController, error: String){
+        showBasicAlert(on: vc, with: Constant.VALIDATION_ERROR_MESSAGE_HEADER, message: error)
     }
     
     static func showServerErroAlert(on vc:UIViewController){

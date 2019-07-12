@@ -2726,10 +2726,10 @@
             </objects>
             <point key="canvasLocation" x="2724.6376811594205" y="808.92857142857144"/>
         </scene>
-        <!--Signup Without Loyalty-->
+        <!--Signup Without LoyaltyVC-->
         <scene sceneID="ExD-Dk-fdi">
             <objects>
-                <viewController id="8GN-pk-IZV" customClass="SignupWithoutLoyalty" customModule="Boxi_Park_Visitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8GN-pk-IZV" customClass="SignupWithoutLoyaltyVC" customModule="Boxi_Park_Visitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7R-10-Xcb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2801,7 +2801,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2912,7 +2912,6 @@
         <image name="topImage" width="602" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J9S-zd-r2V"/>
-        <segue reference="FH3-gi-4RC"/>
+        <segue reference="geO-2j-hgb"/>
     </inferredMetricsTieBreakers>
 </document>

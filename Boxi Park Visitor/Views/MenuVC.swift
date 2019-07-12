@@ -350,7 +350,7 @@ extension UILabel {
             attrString.append( self.attributedText!)
         } else {
             attrString.append( NSMutableAttributedString(string: self.text!))
-            attrString.addAttribute(NSAttributedString.Key.font, value: self.font ?? UIFont(name: "Gotham-Bold", size: 16) , range: NSMakeRange(0, attrString.length))
+            attrString.addAttribute(NSAttributedString.Key.font, value: self.font ?? UIFont(name: "Gotham-Bold", size: 16)! , range: NSMakeRange(0, attrString.length))
         }
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
         self.attributedText = attrString
