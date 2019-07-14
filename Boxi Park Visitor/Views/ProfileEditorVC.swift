@@ -17,6 +17,7 @@ class ProfileEditorVC: UIViewController {
     @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var lblEditProfile: UILabel!
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
+    @IBOutlet weak var lblViewEdit: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +35,16 @@ class ProfileEditorVC: UIViewController {
     }
     
     func setupview()  {
-        btnSave.layer.cornerRadius = 10
-        btnCancel.layer.cornerRadius = 10
-        btnUpload.layer.cornerRadius = 10
-        btnDelete.layer.cornerRadius = 10
+        btnSave.layer.cornerRadius = 12
+        btnCancel.layer.cornerRadius = 12
+        btnUpload.layer.cornerRadius = 12
+        btnDelete.layer.cornerRadius = 12
         
         let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
         lblEditProfile.addGestureRecognizer(tap)
         lblEditProfile.isUserInteractionEnabled = true
+        lblViewEdit.addGestureRecognizer(tap)
+        lblViewEdit.isUserInteractionEnabled = true
         //lblEditProfile.set(image: #imageLiteral(resourceName: "edit_icon"), with: "Edit profile")
     }
     

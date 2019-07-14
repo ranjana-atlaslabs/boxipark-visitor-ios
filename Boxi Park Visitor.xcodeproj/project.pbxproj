@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55003936229FC8D60044B86F /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD69D229FC6C800526089 /* Gotham-Medium.otf */; };
+		55003937229FC8D60044B86F /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD69C229FC68200526089 /* Gotham-Bold.otf */; };
+		55003938229FC8D60044B86F /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD69B229FC62D00526089 /* Gotham-Book.otf */; };
+		55003939229FC8D60044B86F /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 551DD699229FC2A100526089 /* Gotham-Light.otf */; };
 		55003AA322963FAA00782CFD /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003AA222963FAA00782CFD /* MapVC.swift */; };
 		55003AAB2296404A00782CFD /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA52296404A00782CFD /* marker.png */; };
 		55003AAC2296404A00782CFD /* File3.js in Resources */ = {isa = PBXBuildFile; fileRef = 55003AA62296404A00782CFD /* File3.js */; };
@@ -17,7 +21,7 @@
 		55003C612293A82F00C8D12F /* MainWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C602293A82F00C8D12F /* MainWeatherVC.swift */; };
 		55003C632293A98C00C8D12F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C622293A98C00C8D12F /* LoginVC.swift */; };
 		55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */; };
-		55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */; };
+		55003C672293B79F00C8D12F /* SignupWithoutLoyaltyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55003C662293B79F00C8D12F /* SignupWithoutLoyaltyVC.swift */; };
 		5500D7882296560D00D0586D /* ProfileEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5500D7872296560D00D0586D /* ProfileEditorVC.swift */; };
 		55027E5C22953C670018589F /* ProfileTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E5B22953C670018589F /* ProfileTC.swift */; };
 		55027E5F22954BE30018589F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55027E5E22954BE30018589F /* MenuVC.swift */; };
@@ -26,6 +30,10 @@
 		55061CDE229B960A00A7D734 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 55061CDD229B960900A7D734 /* map.jpg */; };
 		550E8A1B22965BB300C983F4 /* BottomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E8A1A22965BB300C983F4 /* BottomBorder.swift */; };
 		550E8A1D2296A7CA00C983F4 /* OfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E8A1C2296A7CA00C983F4 /* OfferVC.swift */; };
+		55179F1D22A527AD00AE4784 /* MenuAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F1C22A527AD00AE4784 /* MenuAPIService.swift */; };
+		55179F1F22A5280900AE4784 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F1E22A5280900AE4784 /* Constant.swift */; };
+		55179F2222A5288300AE4784 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F2122A5288300AE4784 /* Menu.swift */; };
+		5570B39C22A7BFFE000CDB6F /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 5570B39B22A7BFFE000CDB6F /* menu.json */; };
 		55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */; };
 		55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */; };
 		55732FF0228CFBBC00B8BBB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55732FEE228CFBBC00B8BBB4 /* Main.storyboard */; };
@@ -34,6 +42,16 @@
 		55733000228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FFF228CFBBD00B8BBB4 /* Boxi_Park_VisitorTests.swift */; };
 		5573300B228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */; };
 		5573301D228D10C900B8BBB4 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5573301C228D10C900B8BBB4 /* TopView.swift */; };
+		55C09F3E22D2ED4F00FB5C4D /* APIErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */; };
+		55C09F4122D2ED8F00FB5C4D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4022D2ED8F00FB5C4D /* Alert.swift */; };
+		55C09F4322D2F8AC00FB5C4D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4222D2F8AC00FB5C4D /* Reachability.swift */; };
+		55C09F4522D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */; };
+		55E50C3E22D837C50076354B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C3D22D837C50076354B /* Utility.swift */; };
+		55E50C4222D848050076354B /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4122D848050076354B /* Validations.swift */; };
+		55E50C4422D8523A0076354B /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4322D8523A0076354B /* Progress.swift */; };
+		55E50C4622D85C660076354B /* SignupWithoutLoyaltyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4522D85C660076354B /* SignupWithoutLoyaltyModel.swift */; };
+		55E50C4822D865A40076354B /* SignupWithoutLoyaltyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4722D865A40076354B /* SignupWithoutLoyaltyAPIService.swift */; };
+		55FC497222A65CC000C11659 /* SubHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC497122A65CC000C11659 /* SubHeader.swift */; };
 		77305B8B599455E1BEF03BD0 /* Pods_Boxi_Park_VisitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDED3B9030586FEA5EE948BD /* Pods_Boxi_Park_VisitorTests.framework */; };
 		921003F862ABB2C8B98BA4E2 /* Pods_Boxi_Park_Visitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F25AA3D29F71E24EA07B51 /* Pods_Boxi_Park_Visitor.framework */; };
 		DD2F2590415C4DA008FDBF05 /* Pods_Boxi_Park_VisitorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B832A0C916AF8492252AB8 /* Pods_Boxi_Park_VisitorUITests.framework */; };
@@ -68,7 +86,7 @@
 		55003C602293A82F00C8D12F /* MainWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWeatherVC.swift; sourceTree = "<group>"; };
 		55003C622293A98C00C8D12F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithLoyaltyVC.swift; sourceTree = "<group>"; };
-		55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyalty.swift; sourceTree = "<group>"; };
+		55003C662293B79F00C8D12F /* SignupWithoutLoyaltyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyaltyVC.swift; sourceTree = "<group>"; };
 		5500D7872296560D00D0586D /* ProfileEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorVC.swift; sourceTree = "<group>"; };
 		55027E5B22953C670018589F /* ProfileTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTC.swift; sourceTree = "<group>"; };
 		55027E5E22954BE30018589F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -77,6 +95,14 @@
 		55061CDD229B960900A7D734 /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = map.jpg; sourceTree = "<group>"; };
 		550E8A1A22965BB300C983F4 /* BottomBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBorder.swift; sourceTree = "<group>"; };
 		550E8A1C2296A7CA00C983F4 /* OfferVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferVC.swift; sourceTree = "<group>"; };
+		55179F1C22A527AD00AE4784 /* MenuAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAPIService.swift; sourceTree = "<group>"; usesTabs = 0; };
+		55179F1E22A5280900AE4784 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		55179F2122A5288300AE4784 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		551DD699229FC2A100526089 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		551DD69B229FC62D00526089 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		551DD69C229FC68200526089 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		551DD69D229FC6C800526089 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		5570B39B22A7BFFE000CDB6F /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxi Park Visitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturentSelectionVC.swift; sourceTree = "<group>"; };
@@ -91,6 +117,16 @@
 		5573300A228CFBBD00B8BBB4 /* Boxi_Park_VisitorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boxi_Park_VisitorUITests.swift; sourceTree = "<group>"; };
 		5573300C228CFBBD00B8BBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5573301C228D10C900B8BBB4 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandling.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		55C09F4022D2ED8F00FB5C4D /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		55C09F4222D2F8AC00FB5C4D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkAvalabilityErrorHandling .swift"; sourceTree = "<group>"; };
+		55E50C3D22D837C50076354B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		55E50C4122D848050076354B /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		55E50C4322D8523A0076354B /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		55E50C4522D85C660076354B /* SignupWithoutLoyaltyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyaltyModel.swift; sourceTree = "<group>"; };
+		55E50C4722D865A40076354B /* SignupWithoutLoyaltyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyaltyAPIService.swift; sourceTree = "<group>"; };
+		55FC497122A65CC000C11659 /* SubHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeader.swift; sourceTree = "<group>"; };
 		725ADE4C1E4DAB0B4294FEE3 /* Pods-Boxi Park Visitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park Visitor.debug.xcconfig"; path = "Target Support Files/Pods-Boxi Park Visitor/Pods-Boxi Park Visitor.debug.xcconfig"; sourceTree = "<group>"; };
 		92B832A0C916AF8492252AB8 /* Pods_Boxi_Park_VisitorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boxi_Park_VisitorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE676A5C271F4637426F9FA /* Pods-Boxi Park VisitorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boxi Park VisitorUITests.debug.xcconfig"; path = "Target Support Files/Pods-Boxi Park VisitorUITests/Pods-Boxi Park VisitorUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +197,7 @@
 			children = (
 				55027E5B22953C670018589F /* ProfileTC.swift */,
 				55027E60229557A40018589F /* MenuItem.swift */,
+				55FC497122A65CC000C11659 /* SubHeader.swift */,
 			);
 			path = TabelCell;
 			sourceTree = "<group>";
@@ -171,6 +208,26 @@
 				55027E67229580FB0018589F /* BottomVC.swift */,
 			);
 			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		55179F2022A5285C00AE4784 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55179F2122A5288300AE4784 /* Menu.swift */,
+				55E50C4522D85C660076354B /* SignupWithoutLoyaltyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		551DD696229FC29500526089 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				551DD69D229FC6C800526089 /* Gotham-Medium.otf */,
+				551DD69C229FC68200526089 /* Gotham-Bold.otf */,
+				551DD69B229FC62D00526089 /* Gotham-Book.otf */,
+				551DD699229FC2A100526089 /* Gotham-Light.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		55732FDE228CFBBC00B8BBB4 = {
@@ -198,9 +255,12 @@
 		55732FE9228CFBBC00B8BBB4 /* Boxi Park Visitor */ = {
 			isa = PBXGroup;
 			children = (
+				5570B39B22A7BFFE000CDB6F /* menu.json */,
+				55179F2022A5285C00AE4784 /* Models */,
 				55027E622295772E0018589F /* BottomSheet */,
 				5573301B228D10BB00B8BBB4 /* Extension */,
 				5573301A228D003300B8BBB4 /* Resoures */,
+				55E50C3F22D8449C0076354B /* StoryBoard */,
 				55733019228D001F00B8BBB4 /* Views */,
 				55733018228CFEC300B8BBB4 /* Application */,
 			);
@@ -237,13 +297,11 @@
 		55733019228D001F00B8BBB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55732FEE228CFBBC00B8BBB4 /* Main.storyboard */,
-				55732FF3228CFBBD00B8BBB4 /* LaunchScreen.storyboard */,
 				55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */,
 				55003C602293A82F00C8D12F /* MainWeatherVC.swift */,
 				55003C622293A98C00C8D12F /* LoginVC.swift */,
 				55003C642293B41D00C8D12F /* SignupWithLoyaltyVC.swift */,
-				55003C662293B79F00C8D12F /* SignupWithoutLoyalty.swift */,
+				55003C662293B79F00C8D12F /* SignupWithoutLoyaltyVC.swift */,
 				55027E5E22954BE30018589F /* MenuVC.swift */,
 				55003AA222963FAA00782CFD /* MapVC.swift */,
 				5500D7872296560D00D0586D /* ProfileEditorVC.swift */,
@@ -255,8 +313,10 @@
 		5573301A228D003300B8BBB4 /* Resoures */ = {
 			isa = PBXGroup;
 			children = (
+				551DD696229FC29500526089 /* Fonts */,
 				55003AA42296403400782CFD /* Map */,
 				55732FF1228CFBBD00B8BBB4 /* Assets.xcassets */,
+				55179F1E22A5280900AE4784 /* Constant.swift */,
 			);
 			path = Resoures;
 			sourceTree = "<group>";
@@ -264,11 +324,53 @@
 		5573301B228D10BB00B8BBB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55E50C4022D847CF0076354B /* SignupWithLoyaltyVC */,
+				55C09F3F22D2ED7400FB5C4D /* Other */,
+				55C09F3C22D2ED1D00FB5C4D /* APIService */,
 				55027E5D22953C9C0018589F /* TabelCell */,
-				5573301C228D10C900B8BBB4 /* TopView.swift */,
-				550E8A1A22965BB300C983F4 /* BottomBorder.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		55C09F3C22D2ED1D00FB5C4D /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				55179F1C22A527AD00AE4784 /* MenuAPIService.swift */,
+				55E50C4722D865A40076354B /* SignupWithoutLoyaltyAPIService.swift */,
+				55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */,
+				55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		55C09F3F22D2ED7400FB5C4D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				550E8A1A22965BB300C983F4 /* BottomBorder.swift */,
+				5573301C228D10C900B8BBB4 /* TopView.swift */,
+				55C09F4222D2F8AC00FB5C4D /* Reachability.swift */,
+				55C09F4022D2ED8F00FB5C4D /* Alert.swift */,
+				55E50C3D22D837C50076354B /* Utility.swift */,
+				55E50C4322D8523A0076354B /* Progress.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		55E50C3F22D8449C0076354B /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				55732FEE228CFBBC00B8BBB4 /* Main.storyboard */,
+				55732FF3228CFBBD00B8BBB4 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		55E50C4022D847CF0076354B /* SignupWithLoyaltyVC */ = {
+			isa = PBXGroup;
+			children = (
+				55E50C4122D848050076354B /* Validations.swift */,
+			);
+			path = SignupWithLoyaltyVC;
 			sourceTree = "<group>";
 		};
 		DC88B88B00E7A8C52FDAF323 /* Frameworks */ = {
@@ -394,7 +496,12 @@
 				55003AAE2296404A00782CFD /* index.html in Resources */,
 				55003AB02296404A00782CFD /* main.css in Resources */,
 				55061CDE229B960A00A7D734 /* map.jpg in Resources */,
+				55003939229FC8D60044B86F /* Gotham-Light.otf in Resources */,
+				55003936229FC8D60044B86F /* Gotham-Medium.otf in Resources */,
+				5570B39C22A7BFFE000CDB6F /* menu.json in Resources */,
 				55732FF5228CFBBD00B8BBB4 /* LaunchScreen.storyboard in Resources */,
+				55003938229FC8D60044B86F /* Gotham-Book.otf in Resources */,
+				55003937229FC8D60044B86F /* Gotham-Bold.otf in Resources */,
 				55732FF2228CFBBD00B8BBB4 /* Assets.xcassets in Resources */,
 				55003AAC2296404A00782CFD /* File3.js in Resources */,
 				55732FF0228CFBBC00B8BBB4 /* Main.storyboard in Resources */,
@@ -494,12 +601,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Boxi Park Visitor/Pods-Boxi Park Visitor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FittedSheets/FittedSheets.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FittedSheets.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,19 +624,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				55003C612293A82F00C8D12F /* MainWeatherVC.swift in Sources */,
+				55179F1F22A5280900AE4784 /* Constant.swift in Sources */,
 				55003AA322963FAA00782CFD /* MapVC.swift in Sources */,
+				55E50C4622D85C660076354B /* SignupWithoutLoyaltyModel.swift in Sources */,
 				55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */,
+				55E50C4222D848050076354B /* Validations.swift in Sources */,
 				55027E5C22953C670018589F /* ProfileTC.swift in Sources */,
 				550E8A1D2296A7CA00C983F4 /* OfferVC.swift in Sources */,
+				55C09F4122D2ED8F00FB5C4D /* Alert.swift in Sources */,
+				55E50C4422D8523A0076354B /* Progress.swift in Sources */,
+				55179F2222A5288300AE4784 /* Menu.swift in Sources */,
 				5500D7882296560D00D0586D /* ProfileEditorVC.swift in Sources */,
+				55179F1D22A527AD00AE4784 /* MenuAPIService.swift in Sources */,
+				55FC497222A65CC000C11659 /* SubHeader.swift in Sources */,
+				55C09F3E22D2ED4F00FB5C4D /* APIErrorHandling.swift in Sources */,
 				5573301D228D10C900B8BBB4 /* TopView.swift in Sources */,
 				55027E68229580FB0018589F /* BottomVC.swift in Sources */,
 				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
+				55E50C4822D865A40076354B /* SignupWithoutLoyaltyAPIService.swift in Sources */,
 				55027E5F22954BE30018589F /* MenuVC.swift in Sources */,
+				55C09F4522D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift in Sources */,
 				55003C632293A98C00C8D12F /* LoginVC.swift in Sources */,
 				550E8A1B22965BB300C983F4 /* BottomBorder.swift in Sources */,
+				55C09F4322D2F8AC00FB5C4D /* Reachability.swift in Sources */,
+				55E50C3E22D837C50076354B /* Utility.swift in Sources */,
 				55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */,
-				55003C672293B79F00C8D12F /* SignupWithoutLoyalty.swift in Sources */,
+				55003C672293B79F00C8D12F /* SignupWithoutLoyaltyVC.swift in Sources */,
 				55027E61229557A40018589F /* MenuItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

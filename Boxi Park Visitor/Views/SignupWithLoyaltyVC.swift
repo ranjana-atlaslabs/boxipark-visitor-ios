@@ -31,7 +31,7 @@ class SignupWithLoyaltyVC: UIViewController {
     }
     
     func setupView()  {
-        btnSignup.layer.cornerRadius = 10
+        btnSignup.layer.cornerRadius = 12
         
         txtLoyaltyNumber.setLeftPaddingPoints(20)
         txtRegisterNumber.setLeftPaddingPoints(20)
