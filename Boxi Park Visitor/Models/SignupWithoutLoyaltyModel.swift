@@ -49,3 +49,20 @@ struct OauthToken: Codable {
     var printedCardNumber: String!
     var refresh_token: String!
 }
+
+struct EnrollmentConfig: Decodable {
+    
+    var result: String!
+    var config: Config!
+}
+
+struct Config: Decodable {
+    var fields: [Fields]!
+}
+
+struct Fields: Decodable {
+    
+    var type: String!
+    var field: String!
+    var minLength: String!
+}
