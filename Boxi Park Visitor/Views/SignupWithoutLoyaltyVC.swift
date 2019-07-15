@@ -53,7 +53,11 @@ class SignupWithoutLoyaltyVC: UIViewController {
         
         if validationInputFields() {
             
-            let userFields = UserFields(style: "typed", username: [txtEmail.text!], password: [txtPassword.text!])
+            let email    = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            
+            let userFields = UserFields(style: "typed", username: [email!], password: [password!])
             let accountFields = AccoutnFields(style: "typed")
             
             let user = CreateAndRegister(authentication: "anonymous", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username"], setUserFields: userFields, setAccountFields: accountFields)
