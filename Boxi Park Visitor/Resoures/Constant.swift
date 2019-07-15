@@ -76,5 +76,8 @@ struct Constant {
     public static let MOBILE_INVALID_MESSAGE_BODY               = "Invalid mobile number"
     public static let PASSWORD_INVALID_MESSAGE_BODY             = "Password should have 7 more characters"
     public static let USER_ALLREADY_EXSITS_MESSAGE_BODY         = "User already exist in the system"
+    
+    public static let INVALID_LOGIN_ERROR_MESSAGE_HEADER        = "Error"
+    public static let INVALID_LOGIN_ERROR_MESSAGE_BODY          = "Invalid username or password"
 
 }

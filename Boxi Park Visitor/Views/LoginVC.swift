@@ -22,10 +22,7 @@ class LoginVC: UIViewController {
         setupView()
     }
     
-    /**
-     * Called when the user click on the view (outside the UITextField).
-     */
-    
+    //Called when the user click on the view (outside the UITextField).
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -43,7 +40,7 @@ class LoginVC: UIViewController {
  
     
     @IBAction func loginBtnTap(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "menu", sender: nil)
+        loginUsingPassword()
     }
     
     @objc func tapFunction(sender:UITapGestureRecognizer) {
@@ -51,6 +48,46 @@ class LoginVC: UIViewController {
         self.performSegue(withIdentifier: "signup", sender: nil)
     }
     
+    func loginUsingPassword()  {
+        
+        if validationInputFields() {
+            
+            let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let name     = txtUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            let user = LoginWithCredentials(authentication: "anonymous",
+                                            client_id: Constant.CLIENT_ID,
+                                            client_secret: Constant.SECRET,
+                                            grant_type: "password",
+                                            merchantId: Constant.MERCHANT_ID,
+                                            scope: "user_read account_read",
+                                            username: name!,
+                                            password: password!)
+            
+            LoginAPI.loginWithCredentials(user: user) { result, error, status in
+            
+                if error == nil {
+                    
+                    if result != nil && status == 200 {
+                        //save user data in userdefault
+                        AppSessionManager.saveAuthToken(token: result!.access_token!)
+                        AppSessionManager.saveRefreshToken(token: result!.refresh_token!)
+                        AppSessionManager.saveAuthUserName(userName: name!)
+                        AppSessionManager.saveAuthPassword(password: password!)
+                        self.performSegue(withIdentifier: "menu", sender: nil)
+                    }else {
+                        Alert.showInvalidUserNameAlert(on: self)
+                    }
+                    
+                }else {
+                    //Server error
+                    _ = APIErrorHandling(error: error!, vc: self)
+                }
+                
+            }
+            
+        }
+    }
 }
 
 
