@@ -47,9 +47,16 @@ struct Alert {
         showBasicAlert(on: vc, with: Constant.SERVER_SIDE_ERROR_MESSAGE_HEADER, message: Constant.SERVER_SIDE_ERROR_MESSAGE_BODY)
     }
     
+    static func showFailReuqestAlert(on vc:UIViewController){
+        showBasicAlert(on: vc, with: Constant.SERVER_SIDE_ERROR_MESSAGE_HEADER, message: Constant.SERVER_SIDE_ERROR_MESSAGE_HEADER)
+    }
     
     static func showNoInterneErroAlert(on vc:UIViewController){
         showBasicAlert(on: vc, with: Constant.NO_INTERNET_ERROR_MESSAGE_HEADER, message: Constant.NO_INTERNET_ERROR_MESSAGE_BODY)
+    }
+    
+    static func showInvalidUserNameAlert(on vc:UIViewController){
+        showBasicAlert(on: vc, with: Constant.INVALID_LOGIN_ERROR_MESSAGE_HEADER, message: Constant.INVALID_LOGIN_ERROR_MESSAGE_BODY)
     }
     
     //MARK: open Setting page

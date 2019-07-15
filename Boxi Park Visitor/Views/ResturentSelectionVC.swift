@@ -117,6 +117,11 @@ class ResturentSelectionVC: UIViewController {
         self.performSegue(withIdentifier: "offer", sender: nil)
     }
     
+    @IBAction func btnLogoutTap(_ sender: Any) {
+        AppSessionManager.removeAllObject()
+        self.performSegue(withIdentifier: "Main", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "menu" {
             if let vc = segue.destination as? MenuVC {
@@ -183,7 +188,7 @@ class ResturentSelectionVC: UIViewController {
         swipeLeft.direction = .left
         
         // Add tap gesture recognizer to lbllogout
-        let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
+        let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleEditProfiletTap(_:)))
         lblEditProfile.addGestureRecognizer(tap)
         lblEditProfile.isUserInteractionEnabled = true
         lblViewEditProfile.addGestureRecognizer(tap)
@@ -406,8 +411,8 @@ class ResturentSelectionVC: UIViewController {
         
     }
     
-    @objc func handleLogoutTap(_ recognizer:UITapGestureRecognizer) {
-        
+    @objc func handleEditProfiletTap(_ recognizer:UITapGestureRecognizer) {
+
         self.performSegue(withIdentifier: "edit", sender: nil)
         
     }

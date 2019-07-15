@@ -33,6 +33,7 @@ struct SignupWithoutLoyaltyAPI {
                     completion(result, nil, response.response?.statusCode)
                 }
                 catch let err {
+                    print(err)
                     completion(nil, err, response.response?.statusCode)
                 }
                 
@@ -59,6 +60,7 @@ struct SignupWithoutLoyaltyAPI {
                     let result =  try JSONDecoder().decode(EnrollmentConfig.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }
+                    
                 catch let err {
                     completion(nil, err, response.response?.statusCode)
                 }

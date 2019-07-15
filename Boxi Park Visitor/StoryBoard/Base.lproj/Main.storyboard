@@ -64,7 +64,7 @@
                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                         </variation>
                                         <connections>
-                                            <segue destination="9Xf-HC-6b5" kind="show" id="57Z-rV-bb1"/>
+                                            <action selector="getStartBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VE4-SF-TIo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -142,6 +142,8 @@
                     </view>
                     <connections>
                         <outlet property="btnStart" destination="inx-u7-y44" id="g8K-uM-t1U"/>
+                        <segue destination="9Xf-HC-6b5" kind="show" identifier="login" id="iFX-k7-cs8"/>
+                        <segue destination="4YU-Qn-IqD" kind="show" identifier="main_menu" id="d82-7S-pzr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -196,7 +198,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -209,7 +211,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9V-Ee-Gni">
                                                         <rect key="frame" x="0.0" y="71" width="345" height="51"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                         <userDefinedRuntimeAttributes>
@@ -904,7 +906,7 @@
                                                             <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                         </variation>
                                                         <connections>
-                                                            <segue destination="BYZ-38-t0r" kind="show" id="3dO-en-fAZ"/>
+                                                            <action selector="btnLogoutTap:" destination="4YU-Qn-IqD" eventType="touchUpInside" id="k4w-MK-GHx"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1039,6 +1041,7 @@
                         <segue destination="9VO-7y-mx0" kind="show" identifier="menu" id="yuk-2l-ScX"/>
                         <segue destination="g14-ef-DWY" kind="show" identifier="edit" id="J9S-zd-r2V"/>
                         <segue destination="H89-ha-evc" kind="show" identifier="offer" id="zUi-Nf-TmE"/>
+                        <segue destination="9Xf-HC-6b5" kind="show" identifier="Main" id="hNG-QV-Bez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2A-aI-YkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2912,6 +2915,7 @@
         <image name="topImage" width="602" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="geO-2j-hgb"/>
+        <segue reference="d82-7S-pzr"/>
+        <segue reference="hNG-QV-Bez"/>
     </inferredMetricsTieBreakers>
 </document>
