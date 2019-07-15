@@ -24,9 +24,7 @@ class SignupWithoutLoyaltyVC: UIViewController {
         
     }
     
-    /**
-     * Called when the user click on the view (outside the UITextField).
-     */
+    //Called when the user click on the view (outside the UITextField)
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -34,6 +32,9 @@ class SignupWithoutLoyaltyVC: UIViewController {
     
 
     func setupView()   {
+        
+        getEnrollmentConfig()
+        
         btnSignup.layer.cornerRadius = 12
         
         txtName.setLeftPaddingPoints(20)
@@ -51,21 +52,24 @@ class SignupWithoutLoyaltyVC: UIViewController {
     
     @IBAction func signupBtnTap(_ sender: Any) {
         
+        //Validate user inputs
         if validationInputFields() {
             
             let email    = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let name     = txtName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            
-            let userFields = UserFields(style: "typed", username: [email!], password: [password!])
+            //create user object
+            let userFields = UserFields(style: "typed", username: [email!], password: [password!], firstName: [name!], email: [email!])
             let accountFields = AccoutnFields(style: "typed")
             
-            let user = CreateAndRegister(authentication: "anonymous", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username"], setUserFields: userFields, setAccountFields: accountFields)
+            let user = CreateAndRegister(authentication: "anonymous", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
             
             progressBar.show()
+            
+            //Make api call
             createUser(createUser: user)
         }
-        //self.performSegue(withIdentifier: "menu", sender: nil)
     }
     
     func createUser(createUser: CreateAndRegister)  {
@@ -75,9 +79,41 @@ class SignupWithoutLoyaltyVC: UIViewController {
             self.progressBar.hide()
             if error == nil {
                 
+                if result?.result == Constant.PAYTRONIX_API_CARD_CREATED_SUCCESS_RESULT {
+                    
+                    if result?.oauthTokens != nil {
+                        //save user data in userdefault
+                        AppSessionManager.saveAuthToken(token: result!.oauthTokens!.access_token!)
+                        AppSessionManager.saveRefreshToken(token: result!.oauthTokens!.refresh_token!)
+                        AppSessionManager.savePrintedCardNumber(number: result!.printedCardNumber!)
+                        AppSessionManager.saveAuthUserName(userName: createUser.setUserFields!.username[0])
+                        AppSessionManager.saveAuthPassword(password: createUser.setUserFields!.password[0])
+                        self.performSegue(withIdentifier: "menu", sender: nil)
+                    }
+                    
+                    
+                    
+                }else if result?.result == Constant.PAYTRONIX_API_USER_EXISTS_RESULT {
+                    
+                    //Show error msg user all ready exsits
+                    Alert.showValidationErrorAlert(on: self, error: Constant.USER_ALLREADY_EXSITS_MESSAGE_BODY)
+                    
+                }else {
+                    
+                    if (result?.errorsByField?["setUserFields/username"]) != nil  {
+                        
+                        //Show error msg user all ready exsits
+                        Alert.showValidationErrorAlert(on: self, error: Constant.USER_ALLREADY_EXSITS_MESSAGE_BODY)
+                        
+                    }else if (result?.errorsByField?["setUserFields/password"]) != nil  {
+                        //Show error msg password invalid
+                        Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_INVALID_MESSAGE_BODY)
+                    }
+                }
                 
                 
             }else {
+                //Server error
                 _ = APIErrorHandling(error: error!, vc: self)
             }
             
@@ -86,6 +122,34 @@ class SignupWithoutLoyaltyVC: UIViewController {
         
     }
     
+    func getEnrollmentConfig()  {
+        
+        SignupWithoutLoyaltyAPI.enrollmentConfig(){ result, error, status in
+            
+            if error == nil {
+                
+                if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT{
+                    
+                    if result?.config.fields != nil && result?.config.fields.count ?? 0 > 0 {
+                        
+                        if let obj = result?.config.fields.enumerated().first(where: {$0.element.field == "password"}) {
+                            //Save password min length in constant file
+                            Constant.MINIMUM_PASSWORD_CHARACHTERS = obj.element.minLength
+                        }
+                    }
+
+                }else {
+                    print(result?.result! ?? "")
+                }
+                
+            }else{
+                print("Error in Enrollment config")
+            }
+            
+        }
+    }
+    
+    //MARK: Keybaord handling
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {

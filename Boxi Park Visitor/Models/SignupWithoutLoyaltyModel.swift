@@ -27,6 +27,8 @@ struct UserFields: Codable {
     var style: String!
     var username: [String]!
     var password: [String]!
+    var firstName: [String]!
+    var email: [String]!
     
 }
 
@@ -40,6 +42,7 @@ struct CreateAndRegisterResult: Codable {
     var accountId: Int?
     var oauthTokens: OauthToken?
     var printedCardNumber: String?
+    var errorsByField: [String: [String]]?
 }
 
 struct OauthToken: Codable {
@@ -64,5 +67,16 @@ struct Fields: Decodable {
     
     var type: String!
     var field: String!
-    var minLength: String!
+    var minLength: Int!
+}
+
+
+extension Encodable {
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
+        }
+        return dictionary
+    }
 }

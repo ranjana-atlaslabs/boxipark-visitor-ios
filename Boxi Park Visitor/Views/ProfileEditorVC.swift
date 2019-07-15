@@ -40,7 +40,7 @@ class ProfileEditorVC: UIViewController {
         btnUpload.layer.cornerRadius = 12
         btnDelete.layer.cornerRadius = 12
         
-        let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleLogoutTap(_:)))
+        let tap                   = UITapGestureRecognizer(target: self, action: #selector(handleCancelTap(_:)))
         lblEditProfile.addGestureRecognizer(tap)
         lblEditProfile.isUserInteractionEnabled = true
         lblViewEdit.addGestureRecognizer(tap)
@@ -57,7 +57,7 @@ class ProfileEditorVC: UIViewController {
     }
     
     
-    @objc func handleLogoutTap(_ recognizer:UITapGestureRecognizer) {
+    @objc func handleCancelTap(_ recognizer:UITapGestureRecognizer) {
         self.bottomConstrain.constant = 0
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()

@@ -53,6 +53,12 @@ extension SignupWithoutLoyaltyVC {
             return false
         }
         
+        if password!.count < Constant.MINIMUM_PASSWORD_CHARACHTERS {
+            
+            Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_INVALID_MESSAGE_BODY)
+            return false
+        }
+        
         return true
     }
     

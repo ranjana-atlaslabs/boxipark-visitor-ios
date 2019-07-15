@@ -44,6 +44,10 @@ struct Constant {
     public static let CLIENT_ID          = "V89673jnA72839A-237Ih23kj623hjksa732hHS722"
     public static let SECRET             = "Nk28Sh2j*2ds"
     
+    public static let PAYTRONIX_API_SUCCESS_RESULT = "success"
+    public static let PAYTRONIX_API_CARD_CREATED_SUCCESS_RESULT = "cardCreatedSuccess"
+    public static let PAYTRONIX_API_USER_EXISTS_RESULT = "uniquenessConflict"
+    public static var MINIMUM_PASSWORD_CHARACHTERS = 8
     //-------------------------------
     
     public static var SHOW_ERROR_MSG = false
@@ -57,6 +61,7 @@ struct Constant {
     
     public static let SERVER_SIDE_ERROR_MESSAGE_HEADER          = "Error"
     public static let SERVER_SIDE_ERROR_MESSAGE_BODY            = "Paytronix server unreachable"
+    public static let FAILD_REUQEST_ERROR_MESSAGE_BODY          = "Request faild"
     
     public static let NO_INTERNET_ERROR_MESSAGE_HEADER          = "Error"
     public static let NO_INTERNET_ERROR_MESSAGE_BODY            = "No Internet Connection"
@@ -65,9 +70,11 @@ struct Constant {
     public static let USERNAME_REQUIRED_MESSAGE_BODY            = "Username is required"
     public static let EMAIL_REQUIRED_MESSAGE_BODY               = "Email is required"
     public static let MOBILE_REQUIRED_MESSAGE_BODY              = "Mobile number is required"
-    public static let PASSWORD_REQUIRED_MESSAGE_BODY            = "Password number is required"
+    public static let PASSWORD_REQUIRED_MESSAGE_BODY            = "Password is required"
     
     public static let EMAIL_INVALID_MESSAGE_BODY                = "Invalid email"
     public static let MOBILE_INVALID_MESSAGE_BODY               = "Invalid mobile number"
+    public static let PASSWORD_INVALID_MESSAGE_BODY             = "Password should have 7 more characters"
+    public static let USER_ALLREADY_EXSITS_MESSAGE_BODY         = "User already exist in the system"
 
 }

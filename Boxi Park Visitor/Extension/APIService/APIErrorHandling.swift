@@ -43,20 +43,20 @@ struct APIErrorHandling {
                 Alert.showNoInterneErroAlert(on: vc)
                 Constant.SHOW_ERROR_MSG = false
             }
-                
-           
-                
-            else if error._code != NSURLErrorCancelled && error._code != 53 && error._code != -1005  {
+ 
+            else if  error._code == 521 {
                 
                 Alert.showServerErroAlert(on: vc)
                 Constant.SHOW_ERROR_MSG = false
+                
+            } else if error._code != NSURLErrorCancelled && error._code != 53 && error._code != -1005 {
+                
+                Alert.showFailReuqestAlert(on: vc)
+                Constant.SHOW_ERROR_MSG = false
+                
             }
             
             break
-            
         }
-        
     }
-    
-    
 }
