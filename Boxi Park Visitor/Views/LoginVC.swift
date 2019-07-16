@@ -16,6 +16,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var lblForgotPassword: UILabel!
     @IBOutlet weak var lblSignUp: UILabel!
     
+    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,9 @@ class LoginVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.tapFunction))
         lblSignUp.isUserInteractionEnabled = true
         lblSignUp.addGestureRecognizer(tap)
+        
+        self.view.addSubview(progressBar)
+        progressBar.hide()
     }
  
     
@@ -50,6 +55,7 @@ class LoginVC: UIViewController {
     
     func loginUsingPassword()  {
         
+        progressBar.show()
         if validationInputFields() {
             
             let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -66,6 +72,7 @@ class LoginVC: UIViewController {
             
             LoginAPI.loginWithCredentials(user: user) { result, error, status in
             
+                self.progressBar.hide()
                 if error == nil {
                     
                     if result != nil && status == 200 {

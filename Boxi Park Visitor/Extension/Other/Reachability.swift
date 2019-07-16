@@ -17,6 +17,7 @@
         var reachability: SCNetworkReachability?
         var reachabilityFlags = SCNetworkReachabilityFlags()
         let reachabilitySerialQueue = DispatchQueue(label: "ReachabilityQueue")
+        
         init?(hostname: String) throws {
             guard let reachability = SCNetworkReachabilityCreateWithName(nil, hostname) else {
                 throw Network.Error.failedToCreateWith(hostname)
@@ -26,6 +27,7 @@
             isReachableOnWWAN = true
             try start()
         }
+        
         init() throws {
             var zeroAddress = sockaddr_in()
             zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
@@ -79,6 +81,7 @@
         }
         
         func stop() {
+            
             defer { isRunning = false }
             guard let reachability = reachability else { return }
             SCNetworkReachabilitySetCallback(reachability, nil, nil)
