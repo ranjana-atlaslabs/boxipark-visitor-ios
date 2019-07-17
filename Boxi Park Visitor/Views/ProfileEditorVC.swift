@@ -11,6 +11,8 @@ import UIKit
 class ProfileEditorVC: UIViewController {
 
     @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtMobileNumber: UITextField!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnUpload: UIButton!
@@ -18,6 +20,8 @@ class ProfileEditorVC: UIViewController {
     @IBOutlet weak var lblEditProfile: UILabel!
     @IBOutlet weak var bottomConstrain: NSLayoutConstraint!
     @IBOutlet weak var lblViewEdit: UIView!
+    
+    var userInformations: UserInformationResult!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,24 @@ class ProfileEditorVC: UIViewController {
         lblViewEdit.addGestureRecognizer(tap)
         lblViewEdit.isUserInteractionEnabled = true
         //lblEditProfile.set(image: #imageLiteral(resourceName: "edit_icon"), with: "Edit profile")
+        
+        dataBindFromApi()
+    }
+    
+    func dataBindFromApi()  {
+        
+        if let username = userInformations.fields.firstName {
+             txtUsername.text = username
+        }
+        
+        if let email = userInformations.fields.email {
+            txtEmail.text = email
+        }
+        
+        if let mobile = userInformations.fields.mobilePhone {
+            txtMobileNumber.text = mobile
+        }
+       
     }
     
     @IBAction func btnUploadBtnTap(_ sender: UIButton) {

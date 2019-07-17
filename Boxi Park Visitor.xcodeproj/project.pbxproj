@@ -46,6 +46,12 @@
 		55AAEAF422DC7D94001BA981 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AAEAF322DC7D94001BA981 /* LoginModel.swift */; };
 		55AAEAF622DC80C8001BA981 /* LoginAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AAEAF522DC80C8001BA981 /* LoginAPIService.swift */; };
 		55AAEAFB22DC8605001BA981 /* LoginValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AAEAFA22DC8605001BA981 /* LoginValidations.swift */; };
+		55BA6D0A22DEC9C0000338B4 /* ResturentAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA6D0922DEC9C0000338B4 /* ResturentAPIService.swift */; };
+		55BA6D0C22DECA69000338B4 /* UserInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA6D0B22DECA69000338B4 /* UserInformationModel.swift */; };
+		55BA6D0F22DEDB26000338B4 /* UISetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA6D0E22DEDB26000338B4 /* UISetup.swift */; };
+		55BA6D1122DEDB8E000338B4 /* BarCodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA6D1022DEDB8E000338B4 /* BarCodeReader.swift */; };
+		55BA6D1322DEDBDA000338B4 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA6D1222DEDBDA000338B4 /* SideBar.swift */; };
+		55BA6D1522DEDC1A000338B4 /* GeaturesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA6D1422DEDC1A000338B4 /* GeaturesHandler.swift */; };
 		55C09F3E22D2ED4F00FB5C4D /* APIErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */; };
 		55C09F4122D2ED8F00FB5C4D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4022D2ED8F00FB5C4D /* Alert.swift */; };
 		55C09F4322D2F8AC00FB5C4D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C09F4222D2F8AC00FB5C4D /* Reachability.swift */; };
@@ -125,6 +131,12 @@
 		55AAEAF322DC7D94001BA981 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		55AAEAF522DC80C8001BA981 /* LoginAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIService.swift; sourceTree = "<group>"; };
 		55AAEAFA22DC8605001BA981 /* LoginValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidations.swift; sourceTree = "<group>"; };
+		55BA6D0922DEC9C0000338B4 /* ResturentAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturentAPIService.swift; sourceTree = "<group>"; };
+		55BA6D0B22DECA69000338B4 /* UserInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationModel.swift; sourceTree = "<group>"; };
+		55BA6D0E22DEDB26000338B4 /* UISetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISetup.swift; sourceTree = "<group>"; };
+		55BA6D1022DEDB8E000338B4 /* BarCodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCodeReader.swift; sourceTree = "<group>"; };
+		55BA6D1222DEDBDA000338B4 /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		55BA6D1422DEDC1A000338B4 /* GeaturesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeaturesHandler.swift; sourceTree = "<group>"; };
 		55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandling.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		55C09F4022D2ED8F00FB5C4D /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		55C09F4222D2F8AC00FB5C4D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -224,6 +236,7 @@
 				55179F2122A5288300AE4784 /* Menu.swift */,
 				55E50C4522D85C660076354B /* SignupWithoutLoyaltyModel.swift */,
 				55AAEAF322DC7D94001BA981 /* LoginModel.swift */,
+				55BA6D0B22DECA69000338B4 /* UserInformationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +347,7 @@
 		5573301B228D10BB00B8BBB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55BA6D0D22DEDAFF000338B4 /* ResturantVC */,
 				55AAEAF722DC8580001BA981 /* LoginVC */,
 				55E50C4022D847CF0076354B /* SignupWithLoyaltyVC */,
 				55C09F3F22D2ED7400FB5C4D /* Other */,
@@ -351,12 +365,24 @@
 			path = LoginVC;
 			sourceTree = "<group>";
 		};
+		55BA6D0D22DEDAFF000338B4 /* ResturantVC */ = {
+			isa = PBXGroup;
+			children = (
+				55BA6D0E22DEDB26000338B4 /* UISetup.swift */,
+				55BA6D1022DEDB8E000338B4 /* BarCodeReader.swift */,
+				55BA6D1222DEDBDA000338B4 /* SideBar.swift */,
+				55BA6D1422DEDC1A000338B4 /* GeaturesHandler.swift */,
+			);
+			path = ResturantVC;
+			sourceTree = "<group>";
+		};
 		55C09F3C22D2ED1D00FB5C4D /* APIService */ = {
 			isa = PBXGroup;
 			children = (
 				55179F1C22A527AD00AE4784 /* MenuAPIService.swift */,
 				55E50C4722D865A40076354B /* SignupWithoutLoyaltyAPIService.swift */,
 				55AAEAF522DC80C8001BA981 /* LoginAPIService.swift */,
+				55BA6D0922DEC9C0000338B4 /* ResturentAPIService.swift */,
 				55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */,
 				55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */,
 			);
@@ -650,16 +676,19 @@
 				55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */,
 				55E50C4222D848050076354B /* SignupWithoutLoyaltyValidations.swift in Sources */,
 				55027E5C22953C670018589F /* ProfileTC.swift in Sources */,
+				55BA6D0A22DEC9C0000338B4 /* ResturentAPIService.swift in Sources */,
 				550E8A1D2296A7CA00C983F4 /* OfferVC.swift in Sources */,
 				55AAEAFB22DC8605001BA981 /* LoginValidations.swift in Sources */,
 				55C09F4122D2ED8F00FB5C4D /* Alert.swift in Sources */,
 				55E50C4422D8523A0076354B /* Progress.swift in Sources */,
 				55179F2222A5288300AE4784 /* Menu.swift in Sources */,
 				5500D7882296560D00D0586D /* ProfileEditorVC.swift in Sources */,
+				55BA6D1522DEDC1A000338B4 /* GeaturesHandler.swift in Sources */,
 				55179F1D22A527AD00AE4784 /* MenuAPIService.swift in Sources */,
 				55FC497222A65CC000C11659 /* SubHeader.swift in Sources */,
 				55C09F3E22D2ED4F00FB5C4D /* APIErrorHandling.swift in Sources */,
 				5573301D228D10C900B8BBB4 /* TopView.swift in Sources */,
+				55BA6D1322DEDBDA000338B4 /* SideBar.swift in Sources */,
 				55027E68229580FB0018589F /* BottomVC.swift in Sources */,
 				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
 				55E50C4822D865A40076354B /* SignupWithoutLoyaltyAPIService.swift in Sources */,
@@ -675,6 +704,9 @@
 				55003C672293B79F00C8D12F /* SignupWithoutLoyaltyVC.swift in Sources */,
 				55AAEAF622DC80C8001BA981 /* LoginAPIService.swift in Sources */,
 				55027E61229557A40018589F /* MenuItem.swift in Sources */,
+				55BA6D1122DEDB8E000338B4 /* BarCodeReader.swift in Sources */,
+				55BA6D0C22DECA69000338B4 /* UserInformationModel.swift in Sources */,
+				55BA6D0F22DEDB26000338B4 /* UISetup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,7 +883,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82LXPLQH7L;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
 				INFOPLIST_FILE = "$(SRCROOT)/Boxi Park Visitor/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -871,7 +903,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82LXPLQH7L;
+				DEVELOPMENT_TEAM = Y9SHRUECVG;
 				INFOPLIST_FILE = "$(SRCROOT)/Boxi Park Visitor/Application/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

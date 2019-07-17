@@ -739,7 +739,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJr-l8-CPF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="225.5" height="55.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vnu-Bo-lJb">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vnu-Bo-lJb">
                                                                         <rect key="frame" x="8" y="26.5" width="217.5" height="26"/>
                                                                         <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="26"/>
                                                                         <nil key="textColor"/>
@@ -1028,6 +1028,7 @@
                         <outlet property="btnOffer" destination="3HD-Gz-EKn" id="G5V-Gv-Cq4"/>
                         <outlet property="lblEditProfile" destination="HwO-Nl-6YQ" id="CQw-fK-XHU"/>
                         <outlet property="lblNoData" destination="hz5-WL-XEf" id="iH2-kM-yxW"/>
+                        <outlet property="lblUsername" destination="vnu-Bo-lJb" id="r4C-4g-ahQ"/>
                         <outlet property="lblViewEditProfile" destination="z2t-Tj-LFj" id="6Qp-rF-ejg"/>
                         <outlet property="leadingConstrianSidebar" destination="sBl-Ar-dfa" id="7Bm-bW-C2D"/>
                         <outlet property="qrImage" destination="skQ-cN-dMq" id="thq-cf-h0f"/>
@@ -1965,7 +1966,7 @@
                                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jone Doe Lewis" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hzt-pk-DbJ" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hzt-pk-DbJ" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="34.5" width="374" height="32.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
@@ -1989,7 +1990,7 @@
                                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="someone@mail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-Mt-8qZ" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4m2-Mt-8qZ" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="34" width="374" height="32.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
@@ -2013,7 +2014,7 @@
                                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+12 345 678 901" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-Dd-HH6" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-Dd-HH6" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="34" width="374" height="32.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
@@ -2091,7 +2092,7 @@
                                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zdfczdfdz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-dc-s7w" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zdfczdfdz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-dc-s7w" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="38" width="374" height="36.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
@@ -2115,7 +2116,7 @@
                                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kzK-Du-q9E" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kzK-Du-q9E" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="38" width="374" height="36.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
@@ -2139,7 +2140,7 @@
                                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                                 </variation>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akZ-aK-XoC" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akZ-aK-XoC" customClass="BottomBorderTF" customModule="Boxi_Park_Visitor" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="38" width="374" height="36"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="textColor"/>
@@ -2362,6 +2363,8 @@
                         <outlet property="btnUpload" destination="uF7-Wj-y0T" id="TGa-uI-FV3"/>
                         <outlet property="lblEditProfile" destination="d8j-r2-bS6" id="0Ty-re-mFU"/>
                         <outlet property="lblViewEdit" destination="W6n-LE-c51" id="6cY-hW-gfp"/>
+                        <outlet property="txtEmail" destination="4m2-Mt-8qZ" id="Xi6-5q-GVu"/>
+                        <outlet property="txtMobileNumber" destination="3Wd-Dd-HH6" id="M2p-jp-US9"/>
                         <outlet property="txtUsername" destination="Hzt-pk-DbJ" id="p3C-oR-DGD"/>
                     </connections>
                 </viewController>
@@ -2915,7 +2918,8 @@
         <image name="topImage" width="602" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d82-7S-pzr"/>
+        <segue reference="J9S-zd-r2V"/>
+        <segue reference="FVC-3N-ZEd"/>
         <segue reference="hNG-QV-Bez"/>
     </inferredMetricsTieBreakers>
 </document>

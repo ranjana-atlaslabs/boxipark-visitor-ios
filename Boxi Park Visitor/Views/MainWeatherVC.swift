@@ -12,6 +12,8 @@ class MainWeatherVC: UIViewController {
 
     @IBOutlet weak var btnStart: UIButton!
     
+    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,9 @@ class MainWeatherVC: UIViewController {
     
     func setupView()  {
         btnStart.layer.cornerRadius = 10
+        
+        self.view.addSubview(progressBar)
+        progressBar.hide()
     }
     
     @IBAction func getStartBtnTap(_ sender: UIButton) {
@@ -35,6 +40,8 @@ class MainWeatherVC: UIViewController {
     
     func loginUsingPassword()  {
         
+        
+            progressBar.show()
        
             let user = LoginWithCredentials(authentication: "anonymous",
                                             client_id: Constant.CLIENT_ID,
@@ -46,6 +53,8 @@ class MainWeatherVC: UIViewController {
                                             password: AppSessionManager.getAuthPassword()!)
             
             LoginAPI.loginWithCredentials(user: user) { result, error, status in
+                
+                self.progressBar.hide()
                 
                 if error == nil {
                     

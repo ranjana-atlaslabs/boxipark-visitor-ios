@@ -58,9 +58,10 @@ class SignupWithoutLoyaltyVC: UIViewController {
             let email    = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let name     = txtName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let mobile   = txtMobileNumber.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             
             //create user object
-            let userFields = UserFields(style: "typed", username: [email!], password: [password!], firstName: [name!], email: [email!])
+            let userFields = UserFields(style: "typed", username: [email!], password: [password!], firstName: [name!], email: [email!], mobilePhone: [mobile!])
             let accountFields = AccoutnFields(style: "typed")
             
             let user = CreateAndRegister(authentication: "anonymous", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)

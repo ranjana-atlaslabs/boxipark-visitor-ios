@@ -29,6 +29,7 @@ struct UserFields: Codable {
     var password: [String]!
     var firstName: [String]!
     var email: [String]!
+    var mobilePhone: [String]!
     
 }
 

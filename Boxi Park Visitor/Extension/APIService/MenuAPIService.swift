@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-struct API {
+struct MenuAPI {
     
     static func getMenus(completion: @escaping (MenuData?, Error?) -> Void) {
         
