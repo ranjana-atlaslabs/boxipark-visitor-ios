@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Boxi Park Visitor/Views/SignupWithoutLoyaltyVC.swift"
-            timestampString = "584771816.0478801"
+            filePath = "Boxi Park Visitor/Extension/APIService/APIErrorHandling.swift"
+            timestampString = "584944699.140757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "createUser(createUser:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "init(error:vc:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

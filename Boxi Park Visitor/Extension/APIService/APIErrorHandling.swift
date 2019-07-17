@@ -25,15 +25,8 @@ struct APIErrorHandling {
             
         case NSURLErrorNotConnectedToInternet:
             
-            //Manager not connected to internet error
-            
-            if  Constant.SHOW_ERROR_MSG  {
-                
-                Alert.showWIFIfaildAlert(on: vc)
-                Constant.SHOW_ERROR_MSG = false
-                
-            }
-            
+             //Manager not connected to internet error
+             Alert.showWIFIfaildAlert(on: vc)
             break
             
         default:
@@ -41,19 +34,15 @@ struct APIErrorHandling {
             //Manager server error
             if (error._code == URLError.Code.notConnectedToInternet.rawValue || error._code  == -1003) {
                 Alert.showNoInterneErroAlert(on: vc)
-                Constant.SHOW_ERROR_MSG = false
             }
  
             else if  error._code == 521 {
                 
                 Alert.showServerErroAlert(on: vc)
-                Constant.SHOW_ERROR_MSG = false
                 
             } else if error._code != NSURLErrorCancelled && error._code != 53 && error._code != -1005 {
                 
-                Alert.showFailReuqestAlert(on: vc)
-                Constant.SHOW_ERROR_MSG = false
-                
+                Alert.showFailReuqestAlert(on: vc)                
             }
             
             break
