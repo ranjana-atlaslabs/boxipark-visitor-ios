@@ -447,6 +447,9 @@
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="signBtnTap:" destination="3TT-LN-CAk" eventType="touchUpInside" id="Bni-85-nWJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2918,7 +2921,6 @@
         <image name="topImage" width="602" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J9S-zd-r2V"/>
         <segue reference="FVC-3N-ZEd"/>
         <segue reference="hNG-QV-Bez"/>
     </inferredMetricsTieBreakers>

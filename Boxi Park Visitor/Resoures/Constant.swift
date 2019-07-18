@@ -68,6 +68,8 @@ struct Constant {
     
     public static let VALIDATION_ERROR_MESSAGE_HEADER           = "Error"
     public static let USERNAME_REQUIRED_MESSAGE_BODY            = "Username is required"
+    public static let CARD_REQUIRED_MESSAGE_BODY                = "Loyalty card number is required"
+    public static let REG_CARD_REQUIRED_MESSAGE_BODY            = "Register number is required"
     public static let EMAIL_REQUIRED_MESSAGE_BODY               = "Email is required"
     public static let MOBILE_REQUIRED_MESSAGE_BODY              = "Mobile number is required"
     public static let PASSWORD_REQUIRED_MESSAGE_BODY            = "Password is required"
