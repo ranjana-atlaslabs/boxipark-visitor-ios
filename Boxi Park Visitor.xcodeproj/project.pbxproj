@@ -59,6 +59,7 @@
 		55CF2E2422E01574007775EC /* RegisterWithCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF2E2322E01574007775EC /* RegisterWithCard.swift */; };
 		55CF2E2722E0168E007775EC /* SignupWithCardValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF2E2622E0168E007775EC /* SignupWithCardValidation.swift */; };
 		55CF2E2922E01D48007775EC /* SignupWithLoyaltyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF2E2822E01D48007775EC /* SignupWithLoyaltyAPIService.swift */; };
+		55CF2E2C22E090AB007775EC /* MenuTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF2E2B22E090AB007775EC /* MenuTable.swift */; };
 		55E50C3E22D837C50076354B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C3D22D837C50076354B /* Utility.swift */; };
 		55E50C4222D848050076354B /* SignupWithoutLoyaltyValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4122D848050076354B /* SignupWithoutLoyaltyValidations.swift */; };
 		55E50C4422D8523A0076354B /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4322D8523A0076354B /* Progress.swift */; };
@@ -147,6 +148,7 @@
 		55CF2E2322E01574007775EC /* RegisterWithCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWithCard.swift; sourceTree = "<group>"; };
 		55CF2E2622E0168E007775EC /* SignupWithCardValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithCardValidation.swift; sourceTree = "<group>"; };
 		55CF2E2822E01D48007775EC /* SignupWithLoyaltyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithLoyaltyAPIService.swift; sourceTree = "<group>"; };
+		55CF2E2B22E090AB007775EC /* MenuTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTable.swift; sourceTree = "<group>"; };
 		55E50C3D22D837C50076354B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		55E50C4122D848050076354B /* SignupWithoutLoyaltyValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyaltyValidations.swift; sourceTree = "<group>"; };
 		55E50C4322D8523A0076354B /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		5573301B228D10BB00B8BBB4 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55CF2E2A22E0908B007775EC /* Menu VC */,
 				55BA6D0D22DEDAFF000338B4 /* ResturantVC */,
 				55AAEAF722DC8580001BA981 /* LoginVC */,
 				55E50C4022D847CF0076354B /* SignupWithoutLoyaltyVC */,
@@ -417,6 +420,14 @@
 				55CF2E2622E0168E007775EC /* SignupWithCardValidation.swift */,
 			);
 			path = SignupWithCard;
+			sourceTree = "<group>";
+		};
+		55CF2E2A22E0908B007775EC /* Menu VC */ = {
+			isa = PBXGroup;
+			children = (
+				55CF2E2B22E090AB007775EC /* MenuTable.swift */,
+			);
+			path = "Menu VC";
 			sourceTree = "<group>";
 		};
 		55E50C3F22D8449C0076354B /* StoryBoard */ = {
@@ -709,6 +720,7 @@
 				55C09F3E22D2ED4F00FB5C4D /* APIErrorHandling.swift in Sources */,
 				5573301D228D10C900B8BBB4 /* TopView.swift in Sources */,
 				55BA6D1322DEDBDA000338B4 /* SideBar.swift in Sources */,
+				55CF2E2C22E090AB007775EC /* MenuTable.swift in Sources */,
 				55027E68229580FB0018589F /* BottomVC.swift in Sources */,
 				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
 				55E50C4822D865A40076354B /* SignupWithoutLoyaltyAPIService.swift in Sources */,

@@ -32,8 +32,8 @@ struct Constant {
     
     public static let NORMAL_FONT_NAME   = "Gotham-Book"
     
-    public static let WAIT_MESSAGE_TEXT  = "Please wait..."
-    
+    public static let WAIT_MESSAGE_TEXT        = "Please wait..."
+    public static let VALIDATING_MESSAGE_TEXT  = "Validating..."
     //Paytronix Api information
     
     public static let PAYTRONIX_BASE_URL = "https://api.pxslab.com:443/rest/19.23/"
@@ -81,5 +81,8 @@ struct Constant {
     
     public static let INVALID_LOGIN_ERROR_MESSAGE_HEADER        = "Error"
     public static let INVALID_LOGIN_ERROR_MESSAGE_BODY          = "Invalid username or password"
+    
+    public static let INVALID_CARD_ERROR_MESSAGE_HEADER         = "Error"
+    public static let INVALID_CARD_ERROR_MESSAGE_BODY           = "Invalid card credentials"
 
 }

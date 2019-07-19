@@ -380,15 +380,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi4-Eu-Jew">
                                 <rect key="frame" x="0.0" y="342.5" width="414" height="519.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-Fh-4Gf">
-                                        <rect key="frame" x="34.5" y="0.0" width="345" height="305.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-Fh-4Gf">
+                                        <rect key="frame" x="34.5" y="0.0" width="345" height="236"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Loyalty card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7WX-JL-hqx">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="49.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="51.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -399,7 +399,7 @@
                                                 </variation>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have a card? Sign up here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-73-r08">
-                                                <rect key="frame" x="0.0" y="64.5" width="345" height="49"/>
+                                                <rect key="frame" x="0.0" y="61.5" width="345" height="51.5"/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -408,26 +408,11 @@
                                                 </variation>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Registration number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTb-72-bEP">
-                                                <rect key="frame" x="0.0" y="128.5" width="345" height="49"/>
+                                                <rect key="frame" x="0.0" y="123" width="345" height="51.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="25"/>
-                                                </variation>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXS-5J-Lgk">
-                                                <rect key="frame" x="0.0" y="192.5" width="345" height="49"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -438,10 +423,10 @@
                                                 </variation>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zST-WX-hlN">
-                                                <rect key="frame" x="0.0" y="256.5" width="345" height="49"/>
+                                                <rect key="frame" x="0.0" y="184.5" width="345" height="51.5"/>
                                                 <color key="backgroundColor" red="0.92108702659999997" green="0.41341990229999998" blue="0.31564357879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="18"/>
-                                                <state key="normal" title="Sign up">
+                                                <state key="normal" title="Next">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=regular">
@@ -459,7 +444,7 @@
                                     <constraint firstItem="qZ2-Fh-4Gf" firstAttribute="centerX" secondItem="Mi4-Eu-Jew" secondAttribute="centerX" id="4Hi-K1-09X"/>
                                     <constraint firstItem="qZ2-Fh-4Gf" firstAttribute="top" secondItem="Mi4-Eu-Jew" secondAttribute="top" id="4cK-by-7eN"/>
                                     <constraint firstItem="qZ2-Fh-4Gf" firstAttribute="width" secondItem="Mi4-Eu-Jew" secondAttribute="width" multiplier="1:1.2" id="eTG-0R-iyx"/>
-                                    <constraint firstItem="qZ2-Fh-4Gf" firstAttribute="height" secondItem="Mi4-Eu-Jew" secondAttribute="height" multiplier="1:1.7" id="xL5-9I-vmi"/>
+                                    <constraint firstItem="qZ2-Fh-4Gf" firstAttribute="height" secondItem="Mi4-Eu-Jew" secondAttribute="height" multiplier="1:2.2" id="xL5-9I-vmi"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -489,7 +474,6 @@
                         <outlet property="btnSignup" destination="zST-WX-hlN" id="bgp-QJ-WgO"/>
                         <outlet property="lblSignup" destination="2Eb-73-r08" id="lAr-gV-XiY"/>
                         <outlet property="txtLoyaltyNumber" destination="7WX-JL-hqx" id="VbJ-CK-zCo"/>
-                        <outlet property="txtPassword" destination="ZXS-5J-Lgk" id="8qZ-sU-hlg"/>
                         <outlet property="txtRegisterNumber" destination="rTb-72-bEP" id="Lc3-4G-kya"/>
                         <segue destination="8GN-pk-IZV" kind="show" identifier="signWithoutLoyalty" id="Gew-DO-Pl4"/>
                     </connections>
@@ -2921,7 +2905,7 @@
         <image name="topImage" width="602" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FVC-3N-ZEd"/>
+        <segue reference="geO-2j-hgb"/>
         <segue reference="hNG-QV-Bez"/>
     </inferredMetricsTieBreakers>
 </document>

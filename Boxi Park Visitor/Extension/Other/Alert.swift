@@ -59,6 +59,10 @@ struct Alert {
         showBasicAlert(on: vc, with: Constant.INVALID_LOGIN_ERROR_MESSAGE_HEADER, message: Constant.INVALID_LOGIN_ERROR_MESSAGE_BODY)
     }
     
+    static func showInvalidCardAlert(on vc:UIViewController){
+        showBasicAlert(on: vc, with: Constant.INVALID_CARD_ERROR_MESSAGE_HEADER, message: Constant.INVALID_CARD_ERROR_MESSAGE_BODY)
+    }
+    
     //MARK: open Setting page
     private static func openWifiSettings() {
 

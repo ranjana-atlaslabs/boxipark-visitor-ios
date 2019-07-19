@@ -17,7 +17,10 @@ class SignupWithoutLoyaltyVC: UIViewController {
     @IBOutlet weak var btnSignup: UIButton!
     
     let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT)
-    
+    var isCardUser  = false
+    var regNumber   = String()
+    var cardNumber  = String()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -60,16 +63,31 @@ class SignupWithoutLoyaltyVC: UIViewController {
             let name     = txtName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let mobile   = txtMobileNumber.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            //create user object
             let userFields = UserFields(style: "typed", username: [email!], password: [password!], firstName: [name!], email: [email!], mobilePhone: [mobile!])
             let accountFields = AccoutnFields(style: "typed")
             
-            let user = CreateAndRegister(authentication: "anonymous", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
-            
-            progressBar.show()
-            
-            //Make api call
-            createUser(createUser: user)
+            if isCardUser {
+                
+                let user = RegisterWithCard(authentication: "card", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, printedCardNumber: self.cardNumber, registrationCode: self.regNumber, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
+                
+                
+                progressBar.show()
+                
+                //Make api call
+                registerUser(user: user)
+                
+            }else {
+                //create user object
+                
+                
+                let user = CreateAndRegister(authentication: "anonymous", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
+                
+                progressBar.show()
+                
+                //Make api call
+                createUser(createUser: user)
+            }
+           
         }
     }
     
@@ -117,7 +135,54 @@ class SignupWithoutLoyaltyVC: UIViewController {
                 //Server error
                 _ = APIErrorHandling(error: error!, vc: self)
             }
+ 
+        }
+    }
+    
+    func registerUser(user: RegisterWithCard)  {
+        
+        SignupWithLoyaltyAPI.registerUser(user: user){ result, error, status in
             
+            self.progressBar.hide()
+            if error == nil {
+                
+                if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT {
+                    
+                    if result?.oauthTokens != nil {
+                        //save user data in userdefault
+                        AppSessionManager.saveAuthToken(token: result!.oauthTokens!.access_token!)
+                        AppSessionManager.saveRefreshToken(token: result!.oauthTokens!.refresh_token!)
+                        AppSessionManager.savePrintedCardNumber(number: (result!.oauthTokens?.printedCardNumber!)!)
+                        AppSessionManager.saveAuthUserName(userName: user.setUserFields!.username[0])
+                        AppSessionManager.saveAuthPassword(password: user.setUserFields!.password[0])
+                        self.performSegue(withIdentifier: "menu", sender: nil)
+                    }
+                    
+                    
+                    
+                }else if result?.result == Constant.PAYTRONIX_API_USER_EXISTS_RESULT {
+                    
+                    //Show error msg user all ready exsits
+                    Alert.showValidationErrorAlert(on: self, error: Constant.USER_ALLREADY_EXSITS_MESSAGE_BODY)
+                    
+                }else {
+                    
+                    if (result?.errorsByField?["setUserFields/username"]) != nil  {
+                        
+                        //Show error msg user all ready exsits
+                        Alert.showValidationErrorAlert(on: self, error: Constant.USER_ALLREADY_EXSITS_MESSAGE_BODY)
+                        
+                    }else if (result?.errorsByField?["setUserFields/password"]) != nil  {
+                        //Show error msg password invalid
+                        Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_INVALID_MESSAGE_BODY)
+                    }
+                }
+                
+                
+            }else {
+                //Server error
+                _ = APIErrorHandling(error: error!, vc: self)
+            }
             
         }
         

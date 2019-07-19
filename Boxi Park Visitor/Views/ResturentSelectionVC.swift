@@ -29,6 +29,7 @@ class ResturentSelectionVC: UIViewController {
     @IBOutlet weak var qrImage: UIImageView!
     
     //Mark Varialbles
+    //should be let data type and must goes to constant file
     var itemCount          = 5
     var tagId              = 0
     let colorArray         = [#colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0.7740916014, green: 0.3885799944, blue: 0.2412629426, alpha: 1), #colorLiteral(red: 0.9653725028, green: 0.835703373, blue: 0.556709826, alpha: 1), #colorLiteral(red: 0.7598508, green: 0.2347533405, blue: 0.190864265, alpha: 1), #colorLiteral(red: 0.2463579476, green: 0.3117541969, blue: 0.3831449151, alpha: 1), #colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.4114020467, green: 0.6439546347, blue: 0.5185563564, alpha: 1),#colorLiteral(red: 0.133510083, green: 0.1185990497, blue: 0.1235295162, alpha: 1), #colorLiteral(red: 0.1140215024, green: 0.3539430797, blue: 0.4238928854, alpha: 1)]
@@ -57,44 +58,10 @@ class ResturentSelectionVC: UIViewController {
             
             isPageLoad = false
             
-            if Constant.OFFLINE_DATA_ON {
-                
-                if let path = Bundle.main.path(forResource: "menu", ofType: "json") {
-                    do {
-                        let fileUrl = URL(fileURLWithPath: path)
-                        // Getting data from JSON file using the file URL
-                        let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
-                        let decoder = JSONDecoder()
-                        let jsonData = try decoder.decode(MenuData.self, from: data as Data)
-                        self.menuApiData = jsonData
-                        DispatchQueue.main.async {
-                            
-                            self.activityIndicatorView.stopAnimating()
-                            var contentRect = CGRect.zero
-                            
-                            for view in self.scrollViw.subviews {
-                                contentRect = contentRect.union(view.frame)
-                            }
-                            
-                            self.setupScrollView()
-                        }
-                        
-                    } catch {
-                        print("error")
-                    }
-                }
-                    
-                else {
-                    print("no file")
-                }
-            }else {
-                
-                self.activityIndicatorView.startAnimating()
-                self.getResutrantMenus()
-            }
+            self.activityIndicatorView.startAnimating()
+            self.getResutrantMenus()
            
         }
-
     }
     
     //Mark: @IBAction
@@ -143,7 +110,9 @@ class ResturentSelectionVC: UIViewController {
     
     
     //Mark: API CALL
-    fileprivate func getResutrantMenus() {
+    
+    //get menu items from single platform
+    func getResutrantMenus() {
         
         MenuAPI.getMenus() { result, error in
             
@@ -175,6 +144,7 @@ class ResturentSelectionVC: UIViewController {
         }
     }
     
+    //get user infomation from Paytronix
     func getUserInformation()  {
         
         ResturentAPI.userInformation() { result, error, status in

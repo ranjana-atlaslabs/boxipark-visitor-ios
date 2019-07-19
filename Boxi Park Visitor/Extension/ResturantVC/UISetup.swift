@@ -78,8 +78,10 @@ extension ResturentSelectionVC {
         self.qrImage.image = image
     }
     
+    //break into common methods
     func setupScrollView()  {
         
+        //assigning resturent ids from api
         Constant.RETURENT_LOCAL_DATA.forEach { (resturent) in
             
             if self.menuApiData.data.menus.contains(where: {$0.name == resturent.name}) {
@@ -91,7 +93,7 @@ extension ResturentSelectionVC {
         //set scrollView size
         self.scrollViw.contentSize = CGSize(width:self.view.frame.width, height:((view.frame.height/4) * CGFloat(itemCount)) + 60 + viwWeather.frame.height)
         
-        
+        //draw top scroll view - left
         let viw = TopView(frame: CGRect(x: 0, y: viwWeather.frame.height , width: view.frame.width , height: view.frame.height/4 + 40))
         
         var side1 = UIView(frame: CGRect(x: 0, y: 0, width: viw.frame.width/2, height: viw.frame.height))
@@ -102,9 +104,10 @@ extension ResturentSelectionVC {
         side1.tag = tagId
         allResutresntViews.append(side1)
         
+        //draw top scroll view - right
         tagId = tagId + 1
         var side2 = UIView(frame: CGRect(x: viw.frame.width/2, y: 0, width: viw.frame.width/2, height: viw.frame.height))
-        var side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5) , image:  imagesArray[tagId ])
+        var side2Image = createImageView(x: 0, y: 0, width: (side2.frame.width/1.5), height: (side2.frame.height/1.5) , image:  imagesArray[tagId])
         side2.addSubview(side2Image)
         side2Image.center = CGPoint(x: side1.center.x, y: side1.center.y - 20)
         side2.backgroundColor =  colorArray[tagId]
@@ -112,11 +115,12 @@ extension ResturentSelectionVC {
         allResutresntViews.append(side2)
         
         
-        // Add tap gesture recognizer to View
+        // Add tap gesture recognizer to top left view
         var tap1                   = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         side1.addGestureRecognizer(tap1)
         side1.isUserInteractionEnabled = true
         
+        // Add tap gesture recognizer to top right view
         tap1                   = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         side2.addGestureRecognizer(tap1)
         side2.isUserInteractionEnabled = true
@@ -125,6 +129,7 @@ extension ResturentSelectionVC {
         viw.addSubview(side2)
         scrollViw.addSubview(viw)
         
+        //draw middle views
         let count      = itemCount - 2
         let itemWidth  = view.frame.width
         let itemHeight = view.frame.height/5 + viw.frame.height * 2/3
@@ -224,4 +229,18 @@ extension ResturentSelectionVC {
         scrollViw.addSubview(bottomView)
     }
     
+    func createView() -> UIView {
+        
+        let viw = UIView()
+        
+        side1 = UIImageView(frame: CGRect(x: 0, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
+        side1.backgroundColor = colorArray[tagId ]
+        side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/2), height: (side1.frame.height/2), image:  imagesArray[tagId])
+        
+        side1Image.center = CGPoint(x: side1.center.x, y: side1.center.y + 10)
+        
+        side1.addSubview(side1Image)
+        
+        return viw
+    }
 }
