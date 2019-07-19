@@ -233,13 +233,7 @@ extension ResturentSelectionVC {
         
         let viw = UIView()
         
-        side1 = UIImageView(frame: CGRect(x: 0, y: 0, width: middleView.frame.width/2, height: middleView.frame.height))
-        side1.backgroundColor = colorArray[tagId ]
-        side1Image = createImageView(x: 0, y: 0, width: (side1.frame.width/2), height: (side1.frame.height/2), image:  imagesArray[tagId])
-        
-        side1Image.center = CGPoint(x: side1.center.x, y: side1.center.y + 10)
-        
-        side1.addSubview(side1Image)
+     
         
         return viw
     }

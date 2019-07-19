@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Utility {
     
@@ -79,3 +80,63 @@ struct Utility {
     }
 }
 
+extension UILabel {
+    func set(image: UIImage, with text: String) {
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = CGRect(x: 0, y: 0, width: 10, height: 10)
+        let attachmentStr = NSAttributedString(attachment: attachment)
+        
+        let mutableAttributedString = NSMutableAttributedString()
+        
+        let textString = NSAttributedString(string: text + "  ", attributes: [.font: self.font!])
+        mutableAttributedString.append(textString)
+        
+        
+        mutableAttributedString.append(attachmentStr)
+        
+        self.attributedText = mutableAttributedString
+    }
+    
+    func setLineHeight(lineHeight: CGFloat) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 1.0
+        paragraphStyle.lineHeightMultiple = lineHeight
+        paragraphStyle.alignment = self.textAlignment
+        
+        let attrString = NSMutableAttributedString()
+        if (self.attributedText != nil) {
+            attrString.append( self.attributedText!)
+        } else {
+            attrString.append( NSMutableAttributedString(string: self.text!))
+            attrString.addAttribute(NSAttributedString.Key.font, value: self.font ?? UIFont(name: "Gotham-Bold", size: 16)! , range: NSMakeRange(0, attrString.length))
+        }
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        self.attributedText = attrString
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
+
+extension UITextField {
+    
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+}
