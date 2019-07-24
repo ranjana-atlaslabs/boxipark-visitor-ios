@@ -11,8 +11,9 @@ import UIKit
 class HistoryCell: UITableViewCell {
 
 
-    @IBOutlet weak var lblItemName: UILabel!
-    @IBOutlet weak var lblResutrantName: UILabel!
+    @IBOutlet weak var lblResturentName: UILabel!
+    @IBOutlet weak var lblTransactionId: UILabel!
+    @IBOutlet weak var lblDateTime: UILabel!
     @IBOutlet weak var lblPoint: UILabel!
     
     

@@ -42,7 +42,7 @@ struct Alert {
         DispatchQueue.main.async { vc.present(alert, animated: true, completion: nil) }
     }
     
-    private static func showAdavanceAlertOneAction(on vc:UIViewController, with title: String, message: String){
+    private static func showAdavanceAlertOneAction(on vc:UIViewController, with title: String, message: String, isDismissController: Bool){
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
         
         let messageFont = [NSAttributedString.Key.font: UIFont(name: Constant.NORMAL_FONT_NAME, size: 15.0)!]
@@ -53,7 +53,19 @@ struct Alert {
         alert.setValue(messageAttrString, forKey: "attributedMessage")
         
         alert.view.tintColor = #colorLiteral(red: 0.9210870266, green: 0.4134199023, blue: 0.3156435788, alpha: 1)
-        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: {(alert: UIAlertAction!) in vc.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: {
+            
+            
+                (alert: UIAlertAction!) in
+            
+            if isDismissController {
+                vc.dismiss(animated: true, completion: nil)
+
+            }
+            
+            
+            
+        }))
         
         DispatchQueue.main.async {
             
@@ -67,10 +79,28 @@ struct Alert {
     }
     
     private static func showAdavanceAlertForConnectionLost(on vc:UIViewController, with title: String, message: String){
-        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {(alert: UIAlertAction!) in vc.dismiss(animated: true, completion: nil)}))
-        alert.addAction(UIAlertAction(title: "Settings", style: .default, handler: {(alert: UIAlertAction!) in Alert.openWifiSettings()}))
-        DispatchQueue.main.async { vc.present(alert, animated: true, completion: nil) }
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        let messageFont = [NSAttributedString.Key.font: UIFont(name: Constant.NORMAL_FONT_NAME, size: 15.0)!]
+        
+        
+        let messageAttrString = NSMutableAttributedString(string: message, attributes: messageFont)
+        
+        alert.setValue(messageAttrString, forKey: "attributedMessage")
+        alert.view.tintColor = #colorLiteral(red: 0.9210870266, green: 0.4134199023, blue: 0.3156435788, alpha: 1)
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: {(alert: UIAlertAction!) in vc.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "Settings", style: .destructive, handler: {(alert: UIAlertAction!) in Alert.openWifiSettings()}))
+        
+        DispatchQueue.main.async {
+            
+            let subview = (alert.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+            subview.layer.cornerRadius  = 10
+            subview.backgroundColor     = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            
+            vc.present(alert, animated: true, completion: nil)
+            
+        }
     }
 
     static func showWIFIfaildAlert(on vc:UIViewController){
@@ -105,8 +135,8 @@ struct Alert {
         showBasicAlert(on: vc, with: Constant.INVALID_CARD_ERROR_MESSAGE_HEADER, message: Constant.INVALID_CARD_ERROR_MESSAGE_BODY)
     }
     
-    static func showForgetPasswordRequestSuccessAlert(on vc:UIViewController){
-        showAdavanceAlertOneAction(on: vc, with: Constant.FORGOT_VC_SUCESS_HEADER_BODY, message: Constant.FORGOT_VC_SUCESS_MESSAGE_BODY)
+    static func showForgetPasswordRequestSuccessAlert(on vc:UIViewController, isHideController: Bool){
+        showAdavanceAlertOneAction(on: vc, with: Constant.FORGOT_VC_SUCESS_HEADER_BODY, message: Constant.FORGOT_VC_SUCESS_MESSAGE_BODY, isDismissController: isHideController)
     }
     
     //MARK: open Setting page

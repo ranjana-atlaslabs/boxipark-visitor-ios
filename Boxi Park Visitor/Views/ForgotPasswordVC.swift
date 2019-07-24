@@ -58,7 +58,9 @@ class ForgotPasswordVC: UIViewController {
                 if  status == 200 && result != nil {
                     
                     if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT {
-                        Alert.showForgetPasswordRequestSuccessAlert(on: self)
+                        
+                        Alert.showForgetPasswordRequestSuccessAlert(on: self, isHideController: true)
+                        
                     }else {
                         Alert.showValidationErrorAlert(on: self, error: result?.errorMessage ?? "Request unavailable")
                     }

@@ -19,6 +19,7 @@ struct Transaction: Decodable {
     var datetime: String!
     var details: [Detail]!
     var storeName: String!
+    var transactionId: Int!
     
 }
 
@@ -28,4 +29,17 @@ struct Detail: Decodable {
     var balance: String!
     var redeemed: String!
     var walletCode: String!
+}
+
+
+struct TransactionTable {
+    
+    var storeName: String!
+    var accrued: String!
+    var balance: String!
+    var redeemed: String!
+    var walletCode: String!
+    var datetime: String!
+    var transactionId: Int!
+
 }

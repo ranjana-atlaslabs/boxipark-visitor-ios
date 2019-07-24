@@ -12,14 +12,11 @@ import Alamofire
 struct ForgotAPI {
 
     static func resetPassword(user: ForgotPassword,completion: @escaping (ForgotPasswordResult?, Error?, Int?) -> Void) {
-    
-        print(user)
+        
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(user)
         
         let url = Constant.PAYTRONIX_BASE_URL + "guestmanagement/generateAndSendGuestResetPasswordCode.json"
- 
-        print(url)
         
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = HTTPMethod.post.rawValue

@@ -14,6 +14,7 @@ class HistroyVC: UIViewController {
     @IBOutlet weak var lblPoints: UILabel!
     
     var historyData: TransationResult!
+    var histroyTrasaction: [TransactionTable]!
     var points = String()
     
     override func viewDidLoad() {
@@ -44,9 +45,19 @@ class HistroyVC: UIViewController {
             if status == 200 && result != nil {
                 
                 self.historyData = result
-                print(result)
+                
+                self.historyData.transactions.forEach({ (transaction) in
+                    
+                    if transaction.details != nil && transaction.details.count > 0 {
+                        
+                        transaction.details.forEach({ (trans) in
+                            
+                            let tableItem = TransactionTable(storeName: transaction.storeName, accrued: trans.accrued, balance: trans.balance, redeemed: trans.redeemed, walletCode: trans.walletCode, datetime: transaction.datetime, transactionId: transaction.transactionId)
+                            self.histroyTrasaction.append(tableItem)
+                        })
+                    }
+                })
             }
-            
         }
     }
     
