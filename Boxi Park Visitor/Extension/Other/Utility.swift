@@ -78,6 +78,30 @@ struct Utility {
             
         }
     }
+    
+    static func stringToDate(date: String, formaterType: String) -> Date {
+        
+        let formater = DateFormatter()
+        formater.dateFormat = formaterType
+        
+        
+        let date = formater.date(from: date)
+        
+        return date ?? Date()
+        
+    }
+    
+    static func dateToString(date: Date, formaterType: String) -> String {
+        
+        let formater = DateFormatter()
+        formater.dateFormat = formaterType
+        
+        
+        let date = formater.string(from: date)
+        
+        return date
+        
+    }
 }
 
 extension UILabel {
