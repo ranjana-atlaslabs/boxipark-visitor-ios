@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var lblForgotPassword: UILabel!
     @IBOutlet weak var lblSignUp: UILabel!
     
-    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT)
+    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT, isDarMode: false)
 
     
     override func viewDidLoad() {

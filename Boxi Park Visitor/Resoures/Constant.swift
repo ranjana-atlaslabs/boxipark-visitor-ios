@@ -49,6 +49,7 @@ struct Constant {
     public static let PAYTRONIX_API_USER_EXISTS_RESULT          = "uniquenessConflict"
     public static var MINIMUM_PASSWORD_CHARACHTERS              = 8
     public static var ANONYMOUS_AUTH_TYPE                       = "anonymous"
+    public static var AUTH_AUTH_TYPE                            = "oauth"
     //-------------------------------
     
     public static var SHOW_ERROR_MSG = false
@@ -69,10 +70,12 @@ struct Constant {
     
     public static let VALIDATION_ERROR_MESSAGE_HEADER           = "Error"
     public static let USERNAME_REQUIRED_MESSAGE_BODY            = "Username is required"
+    public static let FULL_NAME_REQUIRED_MESSAGE_BODY           = "Full name can't be empty"
     public static let CARD_REQUIRED_MESSAGE_BODY                = "Loyalty card number is required"
     public static let REG_CARD_REQUIRED_MESSAGE_BODY            = "Register number is required"
     public static let EMAIL_REQUIRED_MESSAGE_BODY               = "Email is required"
     public static let MOBILE_REQUIRED_MESSAGE_BODY              = "Mobile number is required"
+    public static let MOBILE_EMPTY_MESSAGE_BODY                 = "Mobile number can't be empty"
     public static let PASSWORD_REQUIRED_MESSAGE_BODY            = "Password is required"
     
     public static let EMAIL_INVALID_MESSAGE_BODY                = "Invalid email"
@@ -91,4 +94,5 @@ struct Constant {
     public static let FORGOT_VC_SUCESS_MESSAGE_BODY             = "Request is success. Check your mail"
     public static let FORGOT_VC_SUCESS_HEADER_BODY              = "Success"
 
+    public static let PROFILE_UPDATE_MESSAGE_BODY               = "Profile update success"
 }

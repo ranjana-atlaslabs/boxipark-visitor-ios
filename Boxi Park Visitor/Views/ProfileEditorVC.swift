@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileEditorVC: UIViewController {
-
+    
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtMobileNumber: UITextField!
@@ -23,13 +23,21 @@ class ProfileEditorVC: UIViewController {
     @IBOutlet weak var btnRestPassword: UIButton!
     
     var userInformations: UserInformationResult!
-
+    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT, isDarMode: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupview()
-       
+        
     }
+    
+    //Called when the user click on the view (outside the UITextField)
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
     
     func setupview()  {
         btnSave.layer.cornerRadius = 12
@@ -46,12 +54,15 @@ class ProfileEditorVC: UIViewController {
         //lblEditProfile.set(image: #imageLiteral(resourceName: "edit_icon"), with: "Edit profile")
         
         dataBindFromApi()
+        
+        self.view.addSubview(progressBar)
+        progressBar.hide()
     }
     
     func dataBindFromApi()  {
         
         if let username = userInformations.fields.firstName {
-             txtUsername.text = username
+            txtUsername.text = username
         }
         
         if let email = userInformations.fields.email {
@@ -61,7 +72,7 @@ class ProfileEditorVC: UIViewController {
         if let mobile = userInformations.fields.mobilePhone {
             txtMobileNumber.text = mobile
         }
-       
+        
     }
     
     @IBAction func restBtnTap(_ sender: UIButton) {
@@ -70,8 +81,11 @@ class ProfileEditorVC: UIViewController {
         
         let user      = ForgotPassword(authentication: Constant.ANONYMOUS_AUTH_TYPE, merchantId: Constant.MERCHANT_ID, username: email!)
         
+        self.progressBar.show()
+        
         ForgotAPI.resetPassword(user: user) { result, error, status in
-                    
+            
+            self.progressBar.hide()
             if  status == 200 && result != nil {
                 
                 if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT {
@@ -88,6 +102,50 @@ class ProfileEditorVC: UIViewController {
         }
         
     }
+    
+    @IBAction func saveBtnTap(_ sender: Any) {
+        
+        if validationInputFields() {
+            
+            let name     = txtUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let phone    = txtMobileNumber.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            let userFields = UserFields(style: "typed", username: [txtEmail.text!], password: [AppSessionManager.getAuthPassword()!], firstName: [name!], email: [txtEmail.text!], mobilePhone: [phone!])
+            let accountFields = AccoutnFields(style: "typed")
+            
+            let user = ProfileEdit(authentication: "card", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, accountId: userInformations.accountIds[0], enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
+            
+
+            self.progressBar.show()
+            
+            ProfileAPI.updateUser(user: user) { result , error, status in
+                
+                self.progressBar.hide()
+                
+                if status == 200 && result != nil {
+                    
+                    if result?.result == Constant.PAYTRONIX_API_CARD_CREATED_SUCCESS_RESULT {
+                        Alert.showUpdateSucessAlert(on: self)
+                    }else {
+                        Alert.showFailReuqestAlert(on: self)   
+                    }
+                    
+                }else if status == 403 {
+                    
+                    Utility.getAccessTokenUsingRefreshToken()
+                    
+                }else if error != nil {
+                    
+                    //Server error
+                    _ = APIErrorHandling(error: error!, vc: self)
+                    
+                }
+            }
+            
+        }
+        
+    }
+    
     
     
     @IBAction func btnUploadBtnTap(_ sender: UIButton) {

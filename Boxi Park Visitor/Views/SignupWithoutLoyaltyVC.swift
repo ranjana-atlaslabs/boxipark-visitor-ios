@@ -16,7 +16,7 @@ class SignupWithoutLoyaltyVC: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnSignup: UIButton!
     
-    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT)
+    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT, isDarMode: false)
     var isCardUser  = false
     var regNumber   = String()
     var cardNumber  = String()

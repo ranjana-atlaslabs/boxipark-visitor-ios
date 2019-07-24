@@ -139,6 +139,10 @@ struct Alert {
         showAdavanceAlertOneAction(on: vc, with: Constant.FORGOT_VC_SUCESS_HEADER_BODY, message: Constant.FORGOT_VC_SUCESS_MESSAGE_BODY, isDismissController: isHideController)
     }
     
+    static func showUpdateSucessAlert(on vc:UIViewController){
+        showBasicAlert(on: vc, with: "", message: Constant.PROFILE_UPDATE_MESSAGE_BODY)
+    }
+    
     //MARK: open Setting page
     private static func openWifiSettings() {
 

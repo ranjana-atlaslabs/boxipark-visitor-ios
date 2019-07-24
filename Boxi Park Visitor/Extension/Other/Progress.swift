@@ -18,12 +18,18 @@ class ProgressHUD: UIVisualEffectView {
         }
     }
     
-    let activityIndictor: UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+    var activityIndictor: UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+    var blurEffect = UIBlurEffect(style: .light)
     let label: UILabel = UILabel()
-    let blurEffect = UIBlurEffect(style: .light)
     let vibrancyView: UIVisualEffectView
     
-    init(text: String) {
+    init(text: String, isDarMode:Bool) {
+        
+        if isDarMode {
+            activityIndictor = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
+            blurEffect       = UIBlurEffect(style: .dark)
+        }
+        
         self.text = text
         self.vibrancyView = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffect))
         super.init(effect: blurEffect)

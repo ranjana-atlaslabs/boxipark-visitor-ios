@@ -16,7 +16,7 @@ class SignupWithLoyaltyVC: UIViewController {
     @IBOutlet weak var txtLoyaltyNumber: UITextField!
     @IBOutlet weak var txtRegisterNumber: UITextField!
     
-    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT)
+    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT, isDarMode: false)
     var isCardUser = false
     
     override func viewDidLoad() {
