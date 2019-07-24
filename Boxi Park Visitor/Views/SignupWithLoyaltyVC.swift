@@ -16,7 +16,7 @@ class SignupWithLoyaltyVC: UIViewController {
     @IBOutlet weak var txtLoyaltyNumber: UITextField!
     @IBOutlet weak var txtRegisterNumber: UITextField!
     
-    let progressBar = ProgressHUD(text: Constant.VALIDATING_MESSAGE_TEXT)
+    let progressBar = ProgressHUD(text: Constant.WAIT_MESSAGE_TEXT)
     var isCardUser = false
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class SignupWithLoyaltyVC: UIViewController {
         txtLoyaltyNumber.setLeftPaddingPoints(20)
         txtRegisterNumber.setLeftPaddingPoints(20)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.tapFunction))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SignupWithLoyaltyVC.signUpLblTapFunction))
         lblSignup.isUserInteractionEnabled = true
         lblSignup.addGestureRecognizer(tap)
         
@@ -57,11 +57,15 @@ class SignupWithLoyaltyVC: UIViewController {
         }
     }
     
-    @objc func tapFunction(sender:UITapGestureRecognizer) {
+    @objc func signUpLblTapFunction(sender:UITapGestureRecognizer) {
         self.isCardUser = false
         self.performSegue(withIdentifier: "signWithoutLoyalty", sender: nil)
     }
  
+    @IBAction func backBtnTap(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func signBtnTap(_ sender: UIButton) {
         
         //Validate user inputs

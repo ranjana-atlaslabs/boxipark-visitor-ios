@@ -29,6 +29,7 @@ struct SignupWithoutLoyaltyAPI {
             case .success( _):
                 
                 do {
+                    
                     let result =  try JSONDecoder().decode(CreateAndRegisterResult.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }

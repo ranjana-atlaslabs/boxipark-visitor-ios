@@ -33,6 +33,10 @@
 		55179F1D22A527AD00AE4784 /* MenuAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F1C22A527AD00AE4784 /* MenuAPIService.swift */; };
 		55179F1F22A5280900AE4784 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F1E22A5280900AE4784 /* Constant.swift */; };
 		55179F2222A5288300AE4784 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55179F2122A5288300AE4784 /* Menu.swift */; };
+		5523092F22E56DB5009BCB08 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523092E22E56DB5009BCB08 /* ForgotPasswordVC.swift */; };
+		5523093122E56FA8009BCB08 /* ForgotAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523093022E56FA8009BCB08 /* ForgotAPIService.swift */; };
+		5523093322E5705C009BCB08 /* ForgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523093222E5705C009BCB08 /* ForgotPasswordModel.swift */; };
+		5523093622E572B8009BCB08 /* ForgotPasswordVCValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523093522E572B8009BCB08 /* ForgotPasswordVCValidations.swift */; };
 		5570B39C22A7BFFE000CDB6F /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 5570B39B22A7BFFE000CDB6F /* menu.json */; };
 		55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */; };
 		55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55732FEC228CFBBC00B8BBB4 /* ResturentSelectionVC.swift */; };
@@ -60,6 +64,12 @@
 		55CF2E2722E0168E007775EC /* SignupWithCardValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF2E2622E0168E007775EC /* SignupWithCardValidation.swift */; };
 		55CF2E2922E01D48007775EC /* SignupWithLoyaltyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF2E2822E01D48007775EC /* SignupWithLoyaltyAPIService.swift */; };
 		55CF2E2C22E090AB007775EC /* MenuTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CF2E2B22E090AB007775EC /* MenuTable.swift */; };
+		55D9A83B22E6DEFB00D44E5A /* HistroyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9A83A22E6DEFB00D44E5A /* HistroyVC.swift */; };
+		55D9A83E22E6DFD000D44E5A /* HistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9A83D22E6DFD000D44E5A /* HistoryTable.swift */; };
+		55D9A84022E6E77500D44E5A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9A83F22E6E77500D44E5A /* HistoryCell.swift */; };
+		55D9A84222E6F82D00D44E5A /* AccountInformationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9A84122E6F82D00D44E5A /* AccountInformationResult.swift */; };
+		55D9A84422E7060600D44E5A /* HistroyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9A84322E7060600D44E5A /* HistroyAPIService.swift */; };
+		55D9A84622E7071400D44E5A /* HistroyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9A84522E7071400D44E5A /* HistroyModel.swift */; };
 		55E50C3E22D837C50076354B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C3D22D837C50076354B /* Utility.swift */; };
 		55E50C4222D848050076354B /* SignupWithoutLoyaltyValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4122D848050076354B /* SignupWithoutLoyaltyValidations.swift */; };
 		55E50C4422D8523A0076354B /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E50C4322D8523A0076354B /* Progress.swift */; };
@@ -116,6 +126,10 @@
 		551DD69B229FC62D00526089 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		551DD69C229FC68200526089 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
 		551DD69D229FC6C800526089 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
+		5523092E22E56DB5009BCB08 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		5523093022E56FA8009BCB08 /* ForgotAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotAPIService.swift; sourceTree = "<group>"; };
+		5523093222E5705C009BCB08 /* ForgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModel.swift; sourceTree = "<group>"; };
+		5523093522E572B8009BCB08 /* ForgotPasswordVCValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVCValidations.swift; sourceTree = "<group>"; };
 		5570B39B22A7BFFE000CDB6F /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		55732FE7228CFBBC00B8BBB4 /* Boxi Park Visitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boxi Park Visitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55732FEA228CFBBC00B8BBB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +163,12 @@
 		55CF2E2622E0168E007775EC /* SignupWithCardValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithCardValidation.swift; sourceTree = "<group>"; };
 		55CF2E2822E01D48007775EC /* SignupWithLoyaltyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithLoyaltyAPIService.swift; sourceTree = "<group>"; };
 		55CF2E2B22E090AB007775EC /* MenuTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTable.swift; sourceTree = "<group>"; };
+		55D9A83A22E6DEFB00D44E5A /* HistroyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistroyVC.swift; sourceTree = "<group>"; };
+		55D9A83D22E6DFD000D44E5A /* HistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTable.swift; sourceTree = "<group>"; };
+		55D9A83F22E6E77500D44E5A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryCell.swift; path = "Boxi Park Visitor/Extension/TabelCell/HistoryCell.swift"; sourceTree = SOURCE_ROOT; };
+		55D9A84122E6F82D00D44E5A /* AccountInformationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationResult.swift; sourceTree = "<group>"; };
+		55D9A84322E7060600D44E5A /* HistroyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistroyAPIService.swift; sourceTree = "<group>"; };
+		55D9A84522E7071400D44E5A /* HistroyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistroyModel.swift; sourceTree = "<group>"; };
 		55E50C3D22D837C50076354B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		55E50C4122D848050076354B /* SignupWithoutLoyaltyValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithoutLoyaltyValidations.swift; sourceTree = "<group>"; };
 		55E50C4322D8523A0076354B /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
@@ -223,6 +243,7 @@
 		55027E5D22953C9C0018589F /* TabelCell */ = {
 			isa = PBXGroup;
 			children = (
+				55D9A83F22E6E77500D44E5A /* HistoryCell.swift */,
 				55027E5B22953C670018589F /* ProfileTC.swift */,
 				55027E60229557A40018589F /* MenuItem.swift */,
 				55FC497122A65CC000C11659 /* SubHeader.swift */,
@@ -246,6 +267,9 @@
 				55AAEAF322DC7D94001BA981 /* LoginModel.swift */,
 				55BA6D0B22DECA69000338B4 /* UserInformationModel.swift */,
 				55CF2E2322E01574007775EC /* RegisterWithCard.swift */,
+				5523093222E5705C009BCB08 /* ForgotPasswordModel.swift */,
+				55D9A84122E6F82D00D44E5A /* AccountInformationResult.swift */,
+				55D9A84522E7071400D44E5A /* HistroyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +283,14 @@
 				551DD699229FC2A100526089 /* Gotham-Light.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5523093422E5728B009BCB08 /* ForgotPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				5523093522E572B8009BCB08 /* ForgotPasswordVCValidations.swift */,
+			);
+			path = ForgotPasswordVC;
 			sourceTree = "<group>";
 		};
 		55732FDE228CFBBC00B8BBB4 = {
@@ -338,6 +370,8 @@
 				55003AA222963FAA00782CFD /* MapVC.swift */,
 				5500D7872296560D00D0586D /* ProfileEditorVC.swift */,
 				550E8A1C2296A7CA00C983F4 /* OfferVC.swift */,
+				5523092E22E56DB5009BCB08 /* ForgotPasswordVC.swift */,
+				55D9A83A22E6DEFB00D44E5A /* HistroyVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +395,8 @@
 				55AAEAF722DC8580001BA981 /* LoginVC */,
 				55E50C4022D847CF0076354B /* SignupWithoutLoyaltyVC */,
 				55CF2E2522E015E2007775EC /* SignupWithCard */,
+				5523093422E5728B009BCB08 /* ForgotPasswordVC */,
+				55D9A83C22E6DFB100D44E5A /* HistoryVC */,
 				55C09F3F22D2ED7400FB5C4D /* Other */,
 				55C09F3C22D2ED1D00FB5C4D /* APIService */,
 				55027E5D22953C9C0018589F /* TabelCell */,
@@ -395,6 +431,8 @@
 				55CF2E2822E01D48007775EC /* SignupWithLoyaltyAPIService.swift */,
 				55AAEAF522DC80C8001BA981 /* LoginAPIService.swift */,
 				55BA6D0922DEC9C0000338B4 /* ResturentAPIService.swift */,
+				5523093022E56FA8009BCB08 /* ForgotAPIService.swift */,
+				55D9A84322E7060600D44E5A /* HistroyAPIService.swift */,
 				55C09F3D22D2ED4F00FB5C4D /* APIErrorHandling.swift */,
 				55C09F4422D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift */,
 			);
@@ -428,6 +466,14 @@
 				55CF2E2B22E090AB007775EC /* MenuTable.swift */,
 			);
 			path = "Menu VC";
+			sourceTree = "<group>";
+		};
+		55D9A83C22E6DFB100D44E5A /* HistoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				55D9A83D22E6DFD000D44E5A /* HistoryTable.swift */,
+			);
+			path = HistoryVC;
 			sourceTree = "<group>";
 		};
 		55E50C3F22D8449C0076354B /* StoryBoard */ = {
@@ -698,16 +744,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				55003C612293A82F00C8D12F /* MainWeatherVC.swift in Sources */,
+				5523093622E572B8009BCB08 /* ForgotPasswordVCValidations.swift in Sources */,
+				5523093122E56FA8009BCB08 /* ForgotAPIService.swift in Sources */,
 				55179F1F22A5280900AE4784 /* Constant.swift in Sources */,
 				55003AA322963FAA00782CFD /* MapVC.swift in Sources */,
 				55CF2E2922E01D48007775EC /* SignupWithLoyaltyAPIService.swift in Sources */,
 				55E50C4622D85C660076354B /* SignupWithoutLoyaltyModel.swift in Sources */,
+				55D9A83E22E6DFD000D44E5A /* HistoryTable.swift in Sources */,
 				55732FED228CFBBC00B8BBB4 /* ResturentSelectionVC.swift in Sources */,
 				55E50C4222D848050076354B /* SignupWithoutLoyaltyValidations.swift in Sources */,
+				55D9A83B22E6DEFB00D44E5A /* HistroyVC.swift in Sources */,
+				55D9A84222E6F82D00D44E5A /* AccountInformationResult.swift in Sources */,
 				55027E5C22953C670018589F /* ProfileTC.swift in Sources */,
 				55BA6D0A22DEC9C0000338B4 /* ResturentAPIService.swift in Sources */,
 				55CF2E2722E0168E007775EC /* SignupWithCardValidation.swift in Sources */,
 				55CF2E2422E01574007775EC /* RegisterWithCard.swift in Sources */,
+				55D9A84022E6E77500D44E5A /* HistoryCell.swift in Sources */,
 				550E8A1D2296A7CA00C983F4 /* OfferVC.swift in Sources */,
 				55AAEAFB22DC8605001BA981 /* LoginValidations.swift in Sources */,
 				55C09F4122D2ED8F00FB5C4D /* Alert.swift in Sources */,
@@ -725,17 +777,21 @@
 				55732FEB228CFBBC00B8BBB4 /* AppDelegate.swift in Sources */,
 				55E50C4822D865A40076354B /* SignupWithoutLoyaltyAPIService.swift in Sources */,
 				55027E5F22954BE30018589F /* MenuVC.swift in Sources */,
+				55D9A84422E7060600D44E5A /* HistroyAPIService.swift in Sources */,
 				55C09F4522D2F91000FB5C4D /* NetworkAvalabilityErrorHandling .swift in Sources */,
 				55003C632293A98C00C8D12F /* LoginVC.swift in Sources */,
 				550E8A1B22965BB300C983F4 /* BottomBorder.swift in Sources */,
 				55AAEAF222DC6666001BA981 /* AppSessionManager.swift in Sources */,
 				55C09F4322D2F8AC00FB5C4D /* Reachability.swift in Sources */,
+				5523093322E5705C009BCB08 /* ForgotPasswordModel.swift in Sources */,
+				5523092F22E56DB5009BCB08 /* ForgotPasswordVC.swift in Sources */,
 				55AAEAF422DC7D94001BA981 /* LoginModel.swift in Sources */,
 				55E50C3E22D837C50076354B /* Utility.swift in Sources */,
 				55003C652293B41D00C8D12F /* SignupWithLoyaltyVC.swift in Sources */,
 				55003C672293B79F00C8D12F /* SignupWithoutLoyaltyVC.swift in Sources */,
 				55AAEAF622DC80C8001BA981 /* LoginAPIService.swift in Sources */,
 				55027E61229557A40018589F /* MenuItem.swift in Sources */,
+				55D9A84622E7071400D44E5A /* HistroyModel.swift in Sources */,
 				55BA6D1122DEDB8E000338B4 /* BarCodeReader.swift in Sources */,
 				55BA6D0C22DECA69000338B4 /* UserInformationModel.swift in Sources */,
 				55BA6D0F22DEDB26000338B4 /* UISetup.swift in Sources */,

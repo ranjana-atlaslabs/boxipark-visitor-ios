@@ -44,10 +44,11 @@ struct Constant {
     public static let CLIENT_ID          = "V89673jnA72839A-237Ih23kj623hjksa732hHS722"
     public static let SECRET             = "Nk28Sh2j*2ds"
     
-    public static let PAYTRONIX_API_SUCCESS_RESULT = "success"
+    public static let PAYTRONIX_API_SUCCESS_RESULT              = "success"
     public static let PAYTRONIX_API_CARD_CREATED_SUCCESS_RESULT = "cardCreatedSuccess"
-    public static let PAYTRONIX_API_USER_EXISTS_RESULT = "uniquenessConflict"
-    public static var MINIMUM_PASSWORD_CHARACHTERS = 8
+    public static let PAYTRONIX_API_USER_EXISTS_RESULT          = "uniquenessConflict"
+    public static var MINIMUM_PASSWORD_CHARACHTERS              = 8
+    public static var ANONYMOUS_AUTH_TYPE                       = "anonymous"
     //-------------------------------
     
     public static var SHOW_ERROR_MSG = false
@@ -78,11 +79,16 @@ struct Constant {
     public static let MOBILE_INVALID_MESSAGE_BODY               = "Invalid mobile number"
     public static let PASSWORD_INVALID_MESSAGE_BODY             = "Password should have 7 more characters"
     public static let USER_ALLREADY_EXSITS_MESSAGE_BODY         = "User already exist in the system"
+    public static let INVALID_PHONE_NUMBER_MESSAGE_BODY         = "Invalid mobile number"
     
     public static let INVALID_LOGIN_ERROR_MESSAGE_HEADER        = "Error"
     public static let INVALID_LOGIN_ERROR_MESSAGE_BODY          = "Invalid username or password"
     
     public static let INVALID_CARD_ERROR_MESSAGE_HEADER         = "Error"
     public static let INVALID_CARD_ERROR_MESSAGE_BODY           = "Invalid card credentials"
+    
+    public static let FORGOT_VC_ERROR_MESSAGE_BODY              = "Email is required"
+    public static let FORGOT_VC_SUCESS_MESSAGE_BODY             = "Request is success. Check your mail"
+    public static let FORGOT_VC_SUCESS_HEADER_BODY              = "Success"
 
 }

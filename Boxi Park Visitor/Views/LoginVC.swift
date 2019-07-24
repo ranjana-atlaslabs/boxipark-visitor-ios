@@ -35,9 +35,13 @@ class LoginVC: UIViewController {
         txtUsername.setLeftPaddingPoints(20)
         txtPassword.setLeftPaddingPoints(20)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.tapFunction))
+        var tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.signUpLblTapFunction))
         lblSignUp.isUserInteractionEnabled = true
         lblSignUp.addGestureRecognizer(tap)
+        
+        tap = UITapGestureRecognizer(target: self, action: #selector(LoginVC.forgetLblTapFunction))
+        lblForgotPassword.isUserInteractionEnabled = true
+        lblForgotPassword.addGestureRecognizer(tap)
         
         self.view.addSubview(progressBar)
         progressBar.hide()
@@ -48,9 +52,14 @@ class LoginVC: UIViewController {
         loginUsingPassword()
     }
     
-    @objc func tapFunction(sender:UITapGestureRecognizer) {
+    @objc func signUpLblTapFunction(sender:UITapGestureRecognizer) {
         
         self.performSegue(withIdentifier: "signup", sender: nil)
+    }
+    
+    @objc func forgetLblTapFunction(sender:UITapGestureRecognizer) {
+        
+        self.performSegue(withIdentifier: "forgot", sender: nil)
     }
     
     func loginUsingPassword()  {
@@ -61,7 +70,7 @@ class LoginVC: UIViewController {
             let password = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let name     = txtUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            let user = LoginWithCredentials(authentication: "anonymous",
+            let user = LoginWithCredentials(authentication: Constant.ANONYMOUS_AUTH_TYPE,
                                             client_id: Constant.CLIENT_ID,
                                             client_secret: Constant.SECRET,
                                             grant_type: "password",
@@ -92,23 +101,8 @@ class LoginVC: UIViewController {
                 }
                 
             }
-            
+        }else{
+            self.progressBar.hide()
         }
-    }
-}
-
-
-extension UITextField {
-    
-    func setLeftPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-    
-    func setRightPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
     }
 }

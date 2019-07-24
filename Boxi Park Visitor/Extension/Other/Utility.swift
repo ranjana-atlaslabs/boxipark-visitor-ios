@@ -27,7 +27,7 @@ struct Utility {
     static func getAccessTokenUsingRefreshToken(){
         
         
-        let model = LoginWithRefreshToken(authentication: "anonymous",
+        let model = LoginWithRefreshToken(authentication: Constant.ANONYMOUS_AUTH_TYPE,
                                           client_id: Constant.CLIENT_ID,
                                           client_secret: Constant.SECRET,
                                           grant_type: "refresh_token",
@@ -55,7 +55,7 @@ struct Utility {
     }
     
     static func getAccessTokenUsingCredential(){
-        let user = LoginWithCredentials(authentication: "anonymous",
+        let user = LoginWithCredentials(authentication: Constant.ANONYMOUS_AUTH_TYPE,
                                         client_id: Constant.CLIENT_ID,
                                         client_secret: Constant.SECRET,
                                         grant_type: "password",

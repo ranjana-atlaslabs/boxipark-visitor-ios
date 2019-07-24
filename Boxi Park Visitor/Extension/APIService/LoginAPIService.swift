@@ -57,6 +57,8 @@ struct LoginAPI {
         request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
         
+       
+        
         Alamofire.request(request).responseJSON { response in
             switch response.result {
                 

@@ -14,7 +14,7 @@ extension ResturentSelectionVC {
     func setupview()  {
         
         getUserInformation()
-        
+
         self.lblNoData.isHidden = true
         
         //notify page is load done

@@ -1,29 +1,30 @@
 //
-//  ProfileTC.swift
+//  HistoryCell.swift
 //  Boxi Park Visitor
 //
-//  Created by Atlas-Labs on 5/22/19.
+//  Created by Atlas-Labs on 7/23/19.
 //  Copyright © 2019 Atlas-Labs. All rights reserved.
 //
 
 import UIKit
 
-class ProfileTC: UITableViewCell {
+class HistoryCell: UITableViewCell {
 
-    @IBOutlet weak var lblHeader: UILabel!
-    @IBOutlet weak var lblValue: UILabel!
-    @IBOutlet weak var btnHistory: UIButton!
+
+    @IBOutlet weak var lblItemName: UILabel!
+    @IBOutlet weak var lblResutrantName: UILabel!
+    @IBOutlet weak var lblPoint: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        
-        btnHistory?.layer.cornerRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
 
 }

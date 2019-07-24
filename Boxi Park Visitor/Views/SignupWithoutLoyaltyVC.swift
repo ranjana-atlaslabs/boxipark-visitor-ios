@@ -9,7 +9,7 @@
 import UIKit
 
 class SignupWithoutLoyaltyVC: UIViewController {
-
+    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtMobileNumber: UITextField!
@@ -20,7 +20,7 @@ class SignupWithoutLoyaltyVC: UIViewController {
     var isCardUser  = false
     var regNumber   = String()
     var cardNumber  = String()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -33,7 +33,7 @@ class SignupWithoutLoyaltyVC: UIViewController {
         self.view.endEditing(true)
     }
     
-
+    
     func setupView()   {
         
         getEnrollmentConfig()
@@ -51,6 +51,10 @@ class SignupWithoutLoyaltyVC: UIViewController {
         
         self.view.addSubview(progressBar)
         progressBar.hide()
+    }
+    
+    @IBAction func backBtnTap(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func signupBtnTap(_ sender: Any) {
@@ -80,14 +84,14 @@ class SignupWithoutLoyaltyVC: UIViewController {
                 //create user object
                 
                 
-                let user = CreateAndRegister(authentication: "anonymous", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
+                let user = CreateAndRegister(authentication: Constant.ANONYMOUS_AUTH_TYPE, client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, cardTemplateCode: Constant.CARD_TEMPLATE_CODE, activationStoreCode: Constant.SOTRE_CODE, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
                 
                 progressBar.show()
                 
                 //Make api call
                 createUser(createUser: user)
             }
-           
+            
         }
     }
     
@@ -127,6 +131,10 @@ class SignupWithoutLoyaltyVC: UIViewController {
                     }else if (result?.errorsByField?["setUserFields/password"]) != nil  {
                         //Show error msg password invalid
                         Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_INVALID_MESSAGE_BODY)
+                        
+                    }else if (result?.errorsByField?["setUserFields/mobilePhone"]) != nil  {
+                        //Show error msg mobilePhone invalid
+                        Alert.showValidationErrorAlert(on: self, error: Constant.INVALID_PHONE_NUMBER_MESSAGE_BODY)
                     }
                 }
                 
@@ -135,7 +143,7 @@ class SignupWithoutLoyaltyVC: UIViewController {
                 //Server error
                 _ = APIErrorHandling(error: error!, vc: self)
             }
- 
+            
         }
     }
     
@@ -203,7 +211,7 @@ class SignupWithoutLoyaltyVC: UIViewController {
                             Constant.MINIMUM_PASSWORD_CHARACHTERS = obj.element.minLength
                         }
                     }
-
+                    
                 }else {
                     print(result?.result! ?? "")
                 }

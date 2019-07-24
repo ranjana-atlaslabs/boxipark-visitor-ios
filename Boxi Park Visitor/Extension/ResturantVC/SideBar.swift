@@ -16,15 +16,25 @@ extension ResturentSelectionVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell            = tableView.dequeueReusableCell(withIdentifier: "data", for: indexPath) as! ProfileTC
-        cell.lblHeader.text = profileDetailsArry[indexPath.row]
-        cell.lblValue.text  = profileValueArry[indexPath.row]
-        cell.selectionStyle = .none
-        return cell
+        if indexPath.row == self.profileDetailsArry.count - 1 {
+            let cell            = tableView.dequeueReusableCell(withIdentifier: "histroy", for: indexPath) as! ProfileTC
+            cell.lblHeader.text = profileDetailsArry[indexPath.row]
+            cell.lblValue.text  = profileValueArry[indexPath.row]
+            cell.selectionStyle = .none
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.width)
+            return cell
+        }else {
+            let cell            = tableView.dequeueReusableCell(withIdentifier: "data", for: indexPath) as! ProfileTC
+            cell.lblHeader.text = profileDetailsArry[indexPath.row]
+            cell.lblValue.text  = profileValueArry[indexPath.row]
+            cell.selectionStyle = .none
+            return cell
+        }
+      
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return 75
     }
     
 }

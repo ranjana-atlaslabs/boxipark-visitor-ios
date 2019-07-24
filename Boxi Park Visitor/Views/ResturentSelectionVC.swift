@@ -34,8 +34,8 @@ class ResturentSelectionVC: UIViewController {
     var tagId              = 0
     let colorArray         = [#colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0.7740916014, green: 0.3885799944, blue: 0.2412629426, alpha: 1), #colorLiteral(red: 0.9653725028, green: 0.835703373, blue: 0.556709826, alpha: 1), #colorLiteral(red: 0.7598508, green: 0.2347533405, blue: 0.190864265, alpha: 1), #colorLiteral(red: 0.2463579476, green: 0.3117541969, blue: 0.3831449151, alpha: 1), #colorLiteral(red: 0.9520129561, green: 0.9357979894, blue: 0.893722713, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.4114020467, green: 0.6439546347, blue: 0.5185563564, alpha: 1),#colorLiteral(red: 0.133510083, green: 0.1185990497, blue: 0.1235295162, alpha: 1), #colorLiteral(red: 0.1140215024, green: 0.3539430797, blue: 0.4238928854, alpha: 1)]
     let imagesArray        = [ #imageLiteral(resourceName: "barnonalogon"), #imageLiteral(resourceName: "canoli_logo"), #imageLiteral(resourceName: "lacajitalogon"), #imageLiteral(resourceName: "fowl flay"), #imageLiteral(resourceName: "hopslogon"), #imageLiteral(resourceName: "grilllogon"), #imageLiteral(resourceName: "clawlogon"), #imageLiteral(resourceName: "naughtylogon"), #imageLiteral(resourceName: "barxilogon"), #imageLiteral(resourceName: "beforelogon")]
-    let profileDetailsArry = ["Card Number", "Registration Number", "Call Support"]
-    var profileValueArry   = ["", "", "+95 285 299 653"]
+    let profileDetailsArry = ["Card Number", "Registration Number", "Call Support", "Loyalty Points"]
+    var profileValueArry   = ["", "", "+95 285 299 653", "0.00"]
     var isSidebarOpen      = false
     var selectedImage      = UIView()
     var isPageLoad         = false
@@ -91,6 +91,11 @@ class ResturentSelectionVC: UIViewController {
         self.performSegue(withIdentifier: "Main", sender: nil)
     }
     
+    @IBAction func historyBtnTap(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "history", sender: nil)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "menu" {
             if let vc = segue.destination as? MenuVC {
@@ -104,6 +109,13 @@ class ResturentSelectionVC: UIViewController {
             
             if let vc = segue.destination as? ProfileEditorVC {
                 vc.userInformations = self.userInformations
+            }
+        }
+        
+        else if segue.identifier == "history"{
+            
+            if let vc = segue.destination as? HistroyVC {
+                vc.points = self.profileValueArry[profileValueArry.count - 1]
             }
         }
     }
@@ -149,16 +161,13 @@ class ResturentSelectionVC: UIViewController {
         
         ResturentAPI.userInformation() { result, error, status in
             
-            if status == 200 {
-                
-                if result == nil {
-                    return
-                }
+            if status == 200 && result != nil  {
                 
                 self.userInformations = result
                 
                 if let card = result?.primaryCardNumbers[0] {
                     self.profileValueArry[0] = card
+                    AppSessionManager.savePrintedCardNumber(number: card)
                 }
                 
                 if let reg = result?.accountIds[0] {
@@ -170,13 +179,39 @@ class ResturentSelectionVC: UIViewController {
                 }
                 
                 self.tblProfileData.reloadData()
+                self.getAccountInformation()
+
                 
             }else if status == 403 {
                 
                 Utility.getAccessTokenUsingRefreshToken()
+                
+            }else {
+                _ = APIErrorHandling(error: error!, vc: self)
             }
         }
         
+    }
+    
+    func getAccountInformation()  {
+        
+        ResturentAPI.accountInformation() { result, error, status in
+            
+            if status == 200 && result != nil  {
+                
+                if (result?.pointBalances.count)!  > 0 {
+                    
+                    self.profileValueArry[3] = result?.pointBalances[0].balance ?? "0"
+                }
+                
+            }else if status == 403 {
+                
+                Utility.getAccessTokenUsingRefreshToken()
+                
+            }else {
+                _ = APIErrorHandling(error: error!, vc: self)
+            }
+        }
     }
 }
 

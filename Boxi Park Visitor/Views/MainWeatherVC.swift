@@ -40,7 +40,7 @@ class MainWeatherVC: UIViewController {
     func loginUsingPassword()  {
             progressBar.show()
        
-            let user = LoginWithCredentials(authentication: "anonymous",
+            let user = LoginWithCredentials(authentication: Constant.ANONYMOUS_AUTH_TYPE,
                                             client_id: Constant.CLIENT_ID,
                                             client_secret: Constant.SECRET,
                                             grant_type: "password",
