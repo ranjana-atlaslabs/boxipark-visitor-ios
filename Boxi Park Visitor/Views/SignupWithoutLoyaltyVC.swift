@@ -121,7 +121,8 @@ class SignupWithoutLoyaltyVC: UIViewController {
                     //Show error msg user all ready exsits
                     Alert.showValidationErrorAlert(on: self, error: Constant.USER_ALLREADY_EXSITS_MESSAGE_BODY)
                     
-                }else {
+                }
+                else {
                     
                     if (result?.errorsByField?["setUserFields/username"]) != nil  {
                         
@@ -135,6 +136,12 @@ class SignupWithoutLoyaltyVC: UIViewController {
                     }else if (result?.errorsByField?["setUserFields/mobilePhone"]) != nil  {
                         //Show error msg mobilePhone invalid
                         Alert.showValidationErrorAlert(on: self, error: Constant.INVALID_PHONE_NUMBER_MESSAGE_BODY)
+                        
+                    }else if result?.errorMessage != nil {
+                        Alert.showValidationErrorAlert(on: self, error: (result?.errorMessage)!)
+                    }
+                    else {
+                        Alert.showValidationErrorAlert(on: self, error: Constant.FAILD_REUQEST_ERROR_MESSAGE_BODY)
                     }
                 }
                 
@@ -173,7 +180,8 @@ class SignupWithoutLoyaltyVC: UIViewController {
                     //Show error msg user all ready exsits
                     Alert.showValidationErrorAlert(on: self, error: Constant.USER_ALLREADY_EXSITS_MESSAGE_BODY)
                     
-                }else {
+                }
+                else {
                     
                     if (result?.errorsByField?["setUserFields/username"]) != nil  {
                         
@@ -183,6 +191,15 @@ class SignupWithoutLoyaltyVC: UIViewController {
                     }else if (result?.errorsByField?["setUserFields/password"]) != nil  {
                         //Show error msg password invalid
                         Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_INVALID_MESSAGE_BODY)
+                    }else if (result?.errorsByField?["setUserFields/mobilePhone"]) != nil  {
+                        //Show error msg mobilePhone invalid
+                        Alert.showValidationErrorAlert(on: self, error: Constant.INVALID_PHONE_NUMBER_MESSAGE_BODY)
+                        
+                    }else if result?.errorMessage != nil {
+                        Alert.showValidationErrorAlert(on: self, error: (result?.errorMessage)!)
+                    }
+                    else {
+                        Alert.showValidationErrorAlert(on: self, error: Constant.FAILD_REUQEST_ERROR_MESSAGE_BODY)
                     }
                 }
                 

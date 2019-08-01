@@ -73,9 +73,7 @@ extension ResturentSelectionVC {
                          name: .flagsChanged,
                          object: nil)
         updateUserInterface()
-        
-        let image = generateQRCode(from: "002658932525")
-        self.qrImage.image = image
+
     }
     
     //break into common methods

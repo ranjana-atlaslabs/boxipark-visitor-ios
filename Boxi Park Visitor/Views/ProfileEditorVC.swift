@@ -110,10 +110,13 @@ class ProfileEditorVC: UIViewController {
             let name     = txtUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             let phone    = txtMobileNumber.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            let userFields = UserFields(style: "typed", username: [txtEmail.text!], password: [AppSessionManager.getAuthPassword()!], firstName: [name!], email: [txtEmail.text!], mobilePhone: [phone!])
+            let userFields = EditUserFields(style: "typed", firstName: [name!], mobilePhone: [phone!])
             let accountFields = AccoutnFields(style: "typed")
             
-            let user = ProfileEdit(authentication: "card", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, accountId: userInformations.accountIds[0], enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
+            let accessToken         = AppSessionManager.getAuthToken()!
+            let printedCardNumber   = AppSessionManager.getPrintedCardNumber()!
+
+            let user = ProfileEdit(authentication: "oauth", client_id: Constant.CLIENT_ID, client_secret: Constant.SECRET, merchantId: Constant.MERCHANT_ID, access_token: accessToken, printedCardNumber: printedCardNumber, enforceUniqueFields: ["username", "email"], setUserFields: userFields, setAccountFields: accountFields)
             
 
             self.progressBar.show()
@@ -124,13 +127,20 @@ class ProfileEditorVC: UIViewController {
                 
                 if status == 200 && result != nil {
                     
-                    if result?.result == Constant.PAYTRONIX_API_CARD_CREATED_SUCCESS_RESULT {
+                    if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT {
                         Alert.showUpdateSucessAlert(on: self)
-                    }else {
+                        
+                    }else if (result?.errorsByField?["setUserFields/mobilePhone"]) != nil  {
+                        
+                        self.dataBindFromApi()
+                        //Show error msg mobilePhone invalid
+                        Alert.showValidationErrorAlert(on: self, error: Constant.INVALID_PHONE_NUMBER_MESSAGE_BODY)
+                    }
+                    else {
                         Alert.showFailReuqestAlert(on: self)   
                     }
                     
-                }else if status == 403 {
+                }else if status == 401 {
                     
                     Utility.getAccessTokenUsingRefreshToken()
                     

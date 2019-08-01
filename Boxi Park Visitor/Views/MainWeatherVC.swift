@@ -19,6 +19,8 @@ class MainWeatherVC: UIViewController {
         super.viewDidLoad()
         self.setupView()
         
+        
+        
     }
     
     func setupView()  {
@@ -45,7 +47,7 @@ class MainWeatherVC: UIViewController {
                                             client_secret: Constant.SECRET,
                                             grant_type: "password",
                                             merchantId: Constant.MERCHANT_ID,
-                                            scope: "user_read account_read",
+                                            scope: "user_read user_write account_read account_write",
                                             username: AppSessionManager.getAuthUserName()!,
                                             password: AppSessionManager.getAuthPassword()!)
             
@@ -61,7 +63,7 @@ class MainWeatherVC: UIViewController {
                         AppSessionManager.saveRefreshToken(token: result!.refresh_token!)
                         self.performSegue(withIdentifier: "main_menu", sender: nil)
                     }else {
-                        Alert.showInvalidUserNameAlert(on: self)
+                        self.performSegue(withIdentifier: "login", sender: nil)
                     }
                     
                 }else {

@@ -43,6 +43,7 @@ struct HistroyAPI {
                 }
                     
                 catch let err {
+                    print(err)
                     completion(nil, err, response.response?.statusCode)
                 }
                 

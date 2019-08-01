@@ -14,7 +14,7 @@ class ForgotPasswordVC: UIViewController {
     @IBOutlet weak var txtEmailOrCard: UITextField!
     @IBOutlet weak var btnForgot: UIButton!
     
-    let progressBar = ProgressHUD(text: Constant.VALIDATING_MESSAGE_TEXT, isDarMode: false)
+    let progressBar = ProgressHUD(text: Constant.VALIDATING_MESSAGE_TEXT, isDarMode: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,7 @@ class ForgotPasswordVC: UIViewController {
                     
                     if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT {
                         
+                        Alert.showForgetPasswordRequestSuccessAlert(on: self, isHideController: true)
                         
                     }else {
                         Alert.showValidationErrorAlert(on: self, error: result?.errorMessage ?? "Request unavailable")

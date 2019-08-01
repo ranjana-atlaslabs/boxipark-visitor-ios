@@ -20,8 +20,8 @@ struct CreateAndRegister: Codable {
     var enforceUniqueFields: [String]!
     var setUserFields: UserFields!
     var setAccountFields: AccoutnFields!
+    
 }
-
 struct UserFields: Codable {
     
     var style: String!
@@ -44,6 +44,8 @@ struct CreateAndRegisterResult: Codable {
     var oauthTokens: OauthToken?
     var printedCardNumber: String?
     var errorsByField: [String: [String]]?
+    var errorMessage: String?
+    
 }
 
 struct OauthToken: Codable {

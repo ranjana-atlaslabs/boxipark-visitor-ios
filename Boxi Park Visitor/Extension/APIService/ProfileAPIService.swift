@@ -13,11 +13,6 @@ struct ProfileAPI {
     
     static func updateUser(user: ProfileEdit ,completion: @escaping (CreateAndRegisterResult?, Error?, Int?) -> Void) {
         
-        let accessToken         = AppSessionManager.getAuthToken()!
-        let username            = AppSessionManager.getAuthUserName()!
-        let printedCardNumber   = AppSessionManager.getPrintedCardNumber()!
-        let authenticationType  = "oauth"
-        
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(user)
         

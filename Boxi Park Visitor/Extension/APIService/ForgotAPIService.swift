@@ -36,7 +36,7 @@ struct ForgotAPI {
             case .success( _):
                 
                 do {
-                    
+                    print(response.value)
                     let result =  try JSONDecoder().decode(ForgotPasswordResult.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }

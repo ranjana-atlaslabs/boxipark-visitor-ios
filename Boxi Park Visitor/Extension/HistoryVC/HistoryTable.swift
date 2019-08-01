@@ -13,20 +13,18 @@ extension HistroyVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if histroyTrasaction == nil ||  histroyTrasaction.count == 0 {
+        if histroyTrasaction.count == 0 {
             
             let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
             noDataLabel.text          = "No records found"
             noDataLabel.textColor     = UIColor.black
             noDataLabel.textAlignment = .center
             tableView.backgroundView  = noDataLabel
-            tableView.separatorStyle  = .none
-            
             return 0
         }
         
         tableView.backgroundView = nil
-        return historyData.transactions.count
+        return histroyTrasaction.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,13 +53,23 @@ extension HistroyVC: UITableViewDelegate, UITableViewDataSource {
             cell.lblPoint.text = "+\(accrued) Points"
             cell.lblPoint.textColor = #colorLiteral(red: 0.4322328568, green: 0.6876894832, blue: 0.7780260444, alpha: 1)
         }else {
-            cell.lblPoint.text = "-\(redeemed) Points"
+            cell.lblPoint.text = "\(redeemed) Points"
             cell.lblPoint.textColor = #colorLiteral(red: 0.9212740064, green: 0.3939920068, blue: 0.2965783179, alpha: 1)
         }
         
         cell.lblResturentName.text = trasaction_item.storeName ?? ""
         cell.lblTransactionId.text = "Transaction ID : \(trasaction_item.transactionId ?? 0)"
-        cell.lblDateTime.text      = trasaction_item.datetime
+        
+        let dateStr = trasaction_item.datetime
+        
+        let date = Utility.stringToDate(date: dateStr!, formaterType: "yyyy-mm-dd HH:mm:ss")
+            
+        let new_date = Utility.dateToString(date: date, formaterType: "dd.mm.yyyy 'at' HH:mm a.").lowercased()
+                
+            
+        
+        
+        cell.lblDateTime.text      = new_date
         cell.selectionStyle = .none
         return cell
     }

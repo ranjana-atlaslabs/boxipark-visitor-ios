@@ -14,7 +14,7 @@ class HistroyVC: UIViewController {
     @IBOutlet weak var lblPoints: UILabel!
     
     var historyData: TransationResult!
-    var histroyTrasaction: [TransactionTable]!
+    var histroyTrasaction = [TransactionTable]()
     var points = String()
     
     override func viewDidLoad() {
@@ -39,6 +39,7 @@ class HistroyVC: UIViewController {
     
     func getTransactionHistory()  {
         
+        self.histroyTrasaction.removeAll()
         
         HistroyAPI.getTransactionHistroy() { result, error , status in
             
@@ -57,6 +58,9 @@ class HistroyVC: UIViewController {
                         })
                     }
                 })
+                
+              
+                self.tblHistroy.reloadData()
             }
         }
     }

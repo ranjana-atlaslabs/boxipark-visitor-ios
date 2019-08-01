@@ -28,7 +28,7 @@ struct Detail: Decodable {
     var accrued: String!
     var balance: String!
     var redeemed: String!
-    var walletCode: String!
+    var walletCode: Int!
 }
 
 
@@ -38,7 +38,7 @@ struct TransactionTable {
     var accrued: String!
     var balance: String!
     var redeemed: String!
-    var walletCode: String!
+    var walletCode: Int!
     var datetime: String!
     var transactionId: Int!
 

@@ -166,7 +166,11 @@ class ResturentSelectionVC: UIViewController {
                 self.userInformations = result
                 
                 if let card = result?.primaryCardNumbers[0] {
+                    
                     self.profileValueArry[0] = card
+                    let image = self.generateBarcode(from: card)
+                    self.qrImage.image = image
+                    
                     AppSessionManager.savePrintedCardNumber(number: card)
                 }
                 
@@ -182,7 +186,7 @@ class ResturentSelectionVC: UIViewController {
                 self.getAccountInformation()
 
                 
-            }else if status == 403 {
+            }else if status == 401 {
                 
                 Utility.getAccessTokenUsingRefreshToken()
                 
@@ -202,9 +206,12 @@ class ResturentSelectionVC: UIViewController {
                 if (result?.pointBalances.count)!  > 0 {
                     
                     self.profileValueArry[3] = result?.pointBalances[0].balance ?? "0"
+                    
                 }
                 
-            }else if status == 403 {
+                self.tblProfileData.reloadData()
+                
+            }else if status == 401 {
                 
                 Utility.getAccessTokenUsingRefreshToken()
                 

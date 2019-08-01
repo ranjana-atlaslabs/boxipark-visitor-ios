@@ -15,8 +15,17 @@ struct ProfileEdit: Codable {
     var client_id: String!
     var client_secret: String!
     var merchantId: Int!
-    var accountId: Int!
+    var access_token: String!
+    var printedCardNumber: String!
     var enforceUniqueFields: [String]!
-    var setUserFields: UserFields!
+    var setUserFields: EditUserFields!
     var setAccountFields: AccoutnFields!
+}
+
+struct EditUserFields: Codable {
+    
+    var style: String!
+    var firstName: [String]!
+    var mobilePhone: [String]!
+    
 }

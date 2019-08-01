@@ -32,7 +32,7 @@ struct Utility {
                                           client_secret: Constant.SECRET,
                                           grant_type: "refresh_token",
                                           merchantId: Constant.MERCHANT_ID,
-                                          scope: "user_read account_read",
+                                          scope: "user_read user_write account_read account_write",
                                           refresh_token: AppSessionManager.getRefreshToken()!)
         
         LoginAPI.loginWithRefreshToken(user: model) { result, error, status in
@@ -60,7 +60,7 @@ struct Utility {
                                         client_secret: Constant.SECRET,
                                         grant_type: "password",
                                         merchantId: Constant.MERCHANT_ID,
-                                        scope: "user_read account_read",
+                                        scope: "user_read user_write account_read account_write",
                                         username: AppSessionManager.getAuthUserName()!,
                                         password: AppSessionManager.getAuthPassword()!)
         
@@ -72,6 +72,8 @@ struct Utility {
                     //save user data in userdefault
                     AppSessionManager.saveAuthToken(token: result!.access_token!)
                     AppSessionManager.saveRefreshToken(token: result!.refresh_token!)
+                }else {
+                    AppSessionManager.removeAllObject()
                 }
                 
             }

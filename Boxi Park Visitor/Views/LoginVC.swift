@@ -75,7 +75,7 @@ class LoginVC: UIViewController {
                                             client_secret: Constant.SECRET,
                                             grant_type: "password",
                                             merchantId: Constant.MERCHANT_ID,
-                                            scope: "user_read account_read",
+                                            scope: "user_read user_write account_read account_write",
                                             username: name!,
                                             password: password!)
             
@@ -90,6 +90,7 @@ class LoginVC: UIViewController {
                         AppSessionManager.saveRefreshToken(token: result!.refresh_token!)
                         AppSessionManager.saveAuthUserName(userName: name!)
                         AppSessionManager.saveAuthPassword(password: password!)
+                        print(result!.access_token!)
                         self.performSegue(withIdentifier: "menu", sender: nil)
                     }else {
                         Alert.showInvalidUserNameAlert(on: self)

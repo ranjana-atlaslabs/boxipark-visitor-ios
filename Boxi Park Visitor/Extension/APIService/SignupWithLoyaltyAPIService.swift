@@ -29,6 +29,8 @@ struct SignupWithLoyaltyAPI {
             case .success( _):
                 
                 do {
+                    
+                    print(response.value)
                     let result =  try JSONDecoder().decode(CreateAndRegisterResult.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }
@@ -58,6 +60,7 @@ struct SignupWithLoyaltyAPI {
             case .success( _):
                 
                 do {
+                    print(response.value)
                     let result =  try JSONDecoder().decode(ValidateCard.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }

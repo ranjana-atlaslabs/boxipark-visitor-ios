@@ -35,6 +35,30 @@ struct Alert {
         }
     }
     
+    private static func showBasicAlertWithOk(on vc:UIViewController, with title: String, message: String){
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        let messageFont = [NSAttributedString.Key.font: UIFont(name: Constant.NORMAL_FONT_NAME, size: 15.0)!]
+        
+        
+        let messageAttrString = NSMutableAttributedString(string: message, attributes: messageFont)
+        
+        alert.setValue(messageAttrString, forKey: "attributedMessage")
+        
+        alert.view.tintColor = #colorLiteral(red: 0.9210870266, green: 0.4134199023, blue: 0.3156435788, alpha: 1)
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+        
+        DispatchQueue.main.async {
+            
+            let subview = (alert.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+            subview.layer.cornerRadius  = 10
+            subview.backgroundColor     = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            
+            vc.present(alert, animated: true, completion: nil)
+            
+        }
+    }
+    
     private static func showAdavanceAlert(on vc:UIViewController, with title: String, message: String){
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {(alert: UIAlertAction!) in vc.viewDidLoad(); vc.view.layoutIfNeeded()}))
@@ -140,7 +164,7 @@ struct Alert {
     }
     
     static func showUpdateSucessAlert(on vc:UIViewController){
-        showBasicAlert(on: vc, with: "", message: Constant.PROFILE_UPDATE_MESSAGE_BODY)
+        showBasicAlertWithOk(on: vc, with: "", message: Constant.PROFILE_UPDATE_MESSAGE_BODY)
     }
     
     //MARK: open Setting page
