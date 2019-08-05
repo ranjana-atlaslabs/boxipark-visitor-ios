@@ -87,8 +87,8 @@ class ResturentSelectionVC: UIViewController {
     }
     
     @IBAction func btnLogoutTap(_ sender: Any) {
-        AppSessionManager.removeAllObject()
-        self.performSegue(withIdentifier: "Main", sender: nil)
+      
+        Alert.showLogoutMsgAlert(on: self, with: "", message: "Are you sure?")
     }
     
     @IBAction func historyBtnTap(_ sender: UIButton) {

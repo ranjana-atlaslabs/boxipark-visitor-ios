@@ -104,6 +104,17 @@ struct Utility {
         return date
         
     }
+    
+    static func hideMidChars(_ value: String) -> String {
+        
+        var maskStr = ""
+        value.forEach { (char) in
+            maskStr += "*"
+            
+        }
+        
+        return maskStr
+    }
 }
 
 extension UILabel {
@@ -140,6 +151,8 @@ extension UILabel {
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
         self.attributedText = attrString
     }
+    
+  
 }
 
 extension String {

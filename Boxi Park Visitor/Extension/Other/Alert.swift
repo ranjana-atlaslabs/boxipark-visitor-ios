@@ -86,9 +86,6 @@ struct Alert {
                 vc.dismiss(animated: true, completion: nil)
 
             }
-            
-            
-            
         }))
         
         DispatchQueue.main.async {
@@ -127,6 +124,41 @@ struct Alert {
         }
     }
 
+    static func showLogoutMsgAlert(on vc:UIViewController, with title: String, message: String){
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        let messageFont = [NSAttributedString.Key.font: UIFont(name: Constant.NORMAL_FONT_NAME, size: 15.0)!]
+        
+        
+        let messageAttrString = NSMutableAttributedString(string: message, attributes: messageFont)
+        
+        alert.setValue(messageAttrString, forKey: "attributedMessage")
+        
+        alert.view.tintColor = #colorLiteral(red: 0.9210870266, green: 0.4134199023, blue: 0.3156435788, alpha: 1)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+            
+            
+            (alert: UIAlertAction!) in
+            
+              AppSessionManager.removeAllObject()
+              vc.performSegue(withIdentifier: "Main", sender: nil)
+          
+            
+            
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: nil))
+        
+        DispatchQueue.main.async {
+            
+            let subview = (alert.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+            subview.layer.cornerRadius  = 10
+            subview.backgroundColor     = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            
+            vc.present(alert, animated: true, completion: nil)
+            
+        }
+    }
+    
     static func showWIFIfaildAlert(on vc:UIViewController){
         showAdavanceAlertForConnectionLost(on: vc, with: Constant.NO_WIFI_ALERT_ERROR_MESSAGE_HEADER, message: Constant.NO_WIFI_ALERT_ERROR_MESSAGE_BODY)
     }
@@ -159,8 +191,12 @@ struct Alert {
         showBasicAlert(on: vc, with: Constant.INVALID_CARD_ERROR_MESSAGE_HEADER, message: Constant.INVALID_CARD_ERROR_MESSAGE_BODY)
     }
     
-    static func showForgetPasswordRequestSuccessAlert(on vc:UIViewController, isHideController: Bool){
-        showAdavanceAlertOneAction(on: vc, with: Constant.FORGOT_VC_SUCESS_HEADER_BODY, message: Constant.FORGOT_VC_SUCESS_MESSAGE_BODY, isDismissController: isHideController)
+    static func showInactivedCardAlert(on vc:UIViewController){
+        showBasicAlert(on: vc, with: Constant.INVALID_CARD_ERROR_MESSAGE_HEADER, message: Constant.INACTIVE_CARD_ERROR_MESSAGE_BODY)
+    }
+    
+    static func showForgetPasswordRequestSuccessAlert(on vc:UIViewController, isHideController: Bool, email: String){
+        showAdavanceAlertOneAction(on: vc, with: Constant.FORGOT_VC_SUCESS_HEADER_BODY, message: "we sent an email to \(email) with a link to reset your password", isDismissController: isHideController)
     }
     
     static func showUpdateSucessAlert(on vc:UIViewController){

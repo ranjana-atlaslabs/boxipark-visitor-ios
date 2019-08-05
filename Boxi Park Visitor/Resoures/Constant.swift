@@ -69,7 +69,7 @@ struct Constant {
     public static let NO_INTERNET_ERROR_MESSAGE_BODY            = "No Internet Connection"
     
     public static let VALIDATION_ERROR_MESSAGE_HEADER           = "Error"
-    public static let USERNAME_REQUIRED_MESSAGE_BODY            = "Username is required"
+    public static let USERNAME_REQUIRED_MESSAGE_BODY            = "Name is required"
     public static let FULL_NAME_REQUIRED_MESSAGE_BODY           = "Full name can't be empty"
     public static let CARD_REQUIRED_MESSAGE_BODY                = "Loyalty card number is required"
     public static let REG_CARD_REQUIRED_MESSAGE_BODY            = "Register number is required"
@@ -89,6 +89,7 @@ struct Constant {
     
     public static let INVALID_CARD_ERROR_MESSAGE_HEADER         = "Error"
     public static let INVALID_CARD_ERROR_MESSAGE_BODY           = "Invalid card credentials"
+    public static let INACTIVE_CARD_ERROR_MESSAGE_BODY          = "Inactive card credentials"
     
     public static let FORGOT_VC_ERROR_MESSAGE_BODY              = "Email is required"
     public static let FORGOT_VC_SUCESS_MESSAGE_BODY             = "Request is success. Check your mail"

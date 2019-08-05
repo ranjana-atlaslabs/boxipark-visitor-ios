@@ -36,7 +36,7 @@ struct ResturentAPI {
             case .success( _):
                 
                 do {
-                    
+
                     let result =  try JSONDecoder().decode(UserInformationResult.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }
@@ -77,7 +77,6 @@ struct ResturentAPI {
             case .success( _):
                 
                 do {
-                    
                     let result =  try JSONDecoder().decode(AccountInformationResult.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }

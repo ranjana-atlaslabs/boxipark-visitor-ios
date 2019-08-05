@@ -89,15 +89,22 @@ class SignupWithLoyaltyVC: UIViewController {
             
             if status == 200 && result != nil {
                 
+             
                 if result?.result == "success" {
                     
-                    if result?.registrationStatus == "Unregistered"{
-                        self.isCardUser = true
-                        self.performSegue(withIdentifier: "signWithoutLoyalty", sender: nil)
-
+                    if result?.primaryCard?.status == "ACTIVE" {
+                        if result?.registrationStatus == "Unregistered"{
+                            self.isCardUser = true
+                            self.performSegue(withIdentifier: "signWithoutLoyalty", sender: nil)
+                            
+                        }else {
+                            Alert.showInvalidCardAlert(on: self)
+                        }
                     }else {
-                        Alert.showInvalidCardAlert(on: self)
+                        Alert.showInvalidUserNameAlert(on: self)
                     }
+                    
+                    
                     
                 }else {
                     

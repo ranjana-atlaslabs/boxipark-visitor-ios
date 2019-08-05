@@ -59,7 +59,9 @@ class ForgotPasswordVC: UIViewController {
                     
                     if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT {
                         
-                        Alert.showForgetPasswordRequestSuccessAlert(on: self, isHideController: true)
+                        let components = email?.components(separatedBy: "@")
+                        let result = Utility.hideMidChars((components?.first!)!) + "@" + (components?.last!)!
+                        Alert.showForgetPasswordRequestSuccessAlert(on: self, isHideController: true, email: result)
                         
                     }else {
                         Alert.showValidationErrorAlert(on: self, error: result?.errorMessage ?? "Request unavailable")

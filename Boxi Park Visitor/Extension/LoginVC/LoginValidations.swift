@@ -17,7 +17,7 @@ extension LoginVC {
         
         if name == nil || name == "" {
             
-            Alert.showValidationErrorAlert(on: self, error: Constant.USERNAME_REQUIRED_MESSAGE_BODY)
+            Alert.showValidationErrorAlert(on: self, error: Constant.EMAIL_REQUIRED_MESSAGE_BODY)
             return false
         }
         

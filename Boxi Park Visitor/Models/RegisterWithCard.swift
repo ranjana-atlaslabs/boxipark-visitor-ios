@@ -26,4 +26,10 @@ struct ValidateCard: Decodable {
     
     var result: String!
     var registrationStatus: String?
+    var primaryCard: PrimaryCard?
+}
+
+struct PrimaryCard: Decodable {
+    
+    var status: String
 }

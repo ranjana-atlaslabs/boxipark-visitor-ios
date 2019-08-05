@@ -90,7 +90,9 @@ class ProfileEditorVC: UIViewController {
                 
                 if result?.result == Constant.PAYTRONIX_API_SUCCESS_RESULT {
                     
-                    Alert.showForgetPasswordRequestSuccessAlert(on: self, isHideController: false)
+                    let components = email?.components(separatedBy: "@")
+                    let result = Utility.hideMidChars((components?.first!)!) + "@" + (components?.last!)!
+                    Alert.showForgetPasswordRequestSuccessAlert(on: self, isHideController: false, email: result)
                     
                 }else {
                     Alert.showValidationErrorAlert(on: self, error: result?.errorMessage ?? "Request unavailable")
