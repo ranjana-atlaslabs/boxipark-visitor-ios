@@ -64,6 +64,10 @@ class ResturentSelectionVC: UIViewController {
         }
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getUserInformation()
+    }
     //Mark: @IBAction
     @IBAction func sidebarBtnTap(_ sender: Any) {
         
@@ -180,6 +184,7 @@ class ResturentSelectionVC: UIViewController {
                 
                 if let username = result?.fields.firstName {
                     self.lblUsername.text = username.capitalizingFirstLetter()
+                    AppSessionManager.saveAuthFirstName(userName: username)
                 }
                 
                 self.tblProfileData.reloadData()

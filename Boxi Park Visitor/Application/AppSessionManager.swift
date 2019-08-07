@@ -16,7 +16,7 @@ class AppSessionManager: NSObject {
     
     public static let SESSION_MANAGER_STORE_AUTH_USER_NAME = "com.atlaslabs.BOXI.SESSION_MANAGER_STORE_AUTH_USER_NAME";
     public static let SESSION_MANAGER_STORE_AUTH_PASSWORD = "com.atlaslabs.BOXI.SESSION_MANAGER_STORE_AUTH_PASSWORD";
-
+   public static let SESSION_MANAGER_STORE_AUTH_FIRST_NAME = "com.atlaslabs.BOXI.SESSION_MANAGER_STORE_AUTH_FIRST_NAME";
     public override init() {
     }
     
@@ -46,6 +46,15 @@ class AppSessionManager: NSObject {
     //get user's authentication user name
     static func getAuthUserName() -> String? {
         return UserDefaults.standard.string(forKey: AppSessionManager.SESSION_MANAGER_STORE_AUTH_USER_NAME)
+    }
+    
+    //save user's authentication user name
+    static func saveAuthFirstName(userName: String) {
+        UserDefaults.standard.set(userName, forKey: AppSessionManager.SESSION_MANAGER_STORE_AUTH_FIRST_NAME)
+    }
+    //get user's authentication user name
+    static func getAuthFirstName() -> String? {
+        return UserDefaults.standard.string(forKey: AppSessionManager.SESSION_MANAGER_STORE_AUTH_FIRST_NAME)
     }
     
     //save user's authentication password

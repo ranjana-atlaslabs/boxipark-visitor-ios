@@ -20,6 +20,12 @@ extension ForgotPasswordVC {
             return false
         }
         
+        if !Utility.emailValidate(email: email!) {
+            
+            Alert.showValidationErrorAlert(on: self, error: Constant.EMAIL_INVALID_MESSAGE_BODY)
+            return false
+        }
+        
         return true
     }
 }

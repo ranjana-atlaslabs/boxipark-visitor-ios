@@ -29,27 +29,27 @@ extension SignupWithoutLoyaltyVC {
             return false
         }
         
-        if phone == nil || phone == "" {
-            
-            Alert.showValidationErrorAlert(on: self, error: Constant.MOBILE_REQUIRED_MESSAGE_BODY)
-            return false
-        }
-        
-        if password == nil || password == "" {
-            
-            Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_REQUIRED_MESSAGE_BODY)
-            return false
-        }
-        
         if !Utility.emailValidate(email: email!) {
             
             Alert.showValidationErrorAlert(on: self, error: Constant.EMAIL_INVALID_MESSAGE_BODY)
             return false
         }
         
+        if phone == nil || phone == "" {
+            
+            Alert.showValidationErrorAlert(on: self, error: Constant.MOBILE_REQUIRED_MESSAGE_BODY)
+            return false
+        }
+        
         if !Utility.isValidPhone(phone: phone!) {
             
             Alert.showValidationErrorAlert(on: self, error: Constant.MOBILE_INVALID_MESSAGE_BODY)
+            return false
+        }
+        
+        if password == nil || password == "" {
+            
+            Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_REQUIRED_MESSAGE_BODY)
             return false
         }
         

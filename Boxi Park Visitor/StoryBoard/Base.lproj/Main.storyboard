@@ -1168,7 +1168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2A-aI-YkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="745"/>
+            <point key="canvasLocation" x="-109" y="745"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="4oO-Gg-ndg">
@@ -2331,7 +2331,7 @@
                                                     <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="30"/>
                                                 </variation>
                                                 <connections>
-                                                    <segue destination="4YU-Qn-IqD" kind="show" id="hka-LE-oo6"/>
+                                                    <action selector="cancelBtnTap:" destination="g14-ef-DWY" eventType="touchUpInside" id="Ldf-N7-BWG"/>
                                                 </connections>
                                             </button>
                                         </subviews>

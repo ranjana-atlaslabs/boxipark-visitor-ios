@@ -46,7 +46,7 @@ struct Alert {
         alert.setValue(messageAttrString, forKey: "attributedMessage")
         
         alert.view.tintColor = #colorLiteral(red: 0.9210870266, green: 0.4134199023, blue: 0.3156435788, alpha: 1)
-        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: {(alert: UIAlertAction!) in vc.dismiss(animated: true, completion: nil)}))
         
         DispatchQueue.main.async {
             
@@ -110,7 +110,7 @@ struct Alert {
         
         alert.setValue(messageAttrString, forKey: "attributedMessage")
         alert.view.tintColor = #colorLiteral(red: 0.9210870266, green: 0.4134199023, blue: 0.3156435788, alpha: 1)
-        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: {(alert: UIAlertAction!) in vc.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Settings", style: .destructive, handler: {(alert: UIAlertAction!) in Alert.openWifiSettings()}))
         
         DispatchQueue.main.async {

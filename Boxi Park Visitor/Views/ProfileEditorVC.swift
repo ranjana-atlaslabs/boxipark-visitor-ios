@@ -27,8 +27,12 @@ class ProfileEditorVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupview()
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupview()
     }
     
     //Called when the user click on the view (outside the UITextField)
@@ -63,6 +67,7 @@ class ProfileEditorVC: UIViewController {
         
         if let username = userInformations.fields.firstName {
             txtUsername.text = username
+            AppSessionManager.saveAuthFirstName(userName: username)
         }
         
         if let email = userInformations.fields.email {
@@ -159,6 +164,9 @@ class ProfileEditorVC: UIViewController {
     }
     
     
+    @IBAction func cancelBtnTap(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func btnUploadBtnTap(_ sender: UIButton) {
         
