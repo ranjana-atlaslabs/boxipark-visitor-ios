@@ -12,6 +12,7 @@ struct AccountInformationResult: Decodable {
     
     var result: String!
     var pointBalances: [PointBalances]!
+    var rewardBalances: [RewardBalances]!
 }
 
 struct PointBalances: Decodable  {
@@ -19,3 +20,20 @@ struct PointBalances: Decodable  {
     var balance: String!
     
 }
+
+
+struct RewardBalances: Decodable  {
+    
+    var balance: String!
+    var expirations: [Expirations]?
+    var name: String!
+}
+
+struct Expirations: Decodable  {
+    
+    var amount: String!
+    var expirationDate: String!
+   
+   
+}
+

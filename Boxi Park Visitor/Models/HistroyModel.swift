@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct TransationResult: Decodable {
     
     var result: String!
     var transactions: [Transaction]!
+    var walletInfo: [WalletInfo]!
 }
 
 struct Transaction: Decodable {
@@ -31,6 +33,13 @@ struct Detail: Decodable {
     var walletCode: Int!
 }
 
+struct WalletInfo: Decodable {
+    
+    var name: String!
+    var scale: Int!
+    var walletCode: Int!
+}
+
 
 struct TransactionTable {
     
@@ -42,4 +51,24 @@ struct TransactionTable {
     var datetime: String!
     var transactionId: Int!
 
+}
+
+struct TransactionTablePoint {
+    
+    var storeName: String!
+    var point: String!
+    var datetime: String!
+    var transactionId: Int!
+    var lableColor: UIColor!
+}
+
+
+struct TransactionTableReward {
+    
+    var storeName: String!
+    var reward: String!
+    var datetime: String!
+    var transactionId: Int!
+    var lableColor: UIColor!
+    
 }

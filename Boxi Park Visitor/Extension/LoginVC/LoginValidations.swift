@@ -21,7 +21,6 @@ extension LoginVC {
             return false
         }
         
-     
         if password == nil || password == "" {
             
             Alert.showValidationErrorAlert(on: self, error: Constant.PASSWORD_REQUIRED_MESSAGE_BODY)

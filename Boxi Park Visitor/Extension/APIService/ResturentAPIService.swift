@@ -77,11 +77,13 @@ struct ResturentAPI {
             case .success( _):
                 
                 do {
+                    print(response.value)
                     let result =  try JSONDecoder().decode(AccountInformationResult.self, from: response.data!)
                     completion(result, nil, response.response?.statusCode)
                 }
                     
                 catch let err {
+                    print(err)
                     completion(nil, err, response.response?.statusCode)
                 }
                 

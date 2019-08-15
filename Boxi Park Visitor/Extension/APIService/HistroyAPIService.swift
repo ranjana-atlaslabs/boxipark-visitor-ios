@@ -38,7 +38,9 @@ struct HistroyAPI {
                 
                 do {
                     
+                  //  print(response.value)
                     let result =  try JSONDecoder().decode(TransationResult.self, from: response.data!)
+                   
                     completion(result, nil, response.response?.statusCode)
                 }
                     

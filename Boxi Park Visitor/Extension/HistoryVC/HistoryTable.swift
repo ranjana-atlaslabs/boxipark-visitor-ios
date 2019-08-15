@@ -13,7 +13,15 @@ extension HistroyVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if histroyTrasaction.count == 0 {
+        var count = 0
+        
+        if isLoyaltyPoints {
+            count = self.histroyTrasactionPoints.count
+        }else {
+            count = self.histroyTrasactionRewards.count
+        }
+        
+        if count == 0 {
             
             let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
             noDataLabel.text          = "No records found"
@@ -24,52 +32,40 @@ extension HistroyVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         tableView.backgroundView = nil
-        return histroyTrasaction.count
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "history", for: indexPath) as! HistoryCell
         
-        let trasaction_item = histroyTrasaction[indexPath.row]
         
-        var accrued  = 0.0
-        var redeemed = 0.0
-        
-        if let value = Double(trasaction_item.accrued) {
-            accrued = value
-        } else {
-            print("Not a valid number: \(0)")
-        }
-        
-        if let value = Double(trasaction_item.redeemed) {
-            redeemed = value
+        if isLoyaltyPoints {
+            let trasaction_item = histroyTrasactionPoints[indexPath.row]
+            cell.lblPoint.text = trasaction_item.point
+            cell.lblPoint.textColor = trasaction_item.lableColor
+            cell.lblResturentName.text = trasaction_item.storeName ?? ""
+            cell.lblTransactionId.text = "Transaction ID : \(trasaction_item.transactionId ?? 0)"
             
-        } else {
-            print("Not a valid number: \(0)")
-        }
-        
-        if accrued > 0 {
-            cell.lblPoint.text = "+\(accrued) Points"
-            cell.lblPoint.textColor = #colorLiteral(red: 0.4322328568, green: 0.6876894832, blue: 0.7780260444, alpha: 1)
+            let dateStr = trasaction_item.datetime
+            let date = Utility.stringToDate(date: dateStr!, formaterType: "yyyy-mm-dd HH:mm:ss")
+            let new_date = Utility.dateToString(date: date, formaterType: "dd.mm.yyyy 'at' HH:mm a.").lowercased()
+            cell.lblDateTime.text      = new_date
+            
         }else {
-            cell.lblPoint.text = "\(redeemed) Points"
-            cell.lblPoint.textColor = #colorLiteral(red: 0.9212740064, green: 0.3939920068, blue: 0.2965783179, alpha: 1)
+            let trasaction_item = histroyTrasactionRewards[indexPath.row]
+            cell.lblPoint.text = trasaction_item.reward
+            cell.lblPoint.textColor = trasaction_item.lableColor
+            cell.lblResturentName.text = trasaction_item.storeName ?? ""
+            cell.lblTransactionId.text = "Transaction ID : \(trasaction_item.transactionId ?? 0)"
+            
+            let dateStr = trasaction_item.datetime
+            let date = Utility.stringToDate(date: dateStr!, formaterType: "yyyy-mm-dd HH:mm:ss")
+            let new_date = Utility.dateToString(date: date, formaterType: "dd.mm.yyyy 'at' HH:mm a.").lowercased()
+            cell.lblDateTime.text      = new_date
         }
         
-        cell.lblResturentName.text = trasaction_item.storeName ?? ""
-        cell.lblTransactionId.text = "Transaction ID : \(trasaction_item.transactionId ?? 0)"
-        
-        let dateStr = trasaction_item.datetime
-        
-        let date = Utility.stringToDate(date: dateStr!, formaterType: "yyyy-mm-dd HH:mm:ss")
-            
-        let new_date = Utility.dateToString(date: date, formaterType: "dd.mm.yyyy 'at' HH:mm a.").lowercased()
-                
-            
-        
-        
-        cell.lblDateTime.text      = new_date
         cell.selectionStyle = .none
         return cell
     }

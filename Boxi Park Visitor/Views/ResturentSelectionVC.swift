@@ -43,6 +43,7 @@ class ResturentSelectionVC: UIViewController {
     var allResutresntViews = [UIView()]
     var lblError           = UILabel()
     var userInformations: UserInformationResult!
+    var rewardBalances = [RewardBalances]()
 
     
     //Mark: Life Cycle Methods
@@ -113,6 +114,7 @@ class ResturentSelectionVC: UIViewController {
             
             if let vc = segue.destination as? ProfileEditorVC {
                 vc.userInformations = self.userInformations
+              
             }
         }
         
@@ -120,6 +122,7 @@ class ResturentSelectionVC: UIViewController {
             
             if let vc = segue.destination as? HistroyVC {
                 vc.points = self.profileValueArry[profileValueArry.count - 1]
+                vc.rewardBalances   = self.rewardBalances
             }
         }
     }
@@ -213,6 +216,14 @@ class ResturentSelectionVC: UIViewController {
                     self.profileValueArry[3] = result?.pointBalances[0].balance ?? "0"
                     
                 }
+                
+                if (result?.rewardBalances.count)!  > 0 {
+                    
+                    self.rewardBalances = (result?.rewardBalances!)!
+                    
+                }
+                
+                
                 
                 self.tblProfileData.reloadData()
                 
